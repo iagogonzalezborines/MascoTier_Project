@@ -50,5 +50,3 @@ This project is licensed under the MIT License.
 
 csharp
 
-
-Recuerda reemplazar "your-username" con tu nombre de usuario de GitHub y asegurarte de tener enlaces a los documentos y guías de contribución adecuados. Este README proporciona una estructura básica que puedes expandir según las necesidades específicas de tu proyecto.
