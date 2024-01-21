@@ -48,4 +48,4 @@ Bienvenido a Mascotier, la plataforma dedicada a conectar apasionados cuidadores
 
 Si tiene preguntas o inquietudes sobre estos Términos, contáctenos a [Dirección de Correo Electrónico].
 
-Agradecemos su confianza en Mascotier. Al utilizar nuestra plataforma, usted acepta estos Términos y Condiciones. ¡Gracias por ser parte de nuestra comunidad!
+Agradecemos su confianza en Mascotier. Al utilizar nuestra plataforma, usted acepta estos Términos y Condiciones. ¡Gracias por ser parte de nuestra comunidad!.
