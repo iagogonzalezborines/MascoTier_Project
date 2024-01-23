@@ -1,0 +1,5 @@
+{
+    "require": {
+        "arnolem/tailwindphp": "^2.0"
+    }
+}
