@@ -6,10 +6,11 @@
 ## Relational model
 
 User (User_ID,Email,Pwd,Phone, Place, Area)
+    Owner(User_ID)
+    Carer(User_ID,Rating,Status,ID_Doc,Descr)
 
-/*(IDK how tf can I make the DB with a super entity so I let carer and owner empty)*/
-Carer()
-Owner()
+Pet(Pet_ID,User_ID,Descr,Type)
 
 Chat(User_ID,User_ID,msg,date_time)
-Pet()
+Request(Pet)
+
