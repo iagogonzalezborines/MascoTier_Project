@@ -11,6 +11,8 @@ User (User_ID,Email,Pwd,Phone, Place, Area)
 
 Pet(Pet_ID,User_ID,Descr,Type)
 
-Chat(User_ID,User_ID,msg,date_time)
-Request(Pet)
+Request(Pet_ID,)
+
+
+/*Chat(User_ID,User_ID,msg,date_time)*/ 
 
