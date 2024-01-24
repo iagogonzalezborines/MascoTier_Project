@@ -31,9 +31,24 @@ services:
     networks:
       - Mascotier
       - MascotierLan    
+  phpmyadmin:
+    container_name: 'phpmyadminmascotier'
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mascotier
+      MYSQL_USER: mascotier
+      MYSQL_PASSWORD: mascotier
+    networks:
+      - Mascotier
+      - MascotierLan
 
   composer:
-    container_name: 'dwcs-mycomposer'
+    container_name: 'mascomposer'
     image: composer:2
     volumes:
       - ./src:/var/www/html
