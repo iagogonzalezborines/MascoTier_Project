@@ -1,0 +1,56 @@
+use mascotier;
+-- Crear tabla User
+CREATE TABLE User(
+    User_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Email VARCHAR(255) NOT NULL,
+    Pwd VARCHAR(100) NOT NULL,
+    Phone VARCHAR(15),
+    HasPlace TINYINT CHECK (HasPlace IN (0, 1)), -- 0 as False, 1 as true
+    Area VARCHAR(40)
+);
+
+-- Crear tabla Owner
+CREATE TABLE Owner (
+    User_ID INT PRIMARY KEY,
+    FOREIGN KEY (User_ID) REFERENCES User(User_ID)
+);
+
+-- Crear tabla Carer
+CREATE TABLE Carer (
+    User_ID INT PRIMARY KEY,
+    Rating INT,
+    IsAvailable TINYINT CHECK (IsAvailable IN (0, 1)), -- 0 as false, 1 as true
+    ID_Doc VARCHAR(15),
+    Descr VARCHAR(1000),
+    FOREIGN KEY (User_ID) REFERENCES User(User_ID)
+);
+
+-- Crear tabla Pet
+CREATE TABLE Pet (
+    Pet_ID INT PRIMARY KEY AUTO_INCREMENT,
+    User_Owner_ID INT,
+    Descr VARCHAR(300),
+    Type VARCHAR(50),
+    FOREIGN KEY (User_Owner_ID) REFERENCES User(User_ID)
+);
+
+-- Crear tabla Request
+CREATE TABLE Request (
+    Request_ID INT PRIMARY KEY AUTO_INCREMENT,
+    User_Owner_ID INT,
+    User_Carer_ID INT,
+    Amount DECIMAL(10, 2),
+    Date_Time DATETIME,
+    Status VARCHAR(50),
+    FOREIGN KEY (User_Owner_ID) REFERENCES User(User_ID),
+    FOREIGN KEY (User_Carer_ID) REFERENCES User(User_ID)
+);
+
+-- Crear tabla Requests_Pets (Tabla de relación entre Request y Pet)
+CREATE TABLE Requests_Pets (
+    Request_ID INT,
+    Pet_ID INT,
+    PRIMARY KEY (Request_ID, Pet_ID),
+    FOREIGN KEY (Request_ID) REFERENCES Request(Request_ID),
+    FOREIGN KEY (Pet_ID) REFERENCES Pet(Pet_ID)
+);
