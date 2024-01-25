@@ -17,5 +17,5 @@ Request(Request_ID, User_Owner_ID, User_Carer_ID, Amount, Date_Time, Status)
 Requests_Pets(Request_ID, Pet_ID)
 
 
-Chat(User_ID,User_ID,msg,date_time)
+/*Chat(User_ID,User_ID,msg,date_time)*/
 
