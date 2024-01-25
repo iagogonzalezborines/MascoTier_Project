@@ -22,7 +22,7 @@ CREATE TABLE carer (
     rating INT,
     is_available ENUM('0', '1'), -- 0 as false, 1 as true
     id_doc VARCHAR(15),
-    descr VARCHAR(1000),
+    descr VARCHAR(2000),
     FOREIGN KEY (user_id) REFERENCES user(user_id)
 );
 
@@ -31,7 +31,7 @@ CREATE TABLE pet (
     pet_id INT PRIMARY KEY AUTO_INCREMENT,
     user_owner_id INT NOT NULL,
     descr VARCHAR(300),
-    type VARCHAR(50),
+    pet_type VARCHAR(50),
     FOREIGN KEY (user_owner_id) REFERENCES user(user_id)
 );
 
