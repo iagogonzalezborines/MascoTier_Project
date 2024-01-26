@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS mascotier;
+CREATE DATABASE IF NOT EXISTS mascotier;
 use mascotier;
 
 -- Create table user
@@ -6,7 +8,7 @@ CREATE TABLE user(
     email VARCHAR(255) NOT NULL,
     pwd VARCHAR(100) NOT NULL,
     phone VARCHAR(15),
-    has_place ENUM('0', '1'), -- 0 as False, 1 as true
+    has_place BOOLEAN, -- 0 as False, 1 as true
     area VARCHAR(40)
 );
 
@@ -20,7 +22,7 @@ CREATE TABLE owner (
 CREATE TABLE carer (
     user_id INT PRIMARY KEY,
     rating INT,
-    is_available ENUM('0', '1'), -- 0 as false, 1 as true
+    is_available BOOLEAN, -- 0 as false, 1 as true
     id_doc VARCHAR(15),
     descr VARCHAR(2000),
     FOREIGN KEY (user_id) REFERENCES user(user_id)
