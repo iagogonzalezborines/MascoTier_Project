@@ -32,6 +32,7 @@ CREATE TABLE pet (
     user_owner_id INT NOT NULL,
     descr VARCHAR(300),
     pet_type VARCHAR(50),
+    pet_rating FLOAT,
     FOREIGN KEY (user_owner_id) REFERENCES user(user_id)
 );
 
