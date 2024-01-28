@@ -30,7 +30,7 @@ services:
       - ./data:/var/lib/mysql
     networks:
       - Mascotier
-      - MascotierLan    
+      - MascotierLan
   phpmyadmin:
     container_name: 'phpmyadminmascotier'
     image: phpmyadmin/phpmyadmin
@@ -55,9 +55,9 @@ services:
     working_dir: /var/www/html
     tty: true
     command: '/bin/bash'
+
 networks:
   MascotierLan:
     internal: true
   Mascotier:
     driver: bridge
-
