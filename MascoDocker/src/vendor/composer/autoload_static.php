@@ -12,6 +12,10 @@ class ComposerStaticInitbaf444c27312ee3d5803347f553d62b1
             'Symfony\\Component\\Process\\' => 26,
             'ScssPhp\\ScssPhp\\' => 16,
         ),
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
         'A' => 
         array (
             'Arnolem\\TailwindPhp\\' => 20,
@@ -26,6 +30,10 @@ class ComposerStaticInitbaf444c27312ee3d5803347f553d62b1
         'ScssPhp\\ScssPhp\\' => 
         array (
             0 => __DIR__ . '/..' . '/scssphp/scssphp/src',
+        ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
         'Arnolem\\TailwindPhp\\' => 
         array (

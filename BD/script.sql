@@ -10,6 +10,7 @@ CREATE TABLE user(
     phone VARCHAR(15),
     has_place BOOLEAN, -- 0 as False, 1 as true
     area VARCHAR(40)
+    verified BOOLEAN -- 0 as False, 1 as true
 );
 
 -- Create table owner

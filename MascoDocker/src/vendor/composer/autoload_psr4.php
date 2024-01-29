@@ -8,5 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     'Symfony\\Component\\Process\\' => array($vendorDir . '/symfony/process'),
     'ScssPhp\\ScssPhp\\' => array($vendorDir . '/scssphp/scssphp/src'),
+    'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
     'Arnolem\\TailwindPhp\\' => array($vendorDir . '/arnolem/tailwindphp/src'),
 );
