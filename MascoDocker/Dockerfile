@@ -1,9 +1,12 @@
+# Dockerfile para el servicio principal (php8.3 con Apache)
 FROM php:8.3-apache AS build-php
 
-RUN --mount=type=cache,target=/var/cache/apt apt update && apt full-upgrade -qy && apt clean -qy && apt autoremove -qy
+# Actualizar e instalar actualizaciones del sistema
+RUN apt-get update && apt-get upgrade -y && apt-get clean && apt-get autoremove -y
 
-RUN mount=type=cache,target='/usr/local/lib/php' \
-    pecl install xdebug \
+# Instalar y habilitar Xdebug
+RUN pecl install xdebug \
     && docker-php-ext-enable xdebug
 
+# Instalar extensiones necesarias para MySQL y habilitarlas
 RUN docker-php-ext-install mysqli pdo_mysql && docker-php-ext-enable mysqli pdo_mysql
