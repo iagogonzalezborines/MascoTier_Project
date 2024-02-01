@@ -23,12 +23,12 @@ The base class `User` might include common user information such as the user ID,
 The `Owner` class extends the `User` class and could contain owner-specific information such as contact details and the list of owned pets.
 
 **Additional Attributes:**
-- `contactNumber: string`
+
 - `pets: array[Pet]`
 
 **Additional Methods:**
 - `__construct(username: string, email: string, password: string, contactNumber: string): void`
-- `getContactNumber(): string`
+
 - `addPet(pet: Pet): void`
 - `getPets(): array[Pet]`
 
@@ -40,10 +40,12 @@ The `Carer` class extends the `User` class and represents a user offering pet ca
 - `idDocument: string`
 - `place: bool`
 - `rating: int`
+- `contactNumber: string`
 
 **Additional Methods:**
 - `__construct(username: string, email: string, password: string, idDocument: string, place: bool, rating: int): void`
 - `getIdDocument(): string`
+- `getContactNumber(): string`
 - `hasPlace(): bool`
 - `getRating(): int`
 
