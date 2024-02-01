@@ -1,5 +1,8 @@
 <?php
 
+include '../DataBase/connectToDb.php';
+include '../DataBase/executeQuery';
+
 class User {
     private int $userId;
     private string $username;
@@ -28,18 +31,21 @@ class User {
         $this->password = $password;
     }
 
-    public function transformEmailToUsername($username): void {
+    public function transformEmailToUsername(): void {
         // Transform email to username code here
+        //Use strings?
     }
 
-    private function hashPassword($password): void {
-        // Hash password code here
+    public function hashPassword(): string {
+        return $hashedPassword = password_hash($this->password, PASSWORD_DEFAULT);
     }
 
-    public function saveUser(): void {
-        // Save user code here
-    }
+    public function saveUser() {
+        $hashedPassword = $this->hashPassword();
+        $query = "INSERT INTO users (username, email, password) VALUES ('$this->username', '$this->email', '$hashedPassword')";
+        $dbh = connectToDatabase();
+        executeQuery($dbh, $query);
 
-    
+    }
 }
 ?>

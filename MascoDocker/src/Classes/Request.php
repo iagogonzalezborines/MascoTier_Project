@@ -9,12 +9,12 @@ class Request {
     private $pet;
     private $carer;
 
-    /*public function __construct(string $date, string $status, Pet $pet, Carer $carer) {
+    public function __construct(string $date, string $status, Pet $pet, Carer $carer) {
         $this->date = $date;
         $this->status = $status;
         $this->pet = $pet;
         $this->carer = $carer;
-    } */
+    } 
 
     public function getDate(): string {
         return $this->date;
