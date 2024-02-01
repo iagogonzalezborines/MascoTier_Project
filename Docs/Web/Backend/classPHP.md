@@ -16,6 +16,7 @@ The base class `User` might include common user information such as the user ID,
 - `getUsername(): string`
 - `getEmail(): string`
 - `setPassword(password: string): void`
+- `transformEmailToUsername(): void`
 
 ### Class Owner (inherits from User)
 
@@ -31,24 +32,37 @@ The `Owner` class extends the `User` class and could contain owner-specific info
 - `addPet(pet: Pet): void`
 - `getPets(): array[Pet]`
 
-### Class Care
+### Class Carer (inherits from User)
 
-The `Care` class might represent a care record with details like the date, associated caregiver, and notes.
+The `Carer` class extends the `User` class and represents a user offering pet care services.
+
+**Additional Attributes:**
+- `idDocument: string`
+- `place: bool`
+- `rating: int`
+
+**Additional Methods:**
+- `__construct(username: string, email: string, password: string, idDocument: string, place: bool, rating: int): void`
+- `getIdDocument(): string`
+- `hasPlace(): bool`
+- `getRating(): int`
+
+### Class Request
+
+The `Request` class might represent a service request with details like the date, associated pet, and carer, along with the status.
 
 **Attributes:**
-- `careId: int`
 - `date: string`
-- `notes: string`
+- `status: string` (pending, accepted, denied, in process, paid/finished)
 - `pet: Pet`
-- `caregiver: Owner`
+- `carer: Carer`
 
 **Methods:**
-- `__construct(date: string, notes: string, pet: Pet, caregiver: Owner): void`
-- `getCareId(): int`
+- `__construct(date: string, status: string, pet: Pet, carer: Carer): void`
 - `getDate(): string`
-- `getNotes(): string`
+- `getStatus(): string`
 - `getPet(): Pet`
-- `getCaregiver(): Owner`
+- `getCarer(): Carer`
 
 ### Class Pet
 
@@ -66,4 +80,3 @@ The `Pet` class could represent a pet with details like the pet ID, name, specie
 - `getName(): string`
 - `getSpecies(): string`
 - `getAdditionalInfo(): string`
-
