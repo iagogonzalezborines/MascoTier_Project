@@ -20,7 +20,7 @@
                 <mxCell id="4" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="2">
                     <mxGeometry y="90" width="160" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="+ getPets()&#10;+ setPets()&#10;+ sendRequest()&#10;&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="2">
+                <mxCell id="5" value="+ getPets()&#10;+ setPets()&#10;+ sendRequest()&#10;+ deletePet()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="2">
                     <mxGeometry y="98" width="160" height="92" as="geometry"/>
                 </mxCell>
                 <mxCell id="6" value="User" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
@@ -58,7 +58,7 @@
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="16" value="Pet" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
-                    <mxGeometry x="-160" y="220" width="160" height="114" as="geometry"/>
+                    <mxGeometry x="-160" y="220" width="160" height="150" as="geometry"/>
                 </mxCell>
                 <mxCell id="17" value="- type  int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="16">
                     <mxGeometry y="26" width="160" height="54" as="geometry"/>
@@ -66,11 +66,17 @@
                 <mxCell id="18" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="16">
                     <mxGeometry y="80" width="160" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="19" value="+ getType()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="16">
-                    <mxGeometry y="88" width="160" height="26" as="geometry"/>
+                <mxCell id="19" value="+ getType()&#10;+ modifyPet()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="16">
+                    <mxGeometry y="88" width="160" height="62" as="geometry"/>
                 </mxCell>
                 <mxCell id="23" value="&lt;b style=&quot;font-size: 34px;&quot;&gt;&lt;u&gt;&lt;i&gt;PHP Class UML&lt;br&gt;&lt;/i&gt;&lt;/u&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
                     <mxGeometry x="-320" y="30" width="280" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="To add&lt;br style=&quot;font-size: 33px;&quot;&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=34;" vertex="1" parent="1">
+                    <mxGeometry x="-205" y="465" width="130" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;- Pet: + modifyPet()&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=33;" vertex="1" parent="1">
+                    <mxGeometry x="-210" y="485" width="200" height="130" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
