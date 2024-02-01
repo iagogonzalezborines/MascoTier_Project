@@ -80,3 +80,58 @@ The `Pet` class could represent a pet with details like the pet ID, name, specie
 - `getName(): string`
 - `getSpecies(): string`
 - `getAdditionalInfo(): string`
+
+
+
++-----------------------+          +------------------+
+|         User          |          |      Owner       |
++-----------------------+          +------------------+
+| - userId: int         |          | - contactNumber: string
+| - username: string    |          | - pets: array[Pet]
+| - email: string       |          +------------------+
+| - password: string    |          | +__construct(username, email, password, contactNumber)
+| +__construct(...)     |          | +getContactNumber(): string
+| +getUserId(): int     |          | +addPet(pet: Pet): void
+| +getUsername(): string|          | +getPets(): array[Pet]
+| +getEmail(): string   |          +------------------+
+| +setPassword(...)     |
+| +transformEmailToUsername()|
++-----------------------+
+
++-----------------------+           +----------------------+
+|        Carer          |---(1,n)--|       Request        |
++-----------------------+           +----------------------+
+| - idDocument: string  |           | - date: string       |
+| - place: bool         |           | - status: string     |
+| - rating: int         |           | - pet: Pet           |
++-----------------------+           | - carer: Carer       |
+| +__construct(...)     |           | +__construct(...)    |
+| +getIdDocument(): string           | +getDate(): string   |
+| +hasPlace(): bool                   | +getStatus(): string |
+| +getRating(): int                   | +getPet(): Pet       |
++-----------------------+           | +getCarer(): Carer   |
+                                    +----------------------+
+
++-----------------------+
+|         Pet           |
++-----------------------+
+| - petId: int          |
+| - name: string        |
+| - species: string     |
+| - additionalInfo: string |
++-----------------------+
+| +__construct(...)     |
+| +getPetId(): int      |
+| +getName(): string    |
+| +getSpecies(): string |
+| +getAdditionalInfo(): string |
++-----------------------+
+
+
+In this textual representation:
+
+    Public methods are represented by +.
+    Private attributes are represented by -.
+    Constructor methods are represented by +__construct(...).
+    Relationships are indicated by lines connecting the classes.
+
