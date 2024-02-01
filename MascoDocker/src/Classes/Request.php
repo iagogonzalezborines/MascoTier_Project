@@ -28,6 +28,10 @@ class Request {
     public function getCarer(): Carer {
         return $this->carer;
     }
+
+    public function getPet(): Pet{
+        return $this->pet;
+    }
 }
 
 ?>
