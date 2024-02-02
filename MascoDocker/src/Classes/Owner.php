@@ -17,13 +17,13 @@ class Owner extends User { private $contactNumber; private $pets; public functio
         $this->pets[] = $pet;
     }
 
-    public function getPets(userId)
+    public function getPets($userId)
     {
-      $dbh = connectToDb();
-      $query = 'SELECT * FROM pet WHERE user_id = '$userId'';
-      $pets = executeQuery($dbh, $query);
-      //Turn resultset to type
-        return $this->pets;
+        $dbh = connectToDataBase();
+        $query = "SELECT * FROM pet WHERE user_id = '$userId'";
+        $pets = executeQuery($dbh, $query);
+        //Turn resultset to type
+            return $this->pets;
     }
 }
 ?>
