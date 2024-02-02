@@ -22,7 +22,8 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_USER: mascoroot
+      MYSQL_ROOT_PASSWORD: mascoroot
       MYSQL_DATABASE: mascotier
       MYSQL_USER: mascotier
       MYSQL_PASSWORD: mascotier
@@ -39,7 +40,8 @@ services:
     environment:
       PMA_HOST: mysql
       PMA_PORT: 3306
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_USER: mascoroot
+      MYSQL_ROOT_PASSWORD: mascoroot
       MYSQL_DATABASE: mascotier
       MYSQL_USER: mascotier
       MYSQL_PASSWORD: mascotier
