@@ -14,8 +14,9 @@ class User {
     private bool $verified;
 
 
-    public function __construct(string $userId, string $email, string $password, string $phone, string $hasPlace, string $area, string $verified) {
+    public function __construct(int $userId,string $username, string $email, string $password, string $phone, bool $hasPlace, string $area, bool $verified) {
         $this->userId = $userId;
+        $this->username = $username;
         $this->email = $email;
         $this->password = $password;
         $this->phone = $phone;
