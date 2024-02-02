@@ -4,8 +4,8 @@ class Carer extends User {
     private $place;
     private $rating;
 
-    public function __construct($username, $email, $password, $idDocument, $place, $rating) {
-        parent::__construct($username, $email, $password);
+    public function __construct($userId ,$username, $email, $password, $phone, $hasPlace, $area, $verified, $idDocument, $place, $rating) {
+        parent::__construct($userId,$username, $email, $password, $phone, $hasPlace, $area, $verified);
         $this->idDocument = $idDocument;
         $this->place = $place;
         $this->rating = $rating;
@@ -23,5 +23,5 @@ class Carer extends User {
         return $this->rating;
     }
 }
-
+  
 ?>

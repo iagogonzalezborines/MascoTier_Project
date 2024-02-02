@@ -5,6 +5,7 @@ use mascotier;
 -- Create table user
 CREATE TABLE user(
     user_id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(75),--Comes form email could be changed manually by the user
     email VARCHAR(255) NOT NULL,
     pwd VARCHAR(100) NOT NULL,
     phone VARCHAR(15),

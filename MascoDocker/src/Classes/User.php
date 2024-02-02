@@ -8,11 +8,22 @@ class User {
     private string $username;
     private string $email;
     private string $password;
+    private string $phone;
+    private bool $hasPlace;
+    private string $area;
+    private bool $verified;
 
-    public function __construct(string $username, string $email, string $password) {
+
+    public function __construct(int $userId,string $username, string $email, string $password, string $phone, bool $hasPlace, string $area, bool $verified) {
+        $this->userId = $userId;
         $this->username = $username;
         $this->email = $email;
         $this->password = $password;
+        $this->phone = $phone;
+        $this->hasPlace = $hasPlace;
+        $this->area = $area;
+        $this->verified = $verified;
+
     }
 
     public function getUserId(): int {
@@ -42,7 +53,7 @@ class User {
 
     public function saveUser() {
         $hashedPassword = $this->hashPassword();
-        $query = "INSERT INTO users (username, email, password) VALUES ('$this->username', '$this->email', '$hashedPassword')";
+        $query = "INSERT INTO users (user_id, email, pwd, phone, has_place, area, verified) VALUES ('$this->userId', '$this->email', '$hashedPassword', '$this->phone', '$this->hasPlace', '$this->area', '$this->verified')";
         $dbh = connectToDatabase();
         executeQuery($dbh, $query);
 
