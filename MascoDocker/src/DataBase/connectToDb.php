@@ -18,5 +18,12 @@ function connectToDatabase(){
     }
 }
 
+function disconnectFromDatabase($dbh){
+  close = $dbh->close();
+  dsetroy($dbh);
+  $dbh = null;
+}
+
+
 
 ?>
