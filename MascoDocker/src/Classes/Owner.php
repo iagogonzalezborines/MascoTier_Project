@@ -30,5 +30,5 @@ class Owner extends User {
         return $this->pets;
     }
 }
-$prueba = new User("José","asdjfgsdg@gmail.com","12341234",null,null,null,null,null);
+// $prueba = new User("José","asdjfgsdg@gmail.com","12341234",null,null,null,null,null);
 ?>
