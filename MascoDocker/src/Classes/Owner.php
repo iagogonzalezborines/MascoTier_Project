@@ -10,6 +10,7 @@ class Owner extends User {
         $this->contactNumber = $contactNumber;
         $this->pets = [];
     }
+    
 
     public function getContactNumber()
     {
@@ -29,4 +30,5 @@ class Owner extends User {
         return $this->pets;
     }
 }
+$prueba = new User("José","asdjfgsdg@gmail.com","12341234",null,null,null,null,null);
 ?>
