@@ -1,8 +1,6 @@
 <?php
 
-include '../DataBase/connectToDb.php';
-include '../DataBase/executeQuery';
-
+require_once '../DataBase/dataBase.php';
 class User {
     private int $userId;
     private string $username;
@@ -53,10 +51,11 @@ class User {
 
     public function saveUser() {
         $hashedPassword = $this->hashPassword();
-        $query = "INSERT INTO users (user_id, email, pwd, phone, has_place, area, verified) VALUES ('$this->userId', '$this->email', '$hashedPassword', '$this->phone', '$this->hasPlace', '$this->area', '$this->verified')";
-        $dbh = connectToDatabase();
-        executeQuery($dbh, $query);
-
+          $query = "INSERT INTO users (user_id, email, pwd, phone, has_place, area, verified) VALUES ('$this->userId', '$this->email', '$hashedPassword', '$this->phone', '$this->hasPlace', '$this->area', '$this->verified')";
+            $db = dataBase::getInstance();
+            $db->connectToDatabase();
+            $db->executeQuery($query);
+            $db->disconnectFromDatabase();
     }
 }
 ?>

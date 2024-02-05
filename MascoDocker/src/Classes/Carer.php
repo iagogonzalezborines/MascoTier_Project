@@ -1,4 +1,6 @@
 <?php
+
+require_once '../DataBase/dataBase.php';
 class Carer extends User {
     private $idDocument;
     private $place;

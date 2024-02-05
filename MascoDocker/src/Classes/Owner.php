@@ -1,8 +1,12 @@
 <?php 
+require_once 'User.php';
+require_once 'DataBase/dataBase.php';
+class Owner extends User { 
+    private $contactNumber; 
+    private $pets; 
 
-include '/DataBase/connectToDb';
-include '/DataBase/executeQuery';
-class Owner extends User { private $contactNumber; private $pets; public function __construct($username, $email, $password, $contactNumber) { parent::__construct($username, $email, $password);
+    public function __construct($username, $email, $password, $contactNumber) { 
+        parent::__construct($username, $email, $password, $contactNumber, $contactNumber, $contactNumber, $contactNumber, $contactNumber);
         $this->contactNumber = $contactNumber;
         $this->pets = [];
     }
@@ -19,11 +23,10 @@ class Owner extends User { private $contactNumber; private $pets; public functio
 
     public function getPets($userId)
     {
-        $dbh = connectToDataBase();
+        $db = dataBase::getInstance();
         $query = "SELECT * FROM pet WHERE user_id = '$userId'";
-        $pets = executeQuery($dbh, $query);
-        //Turn resultset to type
-            return $this->pets;
+        $result = $db->executeQuery($query);
+        return $this->pets;
     }
 }
 ?>
