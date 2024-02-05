@@ -40,10 +40,9 @@ class User {
         $this->password = $password;
     }
 
-    // public function transformEmailToUsername(): void {
-    //     // Transform email to username code here
-    //     //Use strings?
-    // }
+    public function transformEmailToUsername(): void {
+        $this->username = strstr($this->email, '@', true);
+    }
 
     public function hashPassword(): string {
         return $hashedPassword = password_hash($this->password, PASSWORD_DEFAULT);
@@ -57,5 +56,23 @@ class User {
             $db->executeQuery($query);
             $db->disconnectFromDatabase();
     }
+
+    public function transformResultSetIntoUserArray($result){
+        $userArray = [];
+        while ($row = $result->fetch_assoc()) {
+            $userArray[] = $row;
+        }
+        return $userArray;
+    }
+    public function getUserDataFromDataBase(){
+        $db = dataBase::getInstance();
+        $db->connectToDatabase();
+        $query = "SELECT * FROM users WHERE email = '$this->email'";
+        $result = $db->executeQuery($query);
+        $db->disconnectFromDatabase();
+        return $this->transformResultSetIntoUserArray($result);   
+    }
+
+    
 }
 ?> 

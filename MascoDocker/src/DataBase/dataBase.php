@@ -50,20 +50,41 @@ class dataBase {
         unset($this->dbh);
     }
 
-    public function executeQuery($query){
+    public function executeQuery($query, $params = null){
+
+        if($params == null){
+            try{
+            
+                $stmt = $this->dbh->prepare($query);
+                $stmt->execute();    
+                $result = $stmt;
+                return $result;
+            } catch (PDOException $e){
+                echo $e->getMessage();
+                return false;
+            }
+            finally{
+                unset($stmt);
+                unset($result);
+            }
+        }
         try{
             $stmt = $this->dbh->prepare($query);
+            foreach($params as $key => $value){
+                $stmt->bindParam($key+1, $value);
+            }
             $stmt->execute();
-
-            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            return $result;
-        } catch (PDOException $e){
+            return $stmt;
+        }
+        catch (PDOException $e){
             echo $e->getMessage();
+            return false;
         }
         finally{
             unset($stmt);
-            unset($result);
+            
         }
+   
     }
 }
 
