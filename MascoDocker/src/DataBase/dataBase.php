@@ -1,5 +1,6 @@
 
 <?php
+/*SINGLETON PATTERN USED*/
 class dataBase {
     private $dbh;
     private $config;
@@ -9,6 +10,9 @@ class dataBase {
     private $password;
     private $database;
 
+    /**
+     * Private constructor to follow the singleton pattern
+     */
     private function __construct() {
         $this->config = parse_ini_file('config.ini', true);
         $this->tipo = $this->config['archivo_datos']['tipo'];
@@ -17,6 +21,11 @@ class dataBase {
         $this->password = $this->config['archivo_datos']['password'];
         $this->database = $this->config['archivo_datos']['database'];
     }
+
+    /**
+     * Function to get the instance of the class(if not exists, it creates it
+     * @return dataBase
+     */
 
     public static function getInstance(){
         static $instance = null;

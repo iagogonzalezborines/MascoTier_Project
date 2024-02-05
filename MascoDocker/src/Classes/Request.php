@@ -29,9 +29,7 @@ class Request {
         return $this->carer;
     }
 
-    public function getPet(): Pet{
+    public function getPet(): Pet{ 
         return $this->pet;
     }
 }
-
-?>
