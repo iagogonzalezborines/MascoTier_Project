@@ -1,5 +1,6 @@
 <?php 
 
+
 require_once 'vendor/autoload.php';
 
 
@@ -25,6 +26,7 @@ require_once 'vendor/autoload.php';
 </body>
 </html>
 <?php
+var_dump($_POST);
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = $_POST["email"];
         $password = $_POST["password"];
