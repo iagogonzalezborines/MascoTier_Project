@@ -34,6 +34,7 @@ Estas plataformas tienen interfaces anticuadas y mucha información textual. Mas
 
 Funcionamos únicamente como intermediarios entre personas que necesitan el cuidado de sus mascotas y personas dispuestas a ofrecer estos cuidados.
 
+
 # Estrategia de Marketing:
 
 ## Objetivos Principales:
@@ -103,11 +104,184 @@ Pendientes:
 
 ## Plan Operativo:
 
-Detalles sobre la operación diaria del negocio, ubicación física (si aplica), procesos de producción, recursos humanos, proveedores y tecnología utilizada.
+El plan operativo se centrará principalmente en mantener actualizada la aplicación web, garantizando actualizaciones constantes para mejorar la experiencia del usuario. Para alojar nuestra aplicación, utilizaremos un servicio de hosting proporcionado por el IES, el cual también nos ofrecerá la capacidad de enviar correos electrónicos de manera automatizada para confirmaciones y otros fines.
 
-## Análisis Financiero:
+En términos de proveedores, actualmente estamos considerando asociarnos con Eagle-Fox, una empresa fundada por nuestros compañeros de clase. Eagle-Fox se especializa en el seguimiento de mascotas a través de un sistema de GPS. Esta asociación potencial nos permitiría integrar tecnología de rastreo de mascotas en nuestra plataforma, ofreciendo así a nuestros usuarios una solución integral para el cuidado y la seguridad de sus mascotas.
+____________________________________________________________________________________________________________________
+____________________________________________________________________________________________________________________
+# Análisis Financiero:
+Entendido, procederé con los cálculos utilizando un promedio de pago por transacción de 14 euros por hora:
 
-Proyecciones financieras que incluyen estados financieros como el balance, estado de resultados y flujo de efectivo, así como análisis de viabilidad, presupuesto y necesidades de financiamiento.
+### Proyecciones Financieras:
+
+#### Ingresos Mensuales:
+1. **Primer Mes:**
+   - Número de Transacciones: 2
+   - Ingresos Mensuales = 2 (transacciones) * 10% (comisión) * 14 euros/hora
+
+2. **A partir del Primer Año:**
+   - Número de Transacciones Semanales: 5
+   - Ingresos Mensuales = 20 (transacciones) * 10% (comisión) * 14 euros/hora
+
+#### Costos Operativos:
+1. **Costos de Transacción:**
+   - Estimación de Costos Asociados con el Procesamiento de Pagos.
+
+   NOTA: 
+        Este sería el costo operativo por lo menos durante el primer año, debido a que el propio desarrollo no requiere de ningún pago y la plataforma de hostin es proporcionada de forma gratuita. Es probable que a futuro estos constes sean modificados
+
+### Resultados Financieros:
+
+#### Beneficio Neto Mensual:
+1. **Primer Mes:**
+   - Beneficio Neto Mensual = Ingresos Mensuales - Costos Operativos
+
+2. **A partir del Primer Año:**
+   - Beneficio Neto Mensual = Ingresos Mensuales - Costos Operativos
+
+#### Beneficio Neto Anual:
+1. **Primer Año:**
+   - Beneficio Neto Anual = Beneficio Neto Mensual * 12
+
+### Cálculos:
+
+1. **Ingresos Mensuales Primer Mes:** 2 (transacciones) * 10% (comisión) * 14 euros/hora = 2.8 euros
+2. **Ingresos Mensuales Primer Año:** 20 (transacciones) * 10% (comisión) * 14 euros/hora = 28 euros
+3. **Beneficio Neto Mensual Primer Mes:** Se necesita determinar los costos operativos.
+4. **Beneficio Neto Mensual Primer Año:** Se necesita determinar los costos operativos.
+5. **Beneficio Neto Anual Primer Año:** Se multiplicará el beneficio neto mensual del primer año por 12.
+
+
+### Proyecciones Financieras:
+
+#### Ingresos Mensuales:
+1. **Primer Mes:**
+   - Ingresos Mensuales = 2.8 euros
+   
+2. **A partir del Primer Año:**
+   - Ingresos Mensuales = 28 euros
+
+#### Costos Operativos:
+1. **Costos de Transacción:**
+   - Estimación de Costos Asociados con el Procesamiento de Pagos.
+
+### Resultados Financieros:
+
+#### Beneficio Neto Mensual:
+1. **Primer Mes:**
+   - Beneficio Neto Mensual = Ingresos Mensuales - Costos Operativos
+
+2. **A partir del Primer Año:**
+   - Beneficio Neto Mensual = Ingresos Mensuales - Costos Operativos
+
+#### Beneficio Neto Anual:
+1. **Primer Año:**
+   - Beneficio Neto Anual = Beneficio Neto Mensual * 12
+
+### Cálculos:
+
+1. **Ingresos Mensuales Primer Mes:** 2.8 euros
+2. **Ingresos Mensuales Primer Año:** 28 euros
+3. **Beneficio Neto Mensual Primer Mes:** Se necesita determinar los costos operativos.
+4. **Beneficio Neto Mensual Primer Año:** Se necesita determinar los costos operativos.
+5. **Beneficio Neto Anual Primer Año:** Se multiplicará el beneficio neto mensual del primer año por 12.
+
+
+
+### Costos Operativos:
+
+1. **Costos de Transacción:**
+   - Asumiendo una tarifa de procesamiento de pagos del 2%, calculamos el costo de transacción por cada transacción realizada.
+   - Para el primer mes:
+     - Costo de Transacción = 2 (transacciones) * 2% (tarifa de procesamiento) * 14 euros/hora
+   - Para el primer año:
+     - Costo de Transacción = 20 (transacciones) * 2% (tarifa de procesamiento) * 14 euros/hora
+
+### Resultados Financieros:
+
+#### Beneficio Neto Mensual:
+
+1. **Primer Mes:**
+   - Beneficio Neto Mensual = Ingresos Mensuales - Costos de Transacción
+
+2. **A partir del Primer Año:**
+   - Beneficio Neto Mensual = Ingresos Mensuales - Costos de Transacción
+
+#### Beneficio Neto Anual:
+
+1. **Primer Año:**
+   - Beneficio Neto Anual = Beneficio Neto Mensual * 12
+
+### Cálculos:
+
+1. **Costo de Transacción Primer Mes:** 2 (transacciones) * 2% (tarifa de procesamiento) * 14 euros/hora = 0.56 euros
+2. **Costo de Transacción Primer Año:** 20 (transacciones) * 2% (tarifa de procesamiento) * 14 euros/hora = 5.6 euros
+
+
+
+### Resultados Financieros:
+
+#### Beneficio Neto Mensual:
+
+1. **Primer Mes:**
+   - Beneficio Neto Mensual = Ingresos Mensuales - Costos de Transacción
+   - Beneficio Neto Mensual = 2.8 euros - 0.56 euros = 2.24 euros
+
+2. **A partir del Primer Año:**
+   - Beneficio Neto Mensual = Ingresos Mensuales - Costos de Transacción
+   - Beneficio Neto Mensual = 28 euros - 5.6 euros = 22.4 euros
+
+#### Beneficio Neto Anual:
+
+1. **Primer Año:**
+   - Beneficio Neto Anual = Beneficio Neto Mensual * 12
+   - Beneficio Neto Anual = 22.4 euros * 12 = 268.8 euros
+
+### Resumen del Análisis Financiero:
+
+1. **Primer Mes:**
+   - Ingresos Mensuales: 2.8 euros
+   - Costos de Transacción: 0.56 euros
+   - Beneficio Neto Mensual: 2.24 euros
+
+2. **A partir del Primer Año:**
+   - Ingresos Mensuales: 28 euros
+   - Costos de Transacción: 5.6 euros
+   - Beneficio Neto Mensual: 22.4 euros
+   - Beneficio Neto Anual: 268.8 euros
+
+Esto proporciona una visión general de los ingresos proyectados y el beneficio neto esperado para el primer mes y a partir del primer año de operación de MascoTier.
+
+Es una visión "pesimista" con la cual se tienen estándares bajos. Al ser un proyecto escolar aún no tenemos claro el futuro de MascoTier.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+___________________________________________________________________________________________________________
+___________________________________________________________________________________________________________
 
 ## Estrategia de Crecimiento y Desarrollo:
 
