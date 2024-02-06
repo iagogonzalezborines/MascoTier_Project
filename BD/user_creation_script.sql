@@ -11,9 +11,14 @@ PURPOSE:
 
 */
 
+CREATE USER 'mascoadmin'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
+
 
 CREATE USER 'mascouser'@'localhost' IDENTIFIED BY 'password';
 GRANT SELECT, INSERT, UPDATE, DELETE ON `database_name`.`table_name` TO 'user'@'localhost';
+
+
 
 -- Path: BD/user_deletion_script.sql
 
