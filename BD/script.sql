@@ -23,6 +23,7 @@ CREATE TABLE owner (
 -- Create table carer
 CREATE TABLE carer (
     user_id INT PRIMARY KEY,
+    full_name VARCHAR(100),
     rating INT,
     is_available BOOLEAN, -- 0 as false, 1 as true
     id_doc VARCHAR(15),
