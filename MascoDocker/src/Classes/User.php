@@ -17,10 +17,10 @@ class User
     private bool $verified; // No (0) or Yes (1)
     private string $type; // owner or carer
 
-/*
+    /*
 public constructor 
 generic user parameters do not include exlusive parameters for other descending user classes like owner or carer
-*/  
+*/
     public function __construct(string $type, string $username, string $email, string $password, string $phone, bool $hasPlace, string $area, bool $verified)
     {
         $this->type = $type;
@@ -33,11 +33,11 @@ generic user parameters do not include exlusive parameters for other descending 
         $this->verified = $verified;
     }
 
-   
+
     //---------------------GETTERS & SETTERS-------------------------//
 
     // Temporary comment: Determine which getters and setters are necessary
-    
+
     public function getUserId(): int
     {
         return $this->userId;
@@ -60,64 +60,63 @@ generic user parameters do not include exlusive parameters for other descending 
     //----------------------------------------------------//
 
 
-// Other functions
+    // Other functions
 
 
-/**
-* function to transform the email into a username
-* @return  void
-* note: should be called before saving the user to the database
-* note: should return a string
-* Still to be updated
- */
+    /**
+     * function to transform the email into a username
+     * @return  void
+     * note: should be called before saving the user to the database
+     * note: should return a string
+     * Still to be updated
+     */
     public function transformEmailToUsername(): void
     {
         $this->username = strstr($this->email, '@', true);
     }
 
-/*
-function to hash the password
-@return a string
-*/
+    /*
+    function to hash the password
+    @return a string
+    */
     public function hashPassword(): string
     {
         return $hashedPassword = password_hash($this->password, PASSWORD_DEFAULT);
     }
 
-/**
- * function to save the user to the database
- * @return void
- * note: should be called after the transformEmailToUsername
- * function IF the user is not already in the database 
- * or the username has beem modified by the user
- */
-    public function saveUserToDb() //Campelo: Is it really necesary to distinguish between owner and carer here???
+    /**
+     * function to save the user to the database
+     * @param $user Can be an owner or a carer
+     * @return void
+     * note: should be called after the transformEmailToUsername
+     * function IF the user is not already in the database 
+     * or the username has beem modified by the user
+     */
+    public function saveUserToDb($userToSave): void
     {
         $hashedPassword = $this->hashPassword();
-        $query = "INSERT INTO users (email, pwd, phone, has_place, area, verified) VALUES ('$this->userId', '$this->email', '$hashedPassword', '$this->phone', '$this->hasPlace', '$this->area', '$this->verified')";
+        $query = "INSERT INTO user (username, email, pwd, phone, has_place, area, verified) VALUES ('$this->username', '$this->email', '$this->password', '$this->phone', '$this->hasPlace', '$this->area', '$this->verified')";
+
         $db = dataBase::getInstance();
         $db->connectToDatabase();
         $db->executeQuery($query);
-        // Depending on the user type, insert into the corresponding table
-        $type = $this->type;
-        if($this->$type == "carer"){
+
+        // Depending on what instace of it is $userToSave, insert into the corresponding table
+        if ($userToSave instanceof Carer) {
             $query = "INSERT INTO carer (user_id) VALUES ('$this->userId')";
             $db->executeQuery($query);
             $db->disconnectFromDatabase();
-        }   // Somehow create an instance, so we can use the its functions, maybe get user id from the database? with last inserted id query?
-        else if($this->$type == "owner"){
+        } else if ($userToSave instanceof Owner) {
             $query = "INSERT INTO owner (user_id, full_name, id_doc) VALUES ('$this->userId')";
             $db->executeQuery($query);
             $db->disconnectFromDatabase();
-            // Somehow create an instance, so we can use the its functions, maybe get user id from the database? with last inserted id query?
         }
-       
     }
-    
-/** 
- * function to transform the result set into a user array
- * @return array with the user data
-*/
+
+    /** 
+     * function to transform the result set into a user array
+     * @return array with the user data
+     */
     public function transformResultSetIntoUserArray($result)
     {
         $userArray = [];
@@ -127,10 +126,10 @@ function to hash the password
         return $userArray;
     }
 
-/**
- * function to get the user data from the database
- * @return $result
-*/
+    /**
+     * function to get the user data from the database
+     * @return $result
+     */
     public function getUserDataFromDataBase()
     {
         $db = dataBase::getInstance();
@@ -141,11 +140,11 @@ function to hash the password
         return $this->transformResultSetIntoUserArray($result);
     }
 
-/**
- * function to verify the user
- * @param bool $bool tells whether the user is gonna be verified or not
- * @return void
- */
+    /**
+     * function to verify the user
+     * @param bool $bool tells whether the user is gonna be verified or not
+     * @return void
+     */
     public function setUserToVerified($bool)
     {
         if ($bool == true) {
@@ -160,7 +159,6 @@ function to hash the password
             $query = "UPDATE users SET verified = 0 WHERE email = '$this->email'";
         }
     }
-
 }
 /* public function verifyUserPhpMailer(){}
       function which sends and recieves an email from the user to confirmed its verified if it is call 
