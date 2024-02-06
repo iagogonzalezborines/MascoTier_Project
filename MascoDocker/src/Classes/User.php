@@ -1,6 +1,7 @@
 <?php
 
 require_once '../DataBase/dataBase.php';
+require_once 'PHPMailer/PHPMailer.php';
 class User {
     private int $userId;
     private string $username;
@@ -56,7 +57,7 @@ class User {
             $db->executeQuery($query);
             $db->disconnectFromDatabase();
     }
-
+ 
     public function transformResultSetIntoUserArray($result){
         $userArray = [];
         while ($row = $result->fetch_assoc()) {
@@ -72,7 +73,26 @@ class User {
         $db->disconnectFromDatabase();
         return $this->transformResultSetIntoUserArray($result);   
     }
+    public function setUserToVerified($bool){
+      if($bool == true) {
+        $verified = true;
+        $query = "UPDATE users SET verified = 1 WHERE email = '$this->email'";
+        $db = dataBase::getInstance();
+        $db->connectToDatabase();
+        $db->executeQuery($query);
+        $db->disconnectFromDatabase();
+              
 
-    
+      } else {
+        $verified = false;
+        $query = "UPDATE users SET verified = 0 WHERE email = '$this->email'";
+      }
+    }
+}  
+   /* public function verifyUserPhpMailer(){}
+      function which sends and recieves an email from the user to confirmed its verified if it is call 
+      setUserToVerified          $mail->Username = '
+   
 }
-?> 
+*/
+?>

@@ -29,6 +29,7 @@ class Owner extends User {
         $result = $db->executeQuery($query);
         return $this->pets;
     }
+     
 }
 // $prueba = new User("José","asdjfgsdg@gmail.com","12341234",null,null,null,null,null);
 ?>
