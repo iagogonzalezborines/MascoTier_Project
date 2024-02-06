@@ -1,19 +1,47 @@
-<?php echo "esto es una prueba";?>
+<?php 
+
+require_once 'vendor/autoload.php';
+
+
+?>
 
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index testing </title>
+</head>
+<body>
+    <h1>Example of user carer register</h1>
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?> " method="post">
+        <input type="text" name="username" placeholder="username">
+        <input type="email" name="email" placeholder="jondoe@example.com">
+        <input type="password" name="password" placeholder="password">
+        <input type="phone" name="phone_number" placeholder="">
 
-    </head>
-    <body>
-    <p class>PRUEBA TAILWIND</p>
-    </body>
+        <input type="submit" value="Register">
+    </form>
+</body>
 </html>
+<?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+        $username = $_POST["username"];
+        $phone = "1234567";
+require_once '../DataBase/dataBase.php';
+require_once '../Classes/User.php';
 
+echo "this is a test";
+
+
+        $hasPlace = false;
+        $area = "none";
+        $verified = false;
+        
+        $user = new User($email, $password, $userId, $username, $phone, $hasPlace, $area, $verified);
+        $user->saveUser();
+    }
+
+?>
