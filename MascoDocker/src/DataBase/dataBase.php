@@ -1,5 +1,8 @@
 
 <?php
+/*ANOTACION PARA EL FUTURO*/
+/*Crear funciones para select(parametros), delete(parametros) y update(parametros) */
+
 /*SINGLETON PATTERN USED*/
 class dataBase {
     private $dbh;
@@ -15,11 +18,12 @@ class dataBase {
      */
     private function __construct() {
         $this->config = parse_ini_file('config.ini', true);
-        $this->tipo = $this->config['archivo_datos']['tipo'];
-        $this->hostname = $this->config['archivo_datos']['hostname'];
-        $this->username = $this->config['archivo_datos']['username'];
-        $this->password = $this->config['archivo_datos']['password'];
-        $this->database = $this->config['archivo_datos']['database'];
+        $this->tipo = $this->config['bbdd']['tipo'];
+        $this->database = $this->config['bbdd']['database'];
+        $this->hostname = $this->config['bbdd']['hostname'];
+        $this->username = $this->config['mascoroot']['username'];
+        $this->password = $this->config['mascoroot']['password'];
+ 
     }
 
     /**
