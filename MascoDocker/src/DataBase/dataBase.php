@@ -53,9 +53,11 @@ class dataBase {
     public function disconnectFromDatabase(){
         unset($this->dbh);
     }
+
 /**
  * Function to execute a query
  * params: $query: the query to be executed 
+ *        $params: the parameters(if necesary) to be binded to the query
  */
     public function executeQuery($query, $params = null){
 

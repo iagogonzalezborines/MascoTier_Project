@@ -10,26 +10,29 @@ class Owner extends User {
         $this->contactNumber = $contactNumber;
         $this->pets = [];
     }
-    
 
-    public function getContactNumber()
+    //---------------------GETTERS-------------------------//
+    public function getContactNumber()//returns the phone number of the owner : string
     {
         return $this->contactNumber;
     }
 
-    public function addPet($pet)
-    {
-        $this->pets[] = $pet;
-    }
-
-    public function getPets($userId)
+    public function getPets($userId)//returns the pets of the owner : array
     {
         $db = dataBase::getInstance();
         $query = "SELECT * FROM pet WHERE user_id = '$userId'";
         $result = $db->executeQuery($query);
         return $this->pets;
     }
+    //----------------------------------------------------// 
+
+    public function addPet($pet)
+    {
+        $this->pets[] = $pet;
+    }
+
+
      
 }
 // $prueba = new User("José","asdjfgsdg@gmail.com","12341234",null,null,null,null,null);
-?>
+
