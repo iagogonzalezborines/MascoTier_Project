@@ -86,7 +86,7 @@ class User
     public function setUserToVerified($bool)
     {
         if ($bool == true) {
-            $verified = true;
+           $this->verified = true;
             $query = "UPDATE users SET verified = 1 WHERE email = '$this->email'";
             $db = dataBase::getInstance();
             $db->connectToDatabase();
