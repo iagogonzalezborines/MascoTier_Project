@@ -14,8 +14,9 @@ class Owner extends User {
 
 
     /*
-This shit needs fixing so we can create a function which creates an instance of owner so that way we can use it on user
-
+        //WEELL WELL WELL, I THINK SINGLETON PATTER IS NOT THE BEST OPTION HERE
+        //ANYWAY, I'LL LEAVE THIS COMMENTED CODE HERE SO WE CAN DISCUSS IT LATER WITH PATRICIA
+        
     public function getInstance(){
         static $instance = null;
         if ($instance === null) {
@@ -23,6 +24,8 @@ This shit needs fixing so we can create a function which creates an instance of 
         }
         return $instance;
     }
+
+
 
 */
 
