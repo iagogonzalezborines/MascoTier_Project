@@ -1,10 +1,10 @@
 
 <?php
 /*ANOTACION PARA EL FUTURO*/
-/*Crear funciones para select(parametros), delete(parametros) y update(parametros) */
-
+/*Creates functions for select(params: table, fields, where, order, limit), insert(params: table, fields, values), update(params: table, fields, values, where), delete(params: table, where)*/
 /*SINGLETON PATTERN USED*/
-class dataBase {
+class dataBase
+{
     private $dbh;
     private $config;
     private $tipo;
@@ -16,14 +16,14 @@ class dataBase {
     /**
      * Private constructor to follow the singleton pattern
      */
-    private function __construct() {
+    private function __construct()
+    {
         $this->config = parse_ini_file('config.ini', true);
         $this->tipo = $this->config['bbdd']['tipo'];
         $this->database = $this->config['bbdd']['database'];
         $this->hostname = $this->config['bbdd']['hostname'];
         $this->username = $this->config['mascoroot']['username'];
         $this->password = $this->config['mascoroot']['password'];
- 
     }
 
     /**
@@ -31,76 +31,71 @@ class dataBase {
      * @return dataBase
      */
 
-    public static function getInstance(){
+    public static function getInstance()
+    {
         static $instance = null;
-        if($instance === null){
+        if ($instance === null) {
             $instance = new dataBase();
         }
         return $instance;
     }
 
-    public function connectToDatabase(){
-        try{
+    public function connectToDatabase()
+    {
+        try {
             $dsn = "$this->tipo:dbname=$this->database;host=$this->hostname";
             $this->dbh = new PDO($dsn, $this->username, $this->password);
             $this->dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $this->dbh;
-        } catch (PDOException $e){
+        } catch (PDOException $e) {
             echo $e->getMessage();
         }
     }
 
-    public function disconnectFromDatabase(){
+    public function disconnectFromDatabase()
+    {
         unset($this->dbh);
+        $dbh = null;
     }
 
 /**
- * Function to execute a query
+ * Function that executes querys, it does have a generic use, so it can be used for any query and avoids SQL injection by using prepared statements
  * params: $query: the query to be executed 
  *        $params: the parameters(if necesary) to be binded to the query
  */
     public function executeQuery($query, $params = null){
 
         //If the query has no parameters, we can execute it directly
-        if($params == null){
-            try{
-            
+        if ($params == null) {
+            try {
+
                 $stmt = $this->dbh->prepare($query);
-                $stmt->execute();    
+                $stmt->execute();
                 $result = $stmt;
                 return $result;
-            } catch (PDOException $e){
+            } catch (PDOException $e) {
                 echo $e->getMessage();
                 return false;
-            }
-            finally{
+            } finally {
                 unset($stmt);
                 unset($result);
             }
         }
 
         //If the query has parameters, we need to bind them to the query
-        try{
+        try {
             $stmt = $this->dbh->prepare($query);
-            foreach($params as $key => $value){
-                $stmt->bindParam($key+1, $value);
+            foreach ($params as $key => $value) {
+                $stmt->bindParam($key + 1, $value);
             }
             $stmt->execute();
             return $stmt;
-        }
-        catch (PDOException $e){
+        } catch (PDOException $e) {
             echo $e->getMessage();
             return false;
-        }
-        finally{
+        } finally {
             unset($stmt);
-            
         }
-   
     }
-  
 }
-
-
-
 ?>
