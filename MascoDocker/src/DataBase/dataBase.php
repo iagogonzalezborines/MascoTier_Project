@@ -53,9 +53,13 @@ class dataBase {
     public function disconnectFromDatabase(){
         unset($this->dbh);
     }
-
+/**
+ * Function to execute a query
+ * params: $query: the query to be executed 
+ */
     public function executeQuery($query, $params = null){
 
+        //If the query has no parameters, we can execute it directly
         if($params == null){
             try{
             
@@ -72,6 +76,8 @@ class dataBase {
                 unset($result);
             }
         }
+
+        //If the query has parameters, we need to bind them to the query
         try{
             $stmt = $this->dbh->prepare($query);
             foreach($params as $key => $value){
