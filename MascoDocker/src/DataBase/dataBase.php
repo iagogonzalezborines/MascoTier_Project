@@ -64,14 +64,12 @@ class dataBase
         $dbh = null;
     }
 
-
-    /**
-     * Function to execute a query
-     * It does have a generic use, so it can be used for any query and avoids SQL injection by using prepared statements
-     * params: $query: the query to be executed 
-     */
-    public function executeQuery($query, $params = null)
-    {
+/**
+ * Function that executes querys, it does have a generic use, so it can be used for any query and avoids SQL injection by using prepared statements
+ * params: $query: the query to be executed 
+ *        $params: the parameters(if necesary) to be binded to the query
+ */
+    public function executeQuery($query, $params = null){
 
         //If the query has no parameters, we can execute it directly
         if ($params == null) {
