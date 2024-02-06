@@ -13,6 +13,7 @@ class dataBase
     private $password;
     private $database;
 
+
     /**
      * Private constructor to follow the singleton pattern
      */
@@ -39,6 +40,11 @@ class dataBase
         }
         return $instance;
     }
+
+    /**
+     * Function to connect to the database
+     * @return PDO
+     */
 
     public function connectToDatabase()
     {
@@ -99,5 +105,7 @@ class dataBase
             unset($stmt);
         }
     }
+
+    
 }
 ?>

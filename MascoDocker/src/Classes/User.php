@@ -1,5 +1,8 @@
 <?php
-
+/*
+Generic class for the user
+Access to the database, and PHPMailer
+*/
 require_once '../DataBase/dataBase.php';
 require_once 'PHPMailer/PHPMailer.php';
 class User
@@ -13,7 +16,10 @@ class User
     private string $area;
     private bool $verified;
 
-
+/*
+public constructor 
+generic user parameters do not include exlusive parameters for other descending user classes like owner or carer
+*/
     public function __construct(int $userId, string $username, string $email, string $password, string $phone, bool $hasPlace, string $area, bool $verified)
     {
         $this->userId = $userId;
@@ -26,6 +32,7 @@ class User
         $this->verified = $verified;
     }
 
+    // Temporary comment: Should determine which getters and setters are necessary
     public function getUserId(): int
     {
         return $this->userId;
@@ -45,17 +52,37 @@ class User
     {
         $this->password = $password;
     }
+// Other functions
+
+
+/**
+* function to transform the email into a username
+* @return  void
+* note: should be called before saving the user to the database
+* note: should return a string
+* Still to be updated
+ */
+
 
     public function transformEmailToUsername(): void
     {
         $this->username = strstr($this->email, '@', true);
     }
-
+/*
+function to hash the password
+@return a string
+*/
     public function hashPassword(): string
     {
         return $hashedPassword = password_hash($this->password, PASSWORD_DEFAULT);
     }
-
+/**
+ * function to save the user to the database
+ * @return void
+ * note: should be called after the transformEmailToUsername
+ * function IF the user is not already in the database 
+ * or the username has beem modified by the user
+ */
     public function saveUser()
     {
         $hashedPassword = $this->hashPassword();
@@ -65,7 +92,10 @@ class User
         $db->executeQuery($query);
         $db->disconnectFromDatabase();
     }
-
+/** 
+ * function to transform the result set into a user array
+ * @return array
+*/
     public function transformResultSetIntoUserArray($result)
     {
         $userArray = [];
@@ -74,6 +104,10 @@ class User
         }
         return $userArray;
     }
+/**
+ * function to get the user data from the database
+ * @return result
+*/
     public function getUserDataFromDataBase()
     {
         $db = dataBase::getInstance();
@@ -83,10 +117,14 @@ class User
         $db->disconnectFromDatabase();
         return $this->transformResultSetIntoUserArray($result);
     }
+/**
+ * function to verify the user
+ * @return bool
+ */
     public function setUserToVerified($bool)
     {
         if ($bool == true) {
-           $this->verified = true;
+            $this->verified = true;
             $query = "UPDATE users SET verified = 1 WHERE email = '$this->email'";
             $db = dataBase::getInstance();
             $db->connectToDatabase();
