@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once 'User.php';
 require_once 'DataBase/dataBase.php';
 class Owner extends User { 
@@ -6,12 +6,14 @@ class Owner extends User {
     private $pets; 
 
 
+    public function __construct($username, $email, $password, $phone, $contactNumber) { 
+        parent::__construct('Owner',$username, $email, $password, $phone,false,'',false); //Owner has no place, no area and is not verified by default
+        $this->contactNumber = $contactNumber;
+        $this->pets = [];
+    }
+
+
     /*
-        public function __construct($username, $email, $password, $phone, $contactNumber) { 
-            parent::__construct($username, $email, $password, $phone);
-            $this->contactNumber = $contactNumber;
-            $this->pets = [];
-        }
 This shit needs fixing so we can create a function which creates an instance of owner so that way we can use it on user
 
     public function getInstance(){

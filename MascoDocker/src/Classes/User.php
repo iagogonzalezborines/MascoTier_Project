@@ -7,15 +7,15 @@ require_once '../DataBase/dataBase.php';
 require_once 'PHPMailer/PHPMailer.php';
 class User
 {
-    private int $userId;
+    private int $userId; // Unique auto increment identifier for the user
     private string $username;
     private string $email;
     private string $password;
-    private string $phone;
-    private bool $hasPlace;
-    private string $area;
-    private bool $verified;
-    private string $type;
+    private string $phone; // Phone number of the user
+    private bool $hasPlace; // Has place to take care of the animals No (0) or Yes (1)
+    private string $area;   // Zone where the user is located
+    private bool $verified; // No (0) or Yes (1)
+    private string $type; // owner or carer
 
 /*
 public constructor 
@@ -34,8 +34,10 @@ generic user parameters do not include exlusive parameters for other descending 
     }
 
    
+    //---------------------GETTERS & SETTERS-------------------------//
 
-    // Temporary comment: Should determine which getters and setters are necessary
+    // Temporary comment: Determine which getters and setters are necessary
+    
     public function getUserId(): int
     {
         return $this->userId;
@@ -55,6 +57,9 @@ generic user parameters do not include exlusive parameters for other descending 
     {
         $this->password = $password;
     }
+    //----------------------------------------------------//
+
+
 // Other functions
 
 
@@ -69,6 +74,7 @@ generic user parameters do not include exlusive parameters for other descending 
     {
         $this->username = strstr($this->email, '@', true);
     }
+
 /*
 function to hash the password
 @return a string
@@ -77,6 +83,7 @@ function to hash the password
     {
         return $hashedPassword = password_hash($this->password, PASSWORD_DEFAULT);
     }
+
 /**
  * function to save the user to the database
  * @return void
@@ -84,7 +91,7 @@ function to hash the password
  * function IF the user is not already in the database 
  * or the username has beem modified by the user
  */
-    public function saveUser()
+    public function saveUserToDb() //Campelo: Is it really necesary to distinguish between owner and carer here???
     {
         $hashedPassword = $this->hashPassword();
         $query = "INSERT INTO users (email, pwd, phone, has_place, area, verified) VALUES ('$this->userId', '$this->email', '$hashedPassword', '$this->phone', '$this->hasPlace', '$this->area', '$this->verified')";
@@ -106,9 +113,10 @@ function to hash the password
         }
        
     }
+    
 /** 
  * function to transform the result set into a user array
- * @return array
+ * @return array with the user data
 */
     public function transformResultSetIntoUserArray($result)
     {
@@ -118,9 +126,10 @@ function to hash the password
         }
         return $userArray;
     }
+
 /**
  * function to get the user data from the database
- * @return result
+ * @return $result
 */
     public function getUserDataFromDataBase()
     {
@@ -131,9 +140,11 @@ function to hash the password
         $db->disconnectFromDatabase();
         return $this->transformResultSetIntoUserArray($result);
     }
+
 /**
  * function to verify the user
- * @return bool
+ * @param bool $bool tells whether the user is gonna be verified or not
+ * @return void
  */
     public function setUserToVerified($bool)
     {

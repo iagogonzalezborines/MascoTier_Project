@@ -43,7 +43,7 @@ echo "this is a test";
         $verified = false;
         
         $user = new User($email, $password, $userId, $username, $phone, $hasPlace, $area, $verified);
-        $user->saveUser();
+        $user->saveUserToDb();
     }
 
 ?>
