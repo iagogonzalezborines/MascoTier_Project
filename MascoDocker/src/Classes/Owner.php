@@ -47,7 +47,14 @@ class Owner extends User {
 
     public function addPet($pet)
     {
+
         $this->pets[] = $pet;
+        $db = dataBase::getInstance();
+        $db->connectToDatabase();
+        $query = 'INSERT INTO pet (user_id, name, type';
+        $db->executeQuery($query);
+        $db->disconnectFromDatabase();
+
     }
 
   
