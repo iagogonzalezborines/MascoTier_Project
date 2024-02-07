@@ -10,3 +10,13 @@ RUN pecl install xdebug \
 
 # Instalar extensiones necesarias para MySQL y habilitarlas
 RUN docker-php-ext-install mysqli pdo_mysql && docker-php-ext-enable mysqli pdo_mysql
+
+# Instalar Node.js y npm
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - \
+    && apt-get install -y nodejs
+
+# Instalar Tailwind CSS
+WORKDIR /var/www/html
+COPY . .
+RUN npm install tailwindcss postcss autoprefixer
+RUN npx tailwindcss init -p
