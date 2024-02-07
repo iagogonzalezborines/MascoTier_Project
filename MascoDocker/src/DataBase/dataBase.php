@@ -64,19 +64,17 @@ class dataBase
         $dbh = null;
     }
 
-/**
- * Function that executes querys, it does have a generic use, so it can be used for any query and avoids SQL injection by using prepared statements
- * params: $query: the query to be executed 
- *        $params: the parameters(if necesary) to be binded to the query
- */
-    public function executeQuery($query, $params = null){
+    /**
+     * Function that executes queries generally, it does have a generic use, so it can be used for any query and avoids SQL injection by using prepared statements
+     * params: $query: the query to be executed 
+     * $params: the parameters(if necessary) to be bound to the query
+     */
 
-        //If the query has no parameters, we can execute it directly
-        if ($params == null) {
+    public function executeQuery($query, $params = null)
+    {
+        if ($params == null) { // In case theres no parameters it uses the query method
             try {
-
-                $stmt = $this->dbh->prepare($query);
-                $stmt->execute();
+                $stmt = $this->dbh->query($query);
                 $result = $stmt;
                 return $result;
             } catch (PDOException $e) {
@@ -86,24 +84,21 @@ class dataBase
                 unset($stmt);
                 unset($result);
             }
-        }
-
-        //If the query has parameters, we need to bind them to the query
-        try {
-            $stmt = $this->dbh->prepare($query);
-            foreach ($params as $key => $value) {
-                $stmt->bindParam($key + 1, $value);
+        } else { // In case there are parameters it uses the prepare method in order to avoid SQL injection
+            try {
+                $stmt = $this->dbh->prepare($query);
+                foreach ($params as $key => $value) {
+                    $stmt->bindParam($key + 1, $value);
+                }
+                $stmt->execute();
+                return $stmt;
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+                return false;
+            } finally {
+                unset($stmt);
             }
-            $stmt->execute();
-            return $stmt;
-        } catch (PDOException $e) {
-            echo $e->getMessage();
-            return false;
-        } finally {
-            unset($stmt);
         }
     }
-
-    
 }
 ?>
