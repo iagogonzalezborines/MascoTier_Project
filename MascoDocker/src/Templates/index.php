@@ -3,7 +3,19 @@
 // VENDOR NOT CONFIGURED YET
 //require_once 'vendor/autoload.php';
 
+var_dump($_POST);
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        echo "Si ves esto, hola GigaChad! <br>";
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+        $username = $_POST["username"];
+        $phone = "1234567";
+    }
+    
 
+
+/*
+IDK who or why did this but I'll just comment it :)
 ?>
 
 <!DOCTYPE html>
@@ -45,5 +57,6 @@ echo "this is a test";
         $user = new User($email, $password, $userId, $username, $phone, $hasPlace, $area, $verified);
         $user->saveUserToDb();
     }
+*/
 
-?>
+
