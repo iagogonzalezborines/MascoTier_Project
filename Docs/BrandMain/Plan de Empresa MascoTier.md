@@ -98,198 +98,88 @@ Funcionamos únicamente como intermediarios entre personas que necesitan el cuid
 
 
 
-
-
-Pendientes:
-
 ## Plan Operativo:
 
 El plan operativo se centrará principalmente en mantener actualizada la aplicación web, garantizando actualizaciones constantes para mejorar la experiencia del usuario. Para alojar nuestra aplicación, utilizaremos un servicio de hosting proporcionado por el IES, el cual también nos ofrecerá la capacidad de enviar correos electrónicos de manera automatizada para confirmaciones y otros fines.
 
-En términos de proveedores, actualmente estamos considerando asociarnos con Eagle-Fox, una empresa fundada por nuestros compañeros de clase. Eagle-Fox se especializa en el seguimiento de mascotas a través de un sistema de GPS. Esta asociación potencial nos permitiría integrar tecnología de rastreo de mascotas en nuestra plataforma, ofreciendo así a nuestros usuarios una solución integral para el cuidado y la seguridad de sus mascotas.
+En términos de proveedores, actualmente estamos considerando asociarnos con Eagle-Fox, una empresa fundada por nuestros compañeros de clase. Eagle-Fox se especializaen el seguimiento de mascotas a través de un sistema de GPS. Esta asociación potencial nos permitiría integrar tecnología de rastreo de mascotas en nuestra plataforma, ofreciendo así a nuestros usuarios una solución integral para el cuidado y la seguridad de sus mascotas.
 ____________________________________________________________________________________________________________________
 ____________________________________________________________________________________________________________________
-# Análisis Financiero:
-Entendido, procederé con los cálculos utilizando un promedio de pago por transacción de 14 euros por hora:
 
-### Proyecciones Financieras:
+## Análisis Financiero
 
-#### Ingresos Mensuales:
+El análisis financiero proporciona una visión detallada de los ingresos proyectados y el beneficio neto esperado para el primer mes y a partir del primer año de operación de MascoTier.
+
+### Ingresos Mensuales:
 1. **Primer Mes:**
-   - Número de Transacciones: 2
-   - Ingresos Mensuales = 2 (transacciones) * 10% (comisión) * 14 euros/hora
+   - Ingresos Mensuales: 2.8 euros (2 transacciones * 10% comisión * 14 euros/hora)
 
 2. **A partir del Primer Año:**
-   - Número de Transacciones Semanales: 5
-   - Ingresos Mensuales = 20 (transacciones) * 10% (comisión) * 14 euros/hora
-
-#### Costos Operativos:
-1. **Costos de Transacción:**
-   - Estimación de Costos Asociados con el Procesamiento de Pagos.
-
-   NOTA: 
-        Este sería el costo operativo por lo menos durante el primer año, debido a que el propio desarrollo no requiere de ningún pago y la plataforma de hostin es proporcionada de forma gratuita. Es probable que a futuro estos constes sean modificados
-
-### Resultados Financieros:
-
-#### Beneficio Neto Mensual:
-1. **Primer Mes:**
-   - Beneficio Neto Mensual = Ingresos Mensuales - Costos Operativos
-
-2. **A partir del Primer Año:**
-   - Beneficio Neto Mensual = Ingresos Mensuales - Costos Operativos
-
-#### Beneficio Neto Anual:
-1. **Primer Año:**
-   - Beneficio Neto Anual = Beneficio Neto Mensual * 12
-
-### Cálculos:
-
-1. **Ingresos Mensuales Primer Mes:** 2 (transacciones) * 10% (comisión) * 14 euros/hora = 2.8 euros
-2. **Ingresos Mensuales Primer Año:** 20 (transacciones) * 10% (comisión) * 14 euros/hora = 28 euros
-3. **Beneficio Neto Mensual Primer Mes:** Se necesita determinar los costos operativos.
-4. **Beneficio Neto Mensual Primer Año:** Se necesita determinar los costos operativos.
-5. **Beneficio Neto Anual Primer Año:** Se multiplicará el beneficio neto mensual del primer año por 12.
-
-
-### Proyecciones Financieras:
-
-#### Ingresos Mensuales:
-1. **Primer Mes:**
-   - Ingresos Mensuales = 2.8 euros
-   
-2. **A partir del Primer Año:**
-   - Ingresos Mensuales = 28 euros
-
-#### Costos Operativos:
-1. **Costos de Transacción:**
-   - Estimación de Costos Asociados con el Procesamiento de Pagos.
-
-### Resultados Financieros:
-
-#### Beneficio Neto Mensual:
-1. **Primer Mes:**
-   - Beneficio Neto Mensual = Ingresos Mensuales - Costos Operativos
-
-2. **A partir del Primer Año:**
-   - Beneficio Neto Mensual = Ingresos Mensuales - Costos Operativos
-
-#### Beneficio Neto Anual:
-1. **Primer Año:**
-   - Beneficio Neto Anual = Beneficio Neto Mensual * 12
-
-### Cálculos:
-
-1. **Ingresos Mensuales Primer Mes:** 2.8 euros
-2. **Ingresos Mensuales Primer Año:** 28 euros
-3. **Beneficio Neto Mensual Primer Mes:** Se necesita determinar los costos operativos.
-4. **Beneficio Neto Mensual Primer Año:** Se necesita determinar los costos operativos.
-5. **Beneficio Neto Anual Primer Año:** Se multiplicará el beneficio neto mensual del primer año por 12.
-
-
+   - Ingresos Mensuales: 28 euros (20 transacciones semanales * 10% comisión * 14 euros/hora)
 
 ### Costos Operativos:
-
 1. **Costos de Transacción:**
-   - Asumiendo una tarifa de procesamiento de pagos del 2%, calculamos el costo de transacción por cada transacción realizada.
-   - Para el primer mes:
-     - Costo de Transacción = 2 (transacciones) * 2% (tarifa de procesamiento) * 14 euros/hora
-   - Para el primer año:
-     - Costo de Transacción = 20 (transacciones) * 2% (tarifa de procesamiento) * 14 euros/hora
+   - Primer Mes: 0.56 euros (2 transacciones * 2% tarifa de procesamiento * 14 euros/hora)
+   - Primer Año: 5.6 euros (20 transacciones semanales * 2% tarifa de procesamiento * 14 euros/hora)
 
-### Resultados Financieros:
-
-#### Beneficio Neto Mensual:
-
+### Beneficio Neto:
 1. **Primer Mes:**
-   - Beneficio Neto Mensual = Ingresos Mensuales - Costos de Transacción
+   - Beneficio Neto Mensual: 2.24 euros (Ingresos Mensuales - Costos de Transacción)
 
 2. **A partir del Primer Año:**
-   - Beneficio Neto Mensual = Ingresos Mensuales - Costos de Transacción
+   - Beneficio Neto Mensual: 22.4 euros (Ingresos Mensuales - Costos de Transacción)
+   - Beneficio Neto Anual: 268.8 euros (Beneficio Neto Mensual * 12)
 
-#### Beneficio Neto Anual:
+### Supuestos:
+- Estimamos que la media de una transacción entre usuarios sea de 14 euros la hora.
+- MascoTier obtendría el 10% de la transacción total como comisión.
 
-1. **Primer Año:**
-   - Beneficio Neto Anual = Beneficio Neto Mensual * 12
-
-### Cálculos:
-
-1. **Costo de Transacción Primer Mes:** 2 (transacciones) * 2% (tarifa de procesamiento) * 14 euros/hora = 0.56 euros
-2. **Costo de Transacción Primer Año:** 20 (transacciones) * 2% (tarifa de procesamiento) * 14 euros/hora = 5.6 euros
-
-
-
-### Resultados Financieros:
-
-#### Beneficio Neto Mensual:
-
-1. **Primer Mes:**
-   - Beneficio Neto Mensual = Ingresos Mensuales - Costos de Transacción
-   - Beneficio Neto Mensual = 2.8 euros - 0.56 euros = 2.24 euros
-
-2. **A partir del Primer Año:**
-   - Beneficio Neto Mensual = Ingresos Mensuales - Costos de Transacción
-   - Beneficio Neto Mensual = 28 euros - 5.6 euros = 22.4 euros
-
-#### Beneficio Neto Anual:
-
-1. **Primer Año:**
-   - Beneficio Neto Anual = Beneficio Neto Mensual * 12
-   - Beneficio Neto Anual = 22.4 euros * 12 = 268.8 euros
-
-### Resumen del Análisis Financiero:
-
-1. **Primer Mes:**
-   - Ingresos Mensuales: 2.8 euros
-   - Costos de Transacción: 0.56 euros
-   - Beneficio Neto Mensual: 2.24 euros
-
-2. **A partir del Primer Año:**
-   - Ingresos Mensuales: 28 euros
-   - Costos de Transacción: 5.6 euros
-   - Beneficio Neto Mensual: 22.4 euros
-   - Beneficio Neto Anual: 268.8 euros
-
-Esto proporciona una visión general de los ingresos proyectados y el beneficio neto esperado para el primer mes y a partir del primer año de operación de MascoTier.
-
-Es una visión "pesimista" con la cual se tienen estándares bajos. Al ser un proyecto escolar aún no tenemos claro el futuro de MascoTier.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Este análisis proporciona una visión "pesimista" con estándares bajos, considerando que MascoTier aún es un proyecto escolar y su futuro es incierto. Los ingresos se basan en suposiciones y estimaciones, y pueden variar en función de varios factores.
 
 ___________________________________________________________________________________________________________
 ___________________________________________________________________________________________________________
 
 ## Estrategia de Crecimiento y Desarrollo:
 
-Planes a futuro para la expansión del negocio, desarrollo de nuevos productos, ingreso a nuevos mercados, alianzas estratégicas, entre otros.
+Una estrategia clave para MascoTier es la alianza estratégica con Eagle-Fox, una empresa especializada en el rastreo en tiempo real de animales. Esta asociación beneficia a todas las partes involucradas:
+
+- Clientes: Brindamos seguridad y tranquilidad al ofrecer un servicio que incluye el seguimiento en tiempo real de sus mascotas. Esto les otorga la confianza de que sus animales están seguros y protegidos durante el cuidado.
+
+- Eagle-Fox: Al asociarse con MascoTier, Eagle-Fox amplía su alcance y visibilidad en el mercado. Además, esta alianza les brinda la oportunidad de ofrecer servicios  adicionales y obtener beneficios adicionales a través de la integración con nuestra plataforma.
+
+-  MascoTier: Como intermediarios, nos esforzamos por ofrecer una plataforma confiable y segura para nuestros usuarios. La integración del rastreo en tiempo real de Eagle-Fox nos permite mejorar nuestra oferta de servicios y diferenciarnos en el mercado al proporcionar una capa adicional de seguridad y protección para las mascotas."
 
 ## Plan de Contingencia:
 
-Estrategias para afrontar situaciones adversas, riesgos identificados y cómo mitigarlos para mantener la estabilidad del negocio.
+### 1. Comportamiento Incorrecto de los Usuarios hacia los Animales:
+
+**Adversidad:** Una posible adversidad podría surgir si un usuario de la plataforma se involucra en comportamientos incorrectos o abusivos hacia los animales que están cuidando.
+
+**Acción:** Enfrentaríamos esta situación de la siguiente manera:
+- **Términos y Condiciones Estrictos:** MascoTier tiene términos y condiciones estrictos que prohíben cualquier forma de maltrato animal. Esto incluye acciones como negligencia, abuso físico o emocional, y cualquier comportamiento que ponga en peligro el bienestar de la mascota.
+- **Reporte y Bloqueo de Usuarios:** Los usuarios de la plataforma tienen la opción de reportar cualquier comportamiento inapropiado. Una vez que se recibe un informe, nuestro equipo de moderación investiga el incidente y toma medidas adecuadas, que pueden incluir la suspensión temporal o permanente del usuario infractor.
+- **Información de Usuarios:** Mantenemos registros detallados de todos los usuarios que ofrecen sus servicios en nuestra plataforma, incluidos antecedentes, verificaciones de identidad y evaluaciones de otros usuarios. Esta información nos permite identificar y abordar rápidamente cualquier problema de comportamiento.
+
+### 2. Problemas Técnicos o Interrupciones del Servicio:
+
+**Adversidad:** Otra adversidad que podríamos enfrentar son los problemas técnicos imprevistos o las interrupciones del servicio, que podrían afectar la funcionalidad de la plataforma y la experiencia del usuario.
+
+**Acción:** Para mitigar esta situación, tomamos las siguientes medidas:
+- **Mantenimiento Preventivo:** Realizamos mantenimiento preventivo regularmente para garantizar el funcionamiento óptimo de la plataforma. Esto incluye actualizaciones de software, pruebas de rendimiento y corrección de errores.
+- **Equipo de Soporte Técnico:** Contamos con un equipo de soporte técnico dedicado que monitorea activamente la plataforma y responde rápidamente a cualquier problema técnico que pueda surgir. Los usuarios pueden comunicarse con nuestro equipo de soporte a través de varios canales, como chat en vivo, correo electrónico o teléfono.
+- **Comunicación Transparente:** En caso de interrupciones del servicio, mantenemos una comunicación transparente con nuestros usuarios, proporcionando actualizaciones periódicas sobre el estado de la plataforma y los esfuerzos para resolver el problema. También ofrecemos compensaciones apropiadas, como créditos o descuentos, a los usuarios afectados por la interrupción.
+
+### 3. Falta de Cumplimiento de Normativas y Regulaciones:
+
+**Adversidad:** Existe el riesgo de enfrentar problemas legales si MascoTier no cumple con las normativas y regulaciones aplicables en el cuidado de mascotas y la protección del consumidor.
+
+**Acción:** Para asegurar el cumplimiento normativo, implementamos las siguientes acciones:
+- **Revisión Legal Regular:** Trabajamos en estrecha colaboración con expertos legales para mantenernos actualizados sobre las normativas y regulaciones relevantes en el cuidado de mascotas y los servicios en línea. Realizamos revisiones legales regulares de nuestras políticas, términos y condiciones para garantizar su conformidad.
+- **Colaboración con Autoridades:** Establecemos relaciones de colaboración con autoridades y organizaciones reguladoras para garantizar el cumplimiento de las normativas y regulaciones. Mantenemos una comunicación abierta y transparente con estas entidades y cooperamos plenamente en cualquier investigación o auditoría relacionada con nuestras operaciones.
+
+### Conclusión:
+
+El plan de contingencia de MascoTier se centra en anticipar y abordar diversas adversidades que podrían surgir durante la operación de la plataforma. Al implementar medidas proactivas y establecer protocolos claros, estamos comprometidos a garantizar la seguridad, la confiabilidad y la legalidad de nuestros servicios para todos los usuarios.
 
 ## Equipo de Gestión:
 
