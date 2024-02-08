@@ -5,33 +5,33 @@ use mascotier;
 -- Create table user
 CREATE TABLE user(
     user_id INT PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(75),--Comes form email could be changed manually by the user
+    username VARCHAR(75),#--Comes form email could be changed manually by the user
     email VARCHAR(255) NOT NULL,
     pwd VARCHAR(100) NOT NULL,
     phone VARCHAR(15),
-    has_place BOOLEAN, -- 0 as False, 1 as true
+    has_place BOOLEAN, #-- 0 as False, 1 as true
     area VARCHAR(40)
-    verified BOOLEAN -- 0 as False, 1 as true
+    verified BOOLEAN #-- 0 as False, 1 as true
 );
 
--- Create table owner
+#-- Create table owner
 CREATE TABLE owner (
     user_id INT PRIMARY KEY,
     FOREIGN KEY (user_id) REFERENCES user(user_id)
 );
 
--- Create table carer
+#-- Create table carer
 CREATE TABLE carer (
     user_id INT PRIMARY KEY,
     full_name VARCHAR(100),
     rating INT,
-    is_available BOOLEAN, -- 0 as false, 1 as true
+    is_available BOOLEAN, #-- 0 as false, 1 as true
     id_doc VARCHAR(15),
     descr VARCHAR(2000),
     FOREIGN KEY (user_id) REFERENCES user(user_id)
 );
 
--- Create table pet
+#-- Create table pet
 CREATE TABLE pet (
     pet_id INT PRIMARY KEY AUTO_INCREMENT,
     user_owner_id INT NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE pet (
     FOREIGN KEY (user_owner_id) REFERENCES user(user_id)
 );
 
--- Create table request
+#-- Create table request
 CREATE TABLE request (
     request_id INT PRIMARY KEY AUTO_INCREMENT,
     user_owner_id INT NOT NULL,
@@ -53,7 +53,7 @@ CREATE TABLE request (
     FOREIGN KEY (user_carer_id) REFERENCES user(user_id)
 );
 
--- Create table requests_pets (Relationship table between request and pet)
+#-- Create table requests_pets (Relationship table between request and pet)
 CREATE TABLE requests_pets (
     request_id INT NOT NULL,
     pet_id INT NOT NULL,
