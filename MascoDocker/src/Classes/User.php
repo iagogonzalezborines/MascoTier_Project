@@ -164,4 +164,13 @@ class User
         $db->executeQuery($query);
         $db->disconnectFromDatabase();
     }
+
+    public function showRequests($userId)
+    {
+        $db = dataBase::getInstance();
+        $query = "SELECT * FROM request WHERE user_owner_id = '$userId'";
+        $result = $db->executeQuery($query);
+
+        return ($result);
+    }
 }
