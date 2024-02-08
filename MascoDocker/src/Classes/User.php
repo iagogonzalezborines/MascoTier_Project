@@ -145,6 +145,25 @@ class User
         return $this->transformResultSetIntoUserArray($result);
     }
 
+//These two functions will help us to mantain a better track of what kind of info we are looking for
+
+    public function getOwnerDataFromDataBase(){ //Bascially the same as the previous function, but for the owner
+        $db = dataBase::getInstance();
+        $db->connectToDatabase();
+        $query = "SELECT * FROM owner WHERE user_id = '$this->userId'";
+        $result = $db->executeQuery($query);
+        $db->disconnectFromDatabase();
+        return $this->transformResultSetIntoUserArray($result);
+    }
+    public function getCarerDataFronDataBase(){ //Bascially the same as the previous function, but for the carer
+        $db = dataBase::getInstance();
+        $db->connectToDatabase();
+        $query = "SELECT * FROM carer WHERE user_id = '$this->userId'";
+        $result = $db->executeQuery($query);
+        $db->disconnectFromDatabase();
+        return $this->transformResultSetIntoUserArray($result);
+    }
+
     /**
      * Set the user as verified or unverified.
      * @param bool $bool - Indicates if the user should be set as verified (true) or unverified (false)
