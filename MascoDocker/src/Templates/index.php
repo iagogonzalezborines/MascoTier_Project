@@ -1,7 +1,7 @@
 <?php 
 
-
-require_once 'vendor/autoload.php';
+// VENDOR NOT CONFIGURED YET
+//require_once 'vendor/autoload.php';
 
 
 ?>
