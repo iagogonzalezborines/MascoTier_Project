@@ -36,7 +36,7 @@ class dataBase
     {
         static $instance = null;
         if ($instance === null) {
-            $instance = new dataBase();
+            $instance = new dataBase();//Shouldnt we set in here the variables from the config.ini?
         }
         return $instance;
     }
