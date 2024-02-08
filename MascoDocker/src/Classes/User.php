@@ -5,6 +5,7 @@ Access to the database, and PHPMailer
 */
 require_once '../DataBase/dataBase.php';
 require_once 'PHPMailer/PHPMailer.php';
+
 class User
 {
     private int $userId; // Unique auto increment identifier for the user
@@ -17,10 +18,17 @@ class User
     private bool $verified; // No (0) or Yes (1)
     private string $type; // owner or carer
 
-    /*
-public constructor 
-generic user parameters do not include exlusive parameters for other descending user classes like owner or carer
-*/
+    /**
+     * User constructor.
+     * @param string $type - The type of user (owner or carer)
+     * @param string $username - The username of the user
+     * @param string $email - The email of the user
+     * @param string $password - The password of the user
+     * @param string $phone - The phone number of the user
+     * @param bool $hasPlace - Indicates if the user has a place to take care of the animals (0 or 1)
+     * @param string $area - The zone where the user is located
+     * @param bool $verified - Indicates if the user is verified (0 or 1)
+     */
     public function __construct(string $type, string $username, string $email, string $password, string $phone, bool $hasPlace, string $area, bool $verified)
     {
         $this->type = $type;
@@ -33,89 +41,86 @@ generic user parameters do not include exlusive parameters for other descending 
         $this->verified = $verified;
     }
 
-
-    //---------------------GETTERS & SETTERS-------------------------//
-
-    // Temporary comment: Determine which getters and setters are necessary
-
+    /**
+     * Get the user ID.
+     * @return int - The user ID
+     */
     public function getUserId(): int
     {
         return $this->userId;
     }
 
+    /**
+     * Get the username.
+     * @return string - The username
+     */
     public function getUsername(): string
     {
         return $this->username;
     }
 
+    /**
+     * Get the email.
+     * @return string - The email
+     */
     public function getEmail(): string
     {
         return $this->email;
     }
 
+    /**
+     * Set the password.
+     * @param string $password - The password to set
+     */
     public function setPassword(string $password): void
     {
         $this->password = $password;
     }
-    //----------------------------------------------------//
-
-
-    // Other functions
-
 
     /**
-     * function to transform the email into a username
-     * @return  void
-     * note: should be called before saving the user to the database
-     * note: should return a string
-     * Still to be updated
+     * Transform the email to username.
      */
     public function transformEmailToUsername(): void
     {
         $this->username = strstr($this->email, '@', true);
     }
 
-    /*
-    function to hash the password
-    @return a string
-    */
+    /**
+     * Hash the password.
+     * @return string - The hashed password
+     */
     public function hashPassword(): string
     {
-        return $hashedPassword = password_hash($this->password, PASSWORD_DEFAULT);
+        return password_hash($this->password, PASSWORD_DEFAULT);
     }
 
     /**
-     * function to save the user to the database
-     * @param $user Can be an owner or a carer
-     * @return void
-     * note: should be called after the transformEmailToUsername
-     * function IF the user is not already in the database 
-     * or the username has beem modified by the user
+     * Save the user to the database.
+     * @param mixed $userToSave - The user object to save
      */
     public function saveUserToDb($userToSave): void
     {
         $hashedPassword = $this->hashPassword();
-        $query = "INSERT INTO user (username, email, pwd, phone, has_place, area, verified) VALUES ('$this->username', '$this->email', '$this->password', '$this->phone', '$this->hasPlace', '$this->area', '$this->verified')";
+        $query = "INSERT INTO user (username, email, pwd, phone, has_place, area, verified) VALUES ('$this->username', '$this->email', '$hashedPassword', '$this->phone', '$this->hasPlace', '$this->area', '$this->verified')";
 
         $db = dataBase::getInstance();
         $db->connectToDatabase();
         $db->executeQuery($query);
 
-        // Depending on what instace of it is $userToSave, insert into the corresponding table
         if ($userToSave instanceof Carer) {
             $query = "INSERT INTO carer (user_id) VALUES ('$this->userId')";
-            $db->executeQuery($query);
-            $db->disconnectFromDatabase();
         } else if ($userToSave instanceof Owner) {
             $query = "INSERT INTO owner (user_id, full_name, id_doc) VALUES ('$this->userId')";
-            $db->executeQuery($query);
-            $db->disconnectFromDatabase();
         }
+
+        $db->executeQuery($query);
+        $db->disconnectFromDatabase();
     }
 
-    /** 
-     * function to transform the result set into a user array
-     * @return array with the user data
+    /**
+     * Transform the result set into an array of user data.
+     * @param mixed $result - The result set to transform
+     * @return array - The array of user data
      */
     public function transformResultSetIntoUserArray($result)
     {
@@ -127,8 +132,8 @@ generic user parameters do not include exlusive parameters for other descending 
     }
 
     /**
-     * function to get the user data from the database
-     * @return $result
+     * Get the user data from the database.
+     * @return array - The array of user data
      */
     public function getUserDataFromDataBase()
     {
@@ -141,28 +146,31 @@ generic user parameters do not include exlusive parameters for other descending 
     }
 
     /**
-     * function to verify the user
-     * @param bool $bool tells whether the user is gonna be verified or not
-     * @return void
+     * Set the user as verified or unverified.
+     * @param bool $bool - Indicates if the user should be set as verified (true) or unverified (false)
      */
     public function setUserToVerified($bool)
     {
         if ($bool == true) {
             $this->verified = true;
             $query = "UPDATE users SET verified = 1 WHERE email = '$this->email'";
-            $db = dataBase::getInstance();
-            $db->connectToDatabase();
-            $db->executeQuery($query);
-            $db->disconnectFromDatabase();
         } else {
-            $verified = false;
+            $this->verified = false;
             $query = "UPDATE users SET verified = 0 WHERE email = '$this->email'";
         }
+
+        $db = dataBase::getInstance();
+        $db->connectToDatabase();
+        $db->executeQuery($query);
+        $db->disconnectFromDatabase();
+    }
+
+    public function showRequests($userId)
+    {
+        $db = dataBase::getInstance();
+        $query = "SELECT * FROM request WHERE user_owner_id = '$userId'";
+        $result = $db->executeQuery($query);
+
+        return ($result);
     }
 }
-/* public function verifyUserPhpMailer(){}
-      function which sends and recieves an email from the user to confirmed its verified if it is call 
-      setUserToVerified          $mail->Username = '
-   
-}
-*/

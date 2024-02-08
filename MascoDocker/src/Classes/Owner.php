@@ -57,6 +57,15 @@ class Owner extends User {
 
     }
 
+    public function createRequest($pet, $date, $time, $duration, $place, $description, $ownerId, $carerId)
+    {
+        $db = dataBase::getInstance();
+        $db->connectToDatabase();
+        $query = "INSERT INTO request (pet_id, date, time, duration, place, description, user_owner_id, user_carer_id) VALUES ('$pet->getId()', '$date', '$time', '$duration', '$place', '$description', '$ownerId', '$carerId')";
+        $db->executeQuery($query);
+        $db->disconnectFromDatabase();
+    }
+
   
 }
 // $prueba = new User("José","asdjfgsdg@gmail.com","12341234",null,null,null,null,null);
