@@ -183,6 +183,50 @@ El plan de contingencia de MascoTier se centra en anticipar y abordar diversas a
 
 ## Equipo de Gestión:
 
-Presentación del equipo directivo y sus habilidades, experiencia y roles dentro de la empresa.
+## Equipo de MascoTier
+
+### Iago González Borines
+- **Rol:** SCRUM Master, Mente Creativa, Product Owner (técnicamente)
+- **Responsabilidades:**
+  - Planificación del Proyecto y Estrategia Empresarial.
+  - Desarrollo Backend y Parte Creativa del Frontend.
+- **Contribuciones Destacadas:**
+  - Liderazgo en la Implementación de Metodologías Ágiles.
+  - Creación de Conceptos Innovadores para la Plataforma.
+  - Desarrollo de Funcionalidades Clave.
+
+### Brais López Escudero
+- **Rol:** Desarrollador de Infraestructura y Frontend
+- **Responsabilidades:**
+  - Montaje de Servidores de Testing con Docker.
+  - Gestión del Hosting y Configuración de Servidores.
+  - Desarrollo Frontend y Mejora de la Experiencia de Usuario.
+- **Contribuciones Destacadas:**
+  - Implementación de Entornos de Desarrollo Eficientes.
+  - Optimización de la Velocidad y Estabilidad de la Plataforma.
+  - Diseño de Interfaz Intuitiva y Atractiva.
+
+### Joel Ninahuaman Quintanilla
+- **Rol:** Desarrollador Frontend y Documentación Frontend
+- **Responsabilidades:**
+  - Desarrollo del Frontend de la Plataforma.
+  - Colaboración en la Documentación del Frontend.
+- **Contribuciones Destacadas:**
+  - Creación de Funcionalidades Complejas y Escalables.
+  - Documentación Clara y Concisa para el Equipo de Desarrollo.
+  - Resolución de Problemas Técnicos de Forma Eficiente.
+
+### Pedro Campelo Rico
+- **Rol:** Desarrollador Backend y Documentación Backend
+- **Responsabilidades:**
+  - Desarrollo y Mantenimiento del Backend de la Plataforma.
+  - Documentación Detallada del Backend y Procesos de Desarrollo.
+- **Contribuciones Destacadas:**
+  - Implementación de Funcionalidades Críticas del Backend.
+  - Elaboración de Documentación Completa para Facilitar el Mantenimiento.
+  - Colaboración Activa en la Resolución de Desafíos Técnicos.
+
+### Nota Importante:
+Todos los miembros del equipo MascoTier son multidisciplinarios y participan activamente en la toma de decisiones creativas y de funcionamiento. Trabajamos en estrecha colaboración para asegurar el éxito del proyecto y estamos comprometidos con la excelencia en todas las áreas del desarrollo de la plataforma.
 
 ## DAFO y CAME
