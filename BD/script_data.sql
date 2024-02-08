@@ -1,32 +1,42 @@
--- Insertar 5 tuplas en la tabla user
-INSERT INTO user (email, pwd, phone, has_place, area) VALUES
-('user1@example.com', 'password1', '123456789', '1', 'Area1'),
-('user2@example.com', 'password2', '987654321', '0', 'Area2'),
-('user3@example.com', 'password3', '555555555', '1', 'Area3'),
-('user4@example.com', 'password4', '111223344', '0', 'Area4'),
-('user5@example.com', 'password5', '999888777', '1', 'Area5');
+-- Agregar tuplas a la tabla user
+INSERT INTO user (username, email, pwd, phone, has_place, area, verified) VALUES
+('pedro_campe', 'pedro@example.com', 'password123', '555-1234', 1, 'City Center', 1),
+('maria_campera', 'maria@example.com', 'securepwd', '555-5678', 0, 'Suburbia', 0),
+('juan_campeador', 'juan@example.com', 'strongpass', '555-9876', 1, 'Downtown', 1),
+('laura_campeona', 'laura@example.com', 'safepassword', '555-4321', 0, 'Countryside', 1),
+('carlos_campeón', 'carlos@example.com', 'mypassword', '555-8765', 1, 'Coastal Area', 0);
 
--- Insertar 5 tuplas en la tabla owner
-INSERT INTO owner (user_id) VALUES (1), (2);
+-- Agregar tuplas a la tabla owner
+INSERT INTO owner (user_id) VALUES (1), (2), (3), (4), (5);
 
--- Insertar 5 tuplas en la tabla carer
-INSERT INTO carer (user_id, rating, is_available, id_doc, descr) VALUES
-(3, 5, '1', 'Doc3', 'Descr3'),
-(4, 2, '0', 'Doc4', 'Descr4'),
-(5, 4, '1', 'Doc5', 'Descr5');
+-- Agregar tuplas a la tabla carer
+INSERT INTO carer (user_id, full_name, rating, is_available, id_doc, descr) VALUES
+(6, 'Ana Cuidadora', 4, 1, 'DOC123', 'Experienced pet caregiver specializing in dogs.'),
+(7, 'Pablo Cuidador', 5, 1, 'DOC456', 'Loves all animals and provides top-notch care.'),
+(8, 'Sofía Cuidadora', 3, 0, 'DOC789', 'Available for cat sitting services.'),
+(9, 'Diego Cuidador', 4, 1, 'DOC012', 'Trained in handling exotic pets.'),
+(10, 'Elena Cuidadora', 4, 1, 'DOC345', 'Offers dog walking and pet sitting services.');
 
--- Insertar 5 tuplas en la tabla pet
-INSERT INTO pet (user_owner_id, descr, type) VALUES
-(1, 'Pet1 Descr', 'Type1'),
-(2, 'Pet2 Descr', 'Type2'),
-(3, 'Pet3 Descr', 'Type3'),
-(4, 'Pet4 Descr', 'Type4'),
-(5, 'Pet5 Descr', 'Type5');
+-- Agregar tuplas a la tabla pet
+INSERT INTO pet (user_owner_id, descr, pet_type, pet_rating) VALUES
+(1, 'Golden Retriever named Max', 'Dog', 4.5),
+(2, 'Tabby cat named Whiskers', 'Cat', 4.2),
+(3, 'German Shepherd named Rex', 'Dog', 4.8),
+(4, 'Siamese cat named Luna', 'Cat', 4.3),
+(5, 'Labrador Retriever named Bella', 'Dog', 4.7);
 
--- Insertar 5 tuplas en la tabla request
+-- Agregar tuplas a la tabla request
 INSERT INTO request (user_owner_id, user_carer_id, amount, date_time, status) VALUES
-(1, 3, 50.00, '2024-01-25 12:30:00', 'Pending'),
-(2, 5, 75.50, '2024-01-25 14:45:00', 'Accepted'),
-(3, 1, 30.00, '2024-01-25 16:00:00', 'Pending'),
-(4, 4, 90.00, '2024-01-25 18:15:00', 'Accepted'),
-(5, 2, 120.00, '2024-01-25 20:30:00', 'Pending');
+(1, 6, 50.00, NOW(), 'Pending'),
+(2, 7, 45.00, NOW(), 'Accepted'),
+(3, 8, 60.00, NOW(), 'Pending'),
+(4, 9, 55.00, NOW(), 'Accepted'),
+(5, 10, 40.00, NOW(), 'Pending');
+
+-- Agregar tuplas a la tabla requests_pets
+INSERT INTO requests_pets (request_id, pet_id) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5);
