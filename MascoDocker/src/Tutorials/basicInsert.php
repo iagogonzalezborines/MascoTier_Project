@@ -2,10 +2,9 @@
 include_once '../DataBase/dataBase.php';
 
 $pdo= dataBase::getInstance();
-
 $db = $pdo->connectToDatabase();
 
-$statement = $db->prepare("INSERT INTO owner(user_id) VALUES (13)");
+$statement = $db->prepare("INSERT INTO owner(user_id) VALUES (14)");
 
 try {
     $statement->execute();
@@ -14,5 +13,7 @@ try {
     echo "Owner not added <br>";
     echo "<h1>ERROR: </h1> ";
     echo $e->getMessage();
+}finally{
+    $pdo->disconnectFromDatabase();
 }
 
