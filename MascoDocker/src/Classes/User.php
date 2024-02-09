@@ -137,7 +137,8 @@ class User
     public function saveUserToDb($userToSave): void
     {
         $hashedPassword = $this->hashPassword();
-        $query = "INSERT INTO users (username, email, psw, phone, area, verified, type, contactNumber, pets, hasPlace, idDocument, place, rating) VALUES ('$this->username', '$this->email', '$hashedPassword', '$this->phone', '$this->hasPlace', '$this->area', '$this->verified')";
+        $query = "INSERT INTO users (username, email, psw, phone, area, verified, type, contactNumber, pets, hasPlace, idDocument, place, rating) 
+        VALUES ('$this->username', '$this->email', '$hashedPassword', '$this->phone', '$this->area', '$this->verified', '$this->type', '$this->contactNumber', '$this->pets', '$this->hasPlace', '$this->idDocument', '$this->place', '$this->rating)";
 
         $db = dataBase::getInstance();
         $db->connectToDatabase();

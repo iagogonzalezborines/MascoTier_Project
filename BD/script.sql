@@ -8,7 +8,7 @@ CREATE TABLE users (
     userId INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(255),
     email VARCHAR(255) NOT NULL,
-    password VARCHAR(255) NOT NULL,
+    pwd VARCHAR(1000) NOT NULL,
     phone VARCHAR(20),
     area VARCHAR(100),
     verified TINYINT(1) DEFAULT 0,
