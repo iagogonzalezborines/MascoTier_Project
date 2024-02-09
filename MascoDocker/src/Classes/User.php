@@ -6,32 +6,61 @@ Access to the database, and PHPMailer
 require_once '../DataBase/dataBase.php';
 require_once 'PHPMailer/PHPMailer.php';
 
+
 class User
 {
-    private int $userId; // Unique auto increment identifier for the user
+    private int $userId;
     private string $username;
     private string $email;
     private string $password;
-    private string $phone; // Phone number of the user
-    private bool $hasPlace; // Has place to take care of the animals No (0) or Yes (1)
-    private string $area;   // Zone where the user is located
-    private bool $verified; // No (0) or Yes (1)
-    private string $type; // owner or carer
+    private string $phone;
+    private string $area;
+    private bool $verified;
+    private string $type;
+    //Exclusive for Owner
+    private $contactNumber;
+    private $pets;
+    //Exclusive for Carer
+    private bool $hasPlace;
+    private $idDocument;
+    private $place;
+    private $rating;
 
     /**
-     * User constructor.
-     * @param string $type - The type of user (owner or carer)
-     * @param string $username - The username of the user
-     * @param string $email - The email of the user
-     * @param string $password - The password of the user
-     * @param string $phone - The phone number of the user
-     * @param bool $hasPlace - Indicates if the user has a place to take care of the animals (0 or 1)
-     * @param string $area - The zone where the user is located
-     * @param bool $verified - Indicates if the user is verified (0 or 1)
-     */
-    public function __construct(string $type, string $username, string $email, string $password, string $phone, bool $hasPlace, string $area, bool $verified)
-    {
-        $this->type = $type;
+        * User constructor.
+        * @param string|null $username - The username of the user
+        * @param string $email - The email of the user
+        * @param string $password - The password of the user
+        * @param string|null $phone - The phone number of the user
+        * @param string|null $area - The zone where the user is located
+        * @param bool $verified - Indicates if the user is verified (0 or 1)
+        * @param string $type - The type of user (owner or carer)
+
+        * @param mixed|null $contactNumber - The contact number of the user (exclusive for owner)
+        * @param mixed|null $pets - The pets of the user (exclusive for owner)
+
+        * @param bool|null $hasPlace - Indicates if the user has a place to take care of the animals (exclusive for carer)
+        * @param mixed|null $idDocument - The ID document of the user (exclusive for carer)
+        * @param mixed|null $place - The place of the user (exclusive for carer)
+        * @param mixed|null $rating - The rating of the user (exclusive for carer)
+  */
+    public function __construct(
+        string $username = null,
+        string $email,
+        string $password,
+        string $phone = null,
+        string $area = null,
+        bool $verified = false,
+        string $type,
+        //Exclusive for Owner
+        $contactNumber = null,
+        $pets = null,
+        //Exclusive for Carer
+        bool $hasPlace = null,
+        $idDocument = null,
+        $place = null,
+        $rating = null
+    ) {
         $this->username = $username;
         $this->email = $email;
         $this->password = $password;
@@ -39,7 +68,14 @@ class User
         $this->hasPlace = $hasPlace;
         $this->area = $area;
         $this->verified = $verified;
+        $this->type = $type;
+        $this->contactNumber = $contactNumber;
+        $this->pets = $pets;
+        $this->idDocument = $idDocument;
+        $this->place = $place;
+        $this->rating = $rating;
     }
+
 
     /**
      * Get the user ID.
@@ -107,8 +143,11 @@ class User
         $db->connectToDatabase();
         $executed = $db->executeQuery($query);
         //Testing echoes for comprobation
-        if($executed){echo "User saved to database"; }
-        else{echo "User not saved to database";}
+        if ($executed) {
+            echo "User saved to database";
+        } else {
+            echo "User not saved to database";
+        }
 
         if ($userToSave instanceof Carer) {
             $query = "INSERT INTO carer (user_id) VALUES ('$this->userId')";
@@ -148,9 +187,10 @@ class User
         return $this->transformResultSetIntoUserArray($result);
     }
 
-//These two functions will help us to mantain a better track of what kind of info we are looking for
+    //These two functions will help us to mantain a better track of what kind of info we are looking for
 
-    public function getOwnerDataFromDataBase(){ //The same as the previous function, but for the owner
+    public function getOwnerDataFromDataBase()
+    { //The same as the previous function, but for the owner
         $db = dataBase::getInstance();
         $db->connectToDatabase();
         $query = "SELECT * FROM owner WHERE user_id = '$this->userId'";
@@ -158,7 +198,8 @@ class User
         $db->disconnectFromDatabase();
         return $this->transformResultSetIntoUserArray($result);
     }
-    public function getCarerDataFronDataBase(){ //Basically the same as the previous function, but for the carer
+    public function getCarerDataFronDataBase()
+    { //Basically the same as the previous function, but for the carer
         $db = dataBase::getInstance();
         $db->connectToDatabase();
         $query = "SELECT * FROM carer WHERE user_id = '$this->userId'";
@@ -194,5 +235,37 @@ class User
         $result = $db->executeQuery($query);
 
         return ($result);
+    }
+
+    /*METHODS FROM Owner.php*/
+
+    public function getPets($userId)//returns the pets of the owner : array
+    {
+        $db = dataBase::getInstance();
+        $query = "SELECT * FROM pet WHERE user_id = '$userId'";
+        $result = $db->executeQuery($query);
+        return $this->pets;
+    }
+    //----------------------------------------------------// 
+
+    public function addPet($pet)
+    {
+
+        $this->pets[] = $pet;
+        $db = dataBase::getInstance();
+        $db->connectToDatabase();
+        $query = 'INSERT INTO pet (user_id, name, type';
+        $db->executeQuery($query);
+        $db->disconnectFromDatabase();
+
+    }
+
+    public function createRequest($pet, $date, $time, $duration, $place, $description, $ownerId, $carerId)
+    {
+        $db = dataBase::getInstance();
+        $db->connectToDatabase();
+        $query = "INSERT INTO request (pet_id, date, time, duration, place, description, user_owner_id, user_carer_id) VALUES ('$pet->getId()', '$date', '$time', '$duration', '$place', '$description', '$ownerId', '$carerId')";
+        $db->executeQuery($query);
+        $db->disconnectFromDatabase();
     }
 }

@@ -9,7 +9,7 @@ class Request {
     private $pet;
     private $carer;
 
-    public function __construct(string $date, string $status, Pet $pet, Carer $carer) {
+    public function __construct(string $date, string $status, Pet $pet, User $carer) {
         $this->date = $date;
         $this->status = $status;
         $this->pet = $pet;
@@ -25,7 +25,7 @@ class Request {
     }
 
  
-    public function getCarer(): Carer {
+    public function getCarer(): User {
         return $this->carer;
     }
 
