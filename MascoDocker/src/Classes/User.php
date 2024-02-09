@@ -137,7 +137,7 @@ class User
     public function saveUserToDb($userToSave): void
     {
         $hashedPassword = $this->hashPassword();
-        $query = "INSERT INTO user (username, email, pwd, phone, has_place, area, verified) VALUES ('$this->username', '$this->email', '$hashedPassword', '$this->phone', '$this->hasPlace', '$this->area', '$this->verified')";
+        $query = "INSERT INTO users (username, email, psw, phone, area, verified, type, contactNumber, pets, hasPlace, idDocument, place, rating) VALUES ('$this->username', '$this->email', '$hashedPassword', '$this->phone', '$this->hasPlace', '$this->area', '$this->verified')";
 
         $db = dataBase::getInstance();
         $db->connectToDatabase();
@@ -147,12 +147,6 @@ class User
             echo "User saved to database";
         } else {
             echo "User not saved to database";
-        }
-
-        if ($userToSave instanceof Carer) {
-            $query = "INSERT INTO carer (user_id) VALUES ('$this->userId')";
-        } else if ($userToSave instanceof Owner) {
-            $query = "INSERT INTO owner (user_id, full_name, id_doc) VALUES ('$this->userId')";
         }
 
         $db->executeQuery($query);
