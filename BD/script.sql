@@ -3,33 +3,24 @@ CREATE DATABASE IF NOT EXISTS mascotier;
 use mascotier;
 
 -- Create table user
-CREATE TABLE user(
-    user_id INT PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(75),#--Comes form email could be changed manually by the user
+--TYPES HAS TO BE CHANGED, THESE ARE JUST TEMPORAL!!!!!!
+CREATE TABLE users (
+    userId INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255),
     email VARCHAR(255) NOT NULL,
-    pwd VARCHAR(100) NOT NULL,
-    phone VARCHAR(15),
-    has_place BOOLEAN, #-- 0 as False, 1 as true
-    area VARCHAR(40)
-    verified BOOLEAN #-- 0 as False, 1 as true
+    password VARCHAR(255) NOT NULL,
+    phone VARCHAR(20),
+    area VARCHAR(100),
+    verified TINYINT(1) DEFAULT 0,
+    type ENUM('owner', 'carer') NOT NULL,
+    contactNumber VARCHAR(20),
+    pets TEXT,
+    hasPlace TINYINT(1),
+    idDocument VARCHAR(100),
+    place VARCHAR(255),
+    rating VARCHAR(10)
 );
 
-#-- Create table owner
-CREATE TABLE owner (
-    user_id INT PRIMARY KEY,
-    FOREIGN KEY (user_id) REFERENCES user(user_id)
-);
-
-#-- Create table carer
-CREATE TABLE carer (
-    user_id INT PRIMARY KEY,
-    full_name VARCHAR(100),
-    rating INT,
-    is_available BOOLEAN, #-- 0 as false, 1 as true
-    id_doc VARCHAR(15),
-    descr VARCHAR(2000),
-    FOREIGN KEY (user_id) REFERENCES user(user_id)
-);
 
 #-- Create table pet
 CREATE TABLE pet (
