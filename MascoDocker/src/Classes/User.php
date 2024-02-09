@@ -105,7 +105,10 @@ class User
 
         $db = dataBase::getInstance();
         $db->connectToDatabase();
-        $db->executeQuery($query);
+        $executed = $db->executeQuery($query);
+        //Testing echoes for comprobation
+        if($executed){echo "User saved to database"; }
+        else{echo "User not saved to database";}
 
         if ($userToSave instanceof Carer) {
             $query = "INSERT INTO carer (user_id) VALUES ('$this->userId')";
@@ -147,7 +150,7 @@ class User
 
 //These two functions will help us to mantain a better track of what kind of info we are looking for
 
-    public function getOwnerDataFromDataBase(){ //Bascially the same as the previous function, but for the owner
+    public function getOwnerDataFromDataBase(){ //The same as the previous function, but for the owner
         $db = dataBase::getInstance();
         $db->connectToDatabase();
         $query = "SELECT * FROM owner WHERE user_id = '$this->userId'";
@@ -155,7 +158,7 @@ class User
         $db->disconnectFromDatabase();
         return $this->transformResultSetIntoUserArray($result);
     }
-    public function getCarerDataFronDataBase(){ //Bascially the same as the previous function, but for the carer
+    public function getCarerDataFronDataBase(){ //Basically the same as the previous function, but for the carer
         $db = dataBase::getInstance();
         $db->connectToDatabase();
         $query = "SELECT * FROM carer WHERE user_id = '$this->userId'";
