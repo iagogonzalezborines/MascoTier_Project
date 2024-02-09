@@ -26,6 +26,7 @@ require_once 'vendor/autoload.php';
 </body>
 </html>
 <?php
+require_once '../DataBase/dataBase.php';
 var_dump($_POST);
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = $_POST["email"];
@@ -43,7 +44,10 @@ echo "this is a test";
         $verified = false;
         
         $user = new User($email, $password, $userId, $username, $phone, $hasPlace, $area, $verified);
-        $user->saveUserToDb();
+        $db ->get::getInstance();
+        $db->connectToDatabase();
+        $user->saveUserToDb($user);
+        $db->disconnectFromDatabase();
     }
 
 ?>
