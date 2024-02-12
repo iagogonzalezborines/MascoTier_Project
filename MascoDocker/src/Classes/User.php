@@ -200,8 +200,9 @@ class User
     {
         $db = dataBase::getInstance();
         $db->connectToDatabase();
-        $query = "SELECT * FROM users WHERE email = ? AND password = ?";
+        $query = "SELECT * FROM users WHERE email = ? AND password = ?"; //This works? hashed password? How to check password?
         $stmt = $db->prepareStatement($query);
+                    //This means ("ss") that it will be recieving two strings not nazi stuff
         $stmt->bind_param("ss", $email, $password);
         $stmt->execute();
         $result = $stmt->get_result();
