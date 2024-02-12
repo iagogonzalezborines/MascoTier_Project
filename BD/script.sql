@@ -10,8 +10,8 @@ CREATE TABLE user(
     pwd VARCHAR(100) NOT NULL,
     phone VARCHAR(15),
     has_place BOOLEAN, #-- 0 as False, 1 as true
-    area VARCHAR(40)
-    verified BOOLEAN #-- 0 as False, 1 as true
+    area VARCHAR(40),
+    verified BOOLEAN #-carer- 0 as False, 1 as true
 );
 
 #-- Create table owner
