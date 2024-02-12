@@ -1,26 +1,5 @@
-<<<<<<< HEAD
-<?php 
-
-// VENDOR NOT CONFIGURED YET
-//require_once 'vendor/autoload.php';
-
-var_dump($_POST);
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        echo "Si ves esto, hola GigaChad! <br>";
-        $email = $_POST["email"];
-        $password = $_POST["password"];
-        $username = $_POST["username"];
-        $phone = "1234567";
-    }
-    
-
-
-/*
-IDK who or why did this but I'll just comment it :)
-=======
 <?php
 require_once 'vendor/autoload.php';
->>>>>>> 3d2cce048cea555279365cb3c558f99c97efca43
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,22 +25,6 @@ require_once 'vendor/autoload.php';
 <?php
 require_once '../DataBase/dataBase.php';
 require_once '../Classes/User.php';
-<<<<<<< HEAD
-
-echo "this is a test";
-
-
-        $hasPlace = false;
-        $area = "none";
-        $verified = false;
-        
-        $user = new User($email, $password, $userId, $username, $phone, $hasPlace, $area, $verified);
-        $user->saveUserToDb();
-    }
-*/
-
-
-=======
 var_dump($_POST);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //Assigning the values from the form to the variables
@@ -81,4 +44,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $db->disconnectFromDatabase();
 }
 ?>
->>>>>>> 3d2cce048cea555279365cb3c558f99c97efca43

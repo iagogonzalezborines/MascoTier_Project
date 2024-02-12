@@ -195,4 +195,21 @@ class User
 
         return ($result);
     }
+
+    public function logIn($password, $email)
+    {
+        $db = dataBase::getInstance();
+        $db->connectToDatabase();
+        $query = "SELECT * FROM users WHERE email = ? AND password = ?";
+        $stmt = $db->prepareStatement($query);
+        $stmt->bind_param("ss", $email, $password);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $db->disconnectFromDatabase();
+        if ($result->num_rows > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
