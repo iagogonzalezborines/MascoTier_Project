@@ -1,5 +1,5 @@
 -- Agregar tuplas a la tabla user
-INSERT INTO users (username, email, password, phone, area, verified, type, contactNumber, pets, hasPlace, idDocument, place, rating)
+INSERT INTO users (username, email, pwd, phone, area, verified, type, contactNumber, pets, hasPlace, idDocument, place, rating)
 VALUES
 ('user1', 'user1@example.com', 'password1', '+123456789', 'Area A', 1, 'owner', '+987654321', 'dog', NULL, NULL, NULL, NULL),
 ('user2', 'user2@example.com', 'password2', '+987654321', 'Area B', 1, 'carer', NULL, NULL, 1, 'ID123', 'Place X', '4.5'),
