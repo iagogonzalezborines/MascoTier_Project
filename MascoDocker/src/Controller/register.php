@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     else{
      $type = "owner";
-     $user = new User($email, $password, $area);
+     $user = new User($email, $password, $area, $type);
     $user->saveUserToDb($user);
     if ($result) {
         echo "REGISTER SUCCESSFUL";
