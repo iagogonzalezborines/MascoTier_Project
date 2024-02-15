@@ -67,6 +67,26 @@ class User
     {
         return $this->email;
     }
+    public function getType(): string
+    {
+        return $this->type;
+    }
+    public function getArea(): string
+    {
+        return $this->area;
+    }
+    public function getPhone(): string
+    {
+        return $this->phone;
+    }
+    public function getHasPlace(): bool
+    {
+        return $this->hasPlace;
+    }
+    public function getVerified(): bool
+    {
+        return $this->verified;
+    }
 
     /**
      * Set the password.
