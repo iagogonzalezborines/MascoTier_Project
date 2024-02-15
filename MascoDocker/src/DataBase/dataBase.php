@@ -110,5 +110,13 @@ class dataBase
         }
         
     }
+    public function transformResultSetIntoUserArray($result)
+    {
+        $userArray = [];
+        while ($row = $result->fetch_assoc()) {
+            $userArray[] = $row;
+        }
+        return $userArray;
+    }
 }
 ?>
