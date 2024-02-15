@@ -1,9 +1,0 @@
-Gente (campelardo), debemos pensar en si owner y carer deberian ser otra clase o simplemente tipos de user determinados por una variable.
-
-Si hacemos este cambio nuestro principal problema podria ser a la hora de hacer el constructor ya que user tiene parametros compartidos
-por los dos tipos de usuario pero owner y carer tienen distintos parametros.
-
-
-Ir haciendo update de esta nota sería bueno para ir sabiendo que hacer cada vez que nos pongamos a trabajar en backend
-
-Tambien lo escribo porque no tengo ni puta idea de hacerlo ayuda. 

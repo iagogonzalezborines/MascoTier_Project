@@ -1,21 +1,21 @@
 -- Agregar tuplas a la tabla user
-INSERT INTO user (username, email, pwd, phone, has_place, area, verified) VALUES
-('pedro_campe', 'pedro@example.com', 'password123', '555-1234', 1, 'City Center', 1),
-('maria_campera', 'maria@example.com', 'securepwd', '555-5678', 0, 'Suburbia', 0),
-('juan_campeador', 'juan@example.com', 'strongpass', '555-9876', 1, 'Downtown', 1),
-('laura_campeona', 'laura@example.com', 'safepassword', '555-4321', 0, 'Countryside', 1),
-('carlos_campeón', 'carlos@example.com', 'mypassword', '555-8765', 1, 'Coastal Area', 0);
-
--- Agregar tuplas a la tabla owner
-INSERT INTO owner (user_id) VALUES (1), (2), (3), (4), (5);
-
--- Agregar tuplas a la tabla carer
-INSERT INTO carer (user_id, full_name, rating, is_available, id_doc, descr) VALUES
-(6, 'Ana Cuidadora', 4, 1, 'DOC123', 'Experienced pet caregiver specializing in dogs.'),
-(7, 'Pablo Cuidador', 5, 1, 'DOC456', 'Loves all animals and provides top-notch care.'),
-(8, 'Sofía Cuidadora', 3, 0, 'DOC789', 'Available for cat sitting services.'),
-(9, 'Diego Cuidador', 4, 1, 'DOC012', 'Trained in handling exotic pets.'),
-(10, 'Elena Cuidadora', 4, 1, 'DOC345', 'Offers dog walking and pet sitting services.');
+INSERT INTO users (username, email, password, phone, area, verified, type, contactNumber, pets, hasPlace, idDocument, place, rating)
+VALUES
+('user1', 'user1@example.com', 'password1', '+123456789', 'Area A', 1, 'owner', '+987654321', 'dog', NULL, NULL, NULL, NULL),
+('user2', 'user2@example.com', 'password2', '+987654321', 'Area B', 1, 'carer', NULL, NULL, 1, 'ID123', 'Place X', '4.5'),
+('user3', 'user3@example.com', 'password3', NULL, NULL, 0, 'owner', '+555666777', 'cat', NULL, NULL, NULL, NULL),
+('user4', 'user4@example.com', 'password4', '+111222333', 'Area C', 1, 'carer', NULL, NULL, 1, 'ID456', 'Place Y', '3.8'),
+('user5', 'user5@example.com', 'password5', NULL, 'Area D', 1, 'owner', '+999888777', 'bird', NULL, NULL, NULL, NULL),
+('user6', 'user6@example.com', 'password6', '+444555666', 'Area E', 0, 'carer', NULL, NULL, 0, 'ID789', 'Place Z', '4.2'),
+('user7', 'user7@example.com', 'password7', NULL, NULL, 1, 'owner', '+777888999', 'hamster', NULL, NULL, NULL, NULL),
+('user8', 'user8@example.com', 'password8', '+666777888', 'Area F', 0, 'carer', NULL, NULL, 1, 'ID321', 'Place W', '4.9'),
+('user9', 'user9@example.com', 'password9', NULL, 'Area G', 1, 'owner', '+222333444', 'snake', NULL, NULL, NULL, NULL),
+('user10', 'user10@example.com', 'password10', '+555444333', NULL, 0, 'carer', NULL, NULL, 0, 'ID654', 'Place V', '3.5'),
+('user11', 'user11@example.com', 'password11', NULL, 'Area H', 1, 'owner', '+777999111', 'rabbit', NULL, NULL, NULL, NULL),
+('user12', 'user12@example.com', 'password12', '+888999000', 'Area I', 1, 'carer', NULL, NULL, 1, 'ID987', 'Place U', '4.7'),
+('user13', 'user13@example.com', 'password13', NULL, NULL, 0, 'owner', '+111222333', 'fish', NULL, NULL, NULL, NULL),
+('user14', 'user14@example.com', 'password14', '+333222111', 'Area J', 1, 'carer', NULL, NULL, 0, 'ID456', 'Place T', '3.2'),
+('user15', 'user15@example.com', 'password15', '+222333444', 'Area K', 1, 'owner', '+444555666', 'dog', NULL, NULL, NULL, NULL);
 
 -- Agregar tuplas a la tabla pet
 INSERT INTO pet (user_owner_id, descr, pet_type, pet_rating) VALUES

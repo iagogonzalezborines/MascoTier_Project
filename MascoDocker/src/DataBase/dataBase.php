@@ -100,5 +100,23 @@ class dataBase
             }
         }
     }
+    public function prepareStatement($stmnt){
+        try {
+            $stmt = $this->dbh->prepare($stmnt);
+            return $stmt;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+        
+    }
+    public function transformResultSetIntoUserArray($result)
+    {
+        $userArray = [];
+        while ($row = $result->fetch_assoc()) {
+            $userArray[] = $row;
+        }
+        return $userArray;
+    }
 }
 ?>
