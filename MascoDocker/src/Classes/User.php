@@ -50,10 +50,9 @@ class User
         string $password,
         string $phone = null,
         string $area = null,
-        bool $verified = false,
+        bool $verified = null,
         string $type,
         //Exclusive for Owner
-        $contactNumber = null,
         $pets = null,
         //Exclusive for Carer
         bool $hasPlace = null,
@@ -69,7 +68,6 @@ class User
         $this->area = $area;
         $this->verified = $verified;
         $this->type = $type;
-        $this->contactNumber = $contactNumber;
         $this->pets = $pets;
         $this->idDocument = $idDocument;
         $this->place = $place;
@@ -154,20 +152,20 @@ class User
      * Save the user to the database.
      * @param mixed $userToSave - The user object to save
      */
-    public function saveUserToDb($userToSave): void
+    public function saveUserToDb($userToSave)
     {
         $hashedPassword = $this->hashPassword();
         $query = "INSERT INTO users (username, email, psw, phone, area, verified, type, contactNumber, pets, hasPlace, idDocument, place, rating) 
-        VALUES ('$this->username', '$this->email', '$hashedPassword', '$this->phone', '$this->area', '$this->verified', '$this->type', '$this->contactNumber', '$this->pets', '$this->hasPlace', '$this->idDocument', '$this->place', '$this->rating)";
+        VALUES ('$this->username', '$this->email', '$hashedPassword', '$this->phone', '$this->area', '$this->verified', '$this->type', '$this->pets', '$this->hasPlace', '$this->idDocument', '$this->place', '$this->rating)";
 
         $db = dataBase::getInstance();
         $db->connectToDatabase();
         $executed = $db->executeQuery($query);
         //Testing echoes for comprobation
         if ($executed) {
-            echo "User saved to database";
+            return true;
         } else {
-            echo "User not saved to database";
+            return false;
         }
 
         $db->executeQuery($query);
