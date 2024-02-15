@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MascoTier</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .login-popup {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-popup-content {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white">
+    <!-- Navbar -->
+    <nav class="bg-transparent fixed top-0 left-0 right-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <img class="h-8 w-8" src="logo.png" alt="MascoTier">
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <!-- Add navigation links here -->
+                        </div>
+                    </div>
+                </div>
+                <button class="md:hidden bg-transparent text-white hover:text-gray-300 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <div class="hidden md:block">
+                    <button class="bg-transparent text-white hover:text-gray-300 focus:outline-none" onclick="toggleLoginPopup()">Login</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <!-- Text section -->
+            <div class="text-center md:text-left">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-8">Bienvenido a MascoTier</h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-8">Conectamos a dueños de mascotas con cuidadores confiables.</p>
+                <div class="flex justify-center md:justify-start">
+                    <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full mr-4 text-lg">¡Sé un Cuidador!</a>
+                    <a href="#" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full text-lg">¡Soy Dueño!</a>
+                </div>
+            </div>
+            <!-- Image section -->
+            <div class="flex justify-center">
+                <img src="./media/cat1.png" alt="Pet Care" class="rounded-lg shadow-2xl w-full max-w-lg">
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Popup -->
+    <div id="loginPopup" class="login-popup">
+        <div class="login-popup-content">
+            <h2 class="text-2xl font-bold mb-4">Iniciar Sesión</h2>
+            <form>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700">Email</label>
+                    <input type="email" id="email" name="email" class="mt-1 p-2 w-full rounded border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200">
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="block text-gray-700">Contraseña</label>
+                    <input type="password" id="password" name="password" class="mt-1 p-2 w-full rounded border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200">
+                </div>
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none">Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleLoginPopup() {
+            var popup = document.getElementById("loginPopup");
+            if (popup.style.display === "block") {
+                popup.style.display = "none";
+            } else {
+                popup.style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>
