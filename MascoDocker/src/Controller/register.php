@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      $user = new User($type, $username, $email, $password, $phone, $hasPlace, $area, $verified, $idDocument, $place, $rating);
     $user->saveUserToDb($user);
     if ($result) {
-        echo "REGISTER SUCCESSFUL";
+        echo "REGISTER SUCCESSFUL"; //Hacer popup   con los echos de comprobacion
     } else {
         echo "REGISTER FAILED";
     }
