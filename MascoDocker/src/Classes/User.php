@@ -27,23 +27,23 @@ class User
     private $rating;
 
     /**
-        * User constructor.
-        * @param string|null $username - The username of the user
-        * @param string $email - The email of the user
-        * @param string $password - The password of the user
-        * @param string|null $phone - The phone number of the user
-        * @param string|null $area - The zone where the user is located
-        * @param bool $verified - Indicates if the user is verified (0 or 1)
-        * @param string $type - The type of user (owner or carer)
+     * User constructor.
+     * @param string|null $username - The username of the user
+     * @param string $email - The email of the user
+     * @param string $password - The password of the user
+     * @param string|null $phone - The phone number of the user
+     * @param string|null $area - The zone where the user is located
+     * @param bool $verified - Indicates if the user is verified (0 or 1)
+     * @param string $type - The type of user (owner or carer)
 
-        * @param mixed|null $contactNumber - The contact number of the user (exclusive for owner)
-        * @param mixed|null $pets - The pets of the user (exclusive for owner)
+     * @param mixed|null $contactNumber - The contact number of the user (exclusive for owner)
+     * @param mixed|null $pets - The pets of the user (exclusive for owner)
 
-        * @param bool|null $hasPlace - Indicates if the user has a place to take care of the animals (exclusive for carer)
-        * @param mixed|null $idDocument - The ID document of the user (exclusive for carer)
-        * @param mixed|null $place - The place of the user (exclusive for carer)
-        * @param mixed|null $rating - The rating of the user (exclusive for carer)
-  */
+     * @param bool|null $hasPlace - Indicates if the user has a place to take care of the animals (exclusive for carer)
+     * @param mixed|null $idDocument - The ID document of the user (exclusive for carer)
+     * @param mixed|null $place - The place of the user (exclusive for carer)
+     * @param mixed|null $rating - The rating of the user (exclusive for carer)
+     */
     public function __construct(
         string $email,
         string $password,
@@ -162,14 +162,14 @@ class User
         $db->connectToDatabase();
         $executed = $db->executeQuery($query);
         //Testing echoes for comprobation
+        $db->executeQuery($query);
+        $db->disconnectFromDatabase();
+        
         if ($executed) {
             return true;
         } else {
             return false;
         }
-
-        $db->executeQuery($query);
-        $db->disconnectFromDatabase();
     }
 
     /**
@@ -253,7 +253,7 @@ class User
 
     /*METHODS FROM Owner.php*/
 
-    public function getPets($userId)//returns the pets of the owner : array
+    public function getPets($userId) //returns the pets of the owner : array
     {
         $db = dataBase::getInstance();
         $query = "SELECT * FROM pet WHERE user_id = '$userId'";
@@ -271,7 +271,6 @@ class User
         $query = 'INSERT INTO pet (user_id, name, type';
         $db->executeQuery($query);
         $db->disconnectFromDatabase();
-
     }
 
     public function createRequest($pet, $date, $time, $duration, $place, $description, $ownerId, $carerId)
@@ -281,7 +280,5 @@ class User
         $query = "INSERT INTO request (pet_id, date, time, duration, place, description, user_owner_id, user_carer_id) VALUES ('$pet->getId()', '$date', '$time', '$duration', '$place', '$description', '$ownerId', '$carerId')";
         $db->executeQuery($query);
         $db->disconnectFromDatabase();
-
-
     }
 }
