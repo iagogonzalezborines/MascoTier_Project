@@ -7,7 +7,7 @@
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
+<script src="scripts/menu-burger.js"></script>
 <body class="bg-gray-800 p-4">
     <header>
         <nav class="flex items-center justify-between" id="navbar">
@@ -16,8 +16,16 @@
                 <img class="h-20 w-20" src="media/logo.svg" alt="Logo" />
                 <span class="text-white font-bold text-lg">MASCOTIER</span>
             </div>
+            <div class="block lg:hidden">
+                <button id="menu-toggle" class="text-white focus:outline-none">
+                  
+                   burguer
+
+                </button>
+              </div>
+
             <!-- Links del navbar -->
-            <ul class="flex items-center w-1/2 justify-start p-5">
+            <ul class="flex items-center w-1/2 justify-start p-5" id="main-nav">
                 <li class="mr-6">
                     <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
                 </li>
@@ -37,7 +45,17 @@
                     <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
                 </li>
             </ul>
+
+            <ul id="menu" class="hidden lg:flex items-center justify-end space-x-6">
+                <li><a href="#" class="hover:text-blue-400">Item 1</a></li>
+                <li><a href="#" class="hover:text-blue-400">Item 2</a></li>
+                <li><a href="#" class="hover:text-blue-400">Item 3</a></li>
+                <li><a href="#" class="hover:text-blue-400">Item 4</a></li>
+                <li><a href="#" class="hover:text-blue-400">Item 5</a></li>
+                <li><a href="#" class="hover:text-blue-400">Item 6</a></li>
+              </ul>
         </nav>
+        
     </header>
 
     <hr />
@@ -77,4 +95,5 @@
     </div>
     
 </body>
+
 </html>
