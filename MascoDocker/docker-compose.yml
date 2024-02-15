@@ -30,8 +30,8 @@ services:
     volumes:
       - ./data:/var/lib/mysql
     networks:
-      - Mascotier
-      - MascotierLan
+    - Mascotier
+    - MascotierLan
   phpmyadmin:
     container_name: 'phpmyadminmascotier'
     image: phpmyadmin/phpmyadmin
