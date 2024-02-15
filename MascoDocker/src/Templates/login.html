@@ -42,39 +42,39 @@
 
     <hr />
     <h1 class="text-center text-white text-5xl m-5">Login</h1>
-    <div id="main-container" class="mt-10 p-10 bg-[#fdfdfb] rounded-lg max-w-sm mx-auto">
+    <main id="main-container" class="mt-10 p-10 bg-[#fdfdfb] rounded-lg max-w-sm mx-auto">
         <!--the value(prueba.php) within the action is a temporal value-->
-        <form class="max-w-md mx-auto" action="prueba.php" method="post">
+        <form class="max-w-md mx-auto" action="../Controller/login.php" method="post">
             <div class="relative z-0 w-full mb-5 group">
                 <input type="email" name="email" id="email"
                     class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    placeholder=" " />
+                    placeholder=" " required/>
                 <label for="email"
                     class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Correo</label>
             </div>
             <div class="relative z-0 w-full mb-5 group">
                 <input type="password" name="pwd" id="pwd"
                     class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    placeholder=" " />
+                    placeholder=" " required/>
                 <label for="pwd"
                     class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Contraseña</label>
             </div>
             <div class="flex justify-center">
                 <button type="submit"
                     class="bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    enviar
+                    Acceder
                 </button>
             </div>
-            <div class="flex justify-center m-4">
-                <a href="#" class=" m-0 flex w-1/2 text-sm bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"><img
-                        src="media/google.svg" class="w-1/5" alt="google icon" />GOOGLE</a>
+            <div class="flex justify-center m-4 w-1/7">
+                <a href="#" class=" m-0 flex w-1/3 text-xs bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"><img
+                        src="media/google.svg" class="w-5/6" alt="google icon" />Google</a>
             </div>
         </form>
-    </div>
+    </main>
     <div class="flex justify-center m-1">
         <p class="text-white mr-5">No tienes cuenta de MascoTier?</p>
         <a href="signup.html" class="text-blue-400">Registrate</a>
     </div>
+    
 </body>
-
 </html>

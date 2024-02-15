@@ -103,6 +103,26 @@ class User
     {
         return $this->email;
     }
+    public function getType(): string
+    {
+        return $this->type;
+    }
+    public function getArea(): string
+    {
+        return $this->area;
+    }
+    public function getPhone(): string
+    {
+        return $this->phone;
+    }
+    public function getHasPlace(): bool
+    {
+        return $this->hasPlace;
+    }
+    public function getVerified(): bool
+    {
+        return $this->verified;
+    }
 
     /**
      * Set the password.
@@ -232,6 +252,7 @@ class User
         return ($result);
     }
 
+
     /*METHODS FROM Owner.php*/
 
     public function getPets($userId)//returns the pets of the owner : array
@@ -262,5 +283,23 @@ class User
         $query = "INSERT INTO request (pet_id, date, time, duration, place, description, user_owner_id, user_carer_id) VALUES ('$pet->getId()', '$date', '$time', '$duration', '$place', '$description', '$ownerId', '$carerId')";
         $db->executeQuery($query);
         $db->disconnectFromDatabase();
+
+    public function logIn($password, $email)
+    {
+        $db = dataBase::getInstance();
+        $db->connectToDatabase();
+        $query = "SELECT * FROM users WHERE email = ? AND password = ?"; //This works? hashed password? How to check password?
+        $stmt = $db->prepareStatement($query);
+                    //This means ("ss") that it will be recieving two strings not nazi stuff
+        $stmt->bind_param("ss", $email, $password);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $db->disconnectFromDatabase();
+        if ($result->num_rows > 0) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
 }
