@@ -3,9 +3,8 @@ CREATE DATABASE IF NOT EXISTS mascotier;
 use mascotier;
 
 -- Create table user
---TYPES HAS TO BE CHANGED, THESE ARE JUST TEMPORAL!!!!!!
 CREATE TABLE users (
-    userId INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(255),
     email VARCHAR(255) NOT NULL,
     pwd VARCHAR(1000) NOT NULL,
@@ -22,17 +21,17 @@ CREATE TABLE users (
 );
 
 
-#-- Create table pet
+-- Create table pet
 CREATE TABLE pet (
     pet_id INT PRIMARY KEY AUTO_INCREMENT,
     user_owner_id INT NOT NULL,
     descr VARCHAR(300),
     pet_type VARCHAR(50),
     pet_rating FLOAT,
-    FOREIGN KEY (user_owner_id) REFERENCES user(user_id)
+    FOREIGN KEY (user_owner_id) REFERENCES users(user_id)
 );
 
-#-- Create table request
+-- Create table request
 CREATE TABLE request (
     request_id INT PRIMARY KEY AUTO_INCREMENT,
     user_owner_id INT NOT NULL,
@@ -40,11 +39,11 @@ CREATE TABLE request (
     amount DECIMAL(10, 2),
     date_time DATETIME NOT NULL,
     status VARCHAR(50) NOT NULL,
-    FOREIGN KEY (user_owner_id) REFERENCES user(user_id),
-    FOREIGN KEY (user_carer_id) REFERENCES user(user_id)
+    FOREIGN KEY (user_owner_id) REFERENCES users(user_id),
+    FOREIGN KEY (user_carer_id) REFERENCES users(user_id)
 );
 
-#-- Create table requests_pets (Relationship table between request and pet)
+-- Create table requests_pets (Relationship table between request and pet)
 CREATE TABLE requests_pets (
     request_id INT NOT NULL,
     pet_id INT NOT NULL,

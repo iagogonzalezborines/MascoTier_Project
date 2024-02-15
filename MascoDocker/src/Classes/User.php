@@ -45,13 +45,13 @@ class User
         * @param mixed|null $rating - The rating of the user (exclusive for carer)
   */
     public function __construct(
-        string $username = null,
         string $email,
         string $password,
+        string $type,
+        string $username = null,
         string $phone = null,
         string $area = null,
         bool $verified = null,
-        string $type,
         //Exclusive for Owner
         $pets = null,
         //Exclusive for Carer
