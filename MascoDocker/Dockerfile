@@ -30,7 +30,7 @@ RUN composer install
 # Copy your custom php.ini file
 COPY ./config/php.ini /usr/local/etc/php/php.ini
 
-# Make port 80 available to the world outside this container
+# Make port 80 available to the world
 # EXPOSE 80
 
 # Define environment variable for Xdebug
