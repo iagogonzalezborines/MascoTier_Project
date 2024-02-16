@@ -1,0 +1,21 @@
+
+{
+    "name": "mascotier",
+    "version": "1.0.0",
+    "description": "Your project description",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "build:css": "tailwindcss build ./path-to-your-source-css/style.css -o ./public/css/style.css"
+    },
+    "author": "mascotier",
+    "license": "MIT",
+    "dependencies": {
+      "tailwindcss": "^2.2.19"
+    },
+    "devDependencies": {
+      "autoprefixer": "^10.4.0",
+      "postcss": "^8.4.5"
+    }
+  }
+  

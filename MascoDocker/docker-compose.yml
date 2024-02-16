@@ -5,7 +5,7 @@ services:
     container_name: 'php8'
     build:
       context: .
-      #dockerfile: Dockerfile
+      dockerfile: Dockerfile
     ports:
       - "8080:80"
     environment:
@@ -16,6 +16,7 @@ services:
     networks:
       - Mascotier
       - MascotierLan
+
   mysql:
     container_name: 'mysqlmascotier'
     image: mysql:latest
@@ -30,8 +31,9 @@ services:
     volumes:
       - ./data:/var/lib/mysql
     networks:
-    - Mascotier
-    - MascotierLan
+      - Mascotier
+      - MascotierLan
+
   phpmyadmin:
     container_name: 'phpmyadminmascotier'
     image: phpmyadmin/phpmyadmin

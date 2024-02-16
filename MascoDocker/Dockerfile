@@ -1,13 +1,40 @@
+# Use an official PHP runtime as a parent image
+FROM php:8.3-apache
 
- #Dockerfile para el servicio principal (php8.3 con Apache)
-FROM php:8.3-apache AS build-php
+# Set the working directory to /var/www/html
+WORKDIR /var/www/html
 
- #Actualizar e instalar actualizaciones del sistema
-# RUN apt-get update && apt-get upgrade -y && apt-get clean && apt-get autoremove -y
+# Install additional PHP extensions
+RUN docker-php-ext-install pdo_mysql mysqli
 
-# Instalar y habilitar Xdebug
-# RUN pecl install xdebug \
-  #  && docker-php-ext-enable xdebug
+# Install Composer globally
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Instalar extensiones necesarias para MySQL y habilitarlas
-#RUN docker-php-ext-install mysqli pdo_mysql && docker-php-ext-enable mysqli pdo_mysql
+# Install Node.js and NPM for JavaScript dependencies
+RUN apt-get update && apt-get install -y \
+    nodejs \
+    npm \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Tailwind CSS and other npm dependencies
+COPY package.json .
+COPY package-lock.json .
+RUN npm install
+
+# Copy the rest of the application code
+COPY . /var/www/html
+
+# Install Composer dependencies
+RUN composer install
+
+# Copy your custom php.ini file
+COPY ./config/php.ini /usr/local/etc/php/php.ini
+
+# Make port 80 available to the world
+# EXPOSE 80
+
+# Define environment variable for Xdebug
+ENV XDEBUG_CONFIG="remote_host=host.docker.internal remote_port=9003 remote_enable=1"
+
+# Run Apache when the container launches
+CMD ["apache2-foreground"]
