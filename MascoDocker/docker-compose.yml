@@ -57,7 +57,7 @@ services:
       - ./src:/var/www/html
     working_dir: /var/www/html
     tty: true
-    command: '/bin/bash'
+    command: npm run watch:css
 
 networks:
   MascotierLan:

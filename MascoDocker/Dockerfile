@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
     npm \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Tailwind CSS and other npm dependencies
+# Copy package files and install dependencies
 COPY package.json .
 COPY package-lock.json .
 RUN npm install
@@ -30,11 +30,8 @@ RUN composer install
 # Copy your custom php.ini file
 COPY ./config/php.ini /usr/local/etc/php/php.ini
 
-# Make port 80 available to the world
-# EXPOSE 80
-
 # Define environment variable for Xdebug
 ENV XDEBUG_CONFIG="remote_host=host.docker.internal remote_port=9003 remote_enable=1"
 
 # Run Apache when the container launches
-CMD ["apache2-foreground"]
+CMD ["npm", "run", "watch:css"]
