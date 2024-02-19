@@ -18,7 +18,6 @@ class User
     private bool $verified;
     private string $type;
     //Exclusive for Owner
-    private $contactNumber;
     private $pets;
     //Exclusive for Carer
     private bool $hasPlace;
