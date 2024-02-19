@@ -2,6 +2,7 @@
 <?php
 require_once '../DataBase/dataBase.php';
 ?>
+
 <html lang="en">
 
 <head>
@@ -93,82 +94,38 @@ require_once '../DataBase/dataBase.php';
                         $zone = $row['area'];
                         $rating = $row['rating'];
                         $hasPlace = $row['hasPlace'];
-
-                        //make the tr
-                        echo '<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">';
-                        //Make the th
-                        echo "<th scope='row' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>";
-                        // Display the username
-                        echo "$username";
-                        echo "</th>";
-
-                        echo "<th scope='row' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>";
-                        // Display the zone
-                        echo "$zone";
-                        echo "</th>";
-
-                        echo "<th scope='row' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>";
-                        // Display the rating
-                        echo "$rating";
-                        echo "</th>";
-
-                        echo "<th scope='row' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>";
-                        // Display the HasPlace variable
-                        if ($hasPlace==1) {
-                            echo "Si";
-                        }else{
-                            echo "No"; //Por defecto, si no especifica q tiene un lugar, no lo tiene
-                        }
-                        echo "</th>";
-                        
-                        echo "<th scope='row' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>";
-                        // Display the rating
-                        echo '<button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a href="./signup_owner.html">Enviar petición</a></button>';
-                        echo "</th>";
-
-                        echo "</tr>";
-                    }
-
                     ?>
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                        <td class="px-6 py-4">
-                            Bueno y fiable
-                        </td>
-                        <td class="px-6 py-4">
-                            ***
-                        </td>
-                        <td class="px-6 py-4">
-                            Disponible
-                        </td>
-                    </tr>
-                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            Microsoft Surface Pro
-                        </th>
-                        <td class="px-6 py-4">
-                            White
-                        </td>
-                        <td class="px-6 py-4">
-                            Laptop PC
-                        </td>
-                        <td class="px-6 py-4">
-                            $1999
-                        </td>
-                    </tr>
-                    <tr class="bg-white dark:bg-gray-800">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            Magic Mouse 2
-                        </th>
-                        <td class="px-6 py-4">
-                            Black
-                        </td>
-                        <td class="px-6 py-4">
-                            Accessories
-                        </td>
-                        <td class="px-6 py-4">
-                            $99
-                        </td>
-                    </tr>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                            <th scope='row' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
+                                <?php echo "$username"; // Display the username 
+                                ?>
+                            </th>
+
+                            <th scope='row' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
+                                <?php echo "$zone";  // Display the zone 
+                                ?>
+                            </th>
+
+                            <th scope='row' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
+                                <?php echo "$rating"; // Display the rating 
+                                ?>
+                            </th>
+
+                            <th scope='row' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
+                                <?php if ($hasPlace == 1) {
+                                    echo "Si";
+                                } else {
+                                    echo "No";
+                                } // Display the HasPlace variable. si no especificas q tiene un lugar, no lo tiene
+                                ?>
+                            </th>
+
+                            <th scope='row' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
+                                <!--Display the rating -->
+                                <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a href="./signup_owner.html">Enviar petición</a></button>
+                            </th>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
