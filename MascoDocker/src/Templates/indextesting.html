@@ -13,7 +13,7 @@
             right: 0;
             bottom: 0;
             left: 0;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(27, 13, 13, 0.5);
             display: none;
             justify-content: center;
             align-items: center;
@@ -61,12 +61,12 @@
 
 <body class="bg-gray-900 text-white">
     <!-- Navbar -->
-    <nav class="bg-transparent fixed top-0 left-0 right-0 z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="bg-transparent fixed top-0 left-0 right-0 z-10 w-4/5 m-auto ">
+        
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
-                        <img class="h-9 w-9" src="logo.png" alt="MascoTier">
+                      <p class="text-2xl">Mascotier</p>
                     </div>
                     <div class="hidden md:block">
                         <div class="ml-10 flex items-baseline space-x-4">
@@ -80,19 +80,19 @@
                     </svg>
                 </button>
                 <div class="hidden md:block">
-                    <button class="btn-blue font-bold py-2 px-4 rounded-full focus:outline-none" onclick="toggleLoginPopup()">Login</button>
+                    <button class="btn-blue font-bold py-2 px-4 rounded-full focus:outline-none p-2 text-xl" onclick="toggleLoginPopup()">Login</button>
                 </div>
             </div>
-        </div>
+      
     </nav>
 
     <!-- Main content -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+   
+        <div class="p-5 grid grid-cols-1 md:grid-cols-2 gap-10 items-center w-5/6 m-auto mt-40">
             <!-- Text section -->
-            <div class="text-center md:text-left">
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-8">
-                    <span class="text-gradient">Bienvenido a</span> MascoTier
+            <div class="text-center md:text-left w-full">
+                <h1 class="text-7xl md:text-7xl lg:text-8xl font-bold mb-8">
+                    <span class="text-gradient text-8xl block">Bienvenido a</span> MascoTier
                 </h1>
                 <p class="text-lg md:text-xl text-gray-300 mb-8">Conectamos a dueños de mascotas con cuidadores confiables.</p>
                 <div class="flex justify-center md:justify-start">
@@ -101,11 +101,11 @@
                 </div>
             </div>
             <!-- Image section -->
-            <div class="flex justify-center">
+            <div class="flex justify-end">
                 <img src="./media/cat1.png" alt="Pet Care" class="rounded-lg shadow-2xl w-full max-w-lg">
             </div>
         </div>
-    </div>
+    
 
     <!-- Login Popup -->
     <div id="loginPopup" class="login-popup">
