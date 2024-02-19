@@ -1,214 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>MascoTier</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .login-popup {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(27, 13, 13, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-popup-content {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .text-gradient {
+            background-image: linear-gradient(to right, #3bec13, #71f1f4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-blue:hover,
+        .btn-green:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-blue,
+        .btn-green {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .btn-blue {
+            background-image: linear-gradient(to right, #0dc5de, #13ecc4);
+            color: white;
+        }
+
+        .btn-green {
+            background-image: linear-gradient(to right, #3bec13, #08f960);
+            color: white;
+        }
+
+    </style>
 </head>
 
-<body class="bg-gray-800 p-4">
-    <nav class="flex items-center justify-between" id="navbar">
-        <!-- temporal Logo -->
-        <div class="flex items-center mr-10">
-            <img class="h-20 w-20 " src="media/logo.svg" alt="Logo">
-            <span class="text-white font-bold text-lg">MASCOTIER</span>
-        </div>
-        <!-- Links del navbar -->
-        <div>
-            <ul class="flex items-center w-1/2 justify-start p-5">
-                <li class="mr-6">
-                    <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
-                </li>
-                <li class="mr-6">
-                    <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
-                </li>
-                <li class="mr-6">
-                    <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
-                </li>
-                <li class="mr-6">
-                    <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
-                </li>
-                <li class="mr-6">
-                    <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
-                </li>
-                <li class="mr-6">
-                    <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
-                </li>
-            </ul>
-        </div>
-
-        <!-- Dropdown -->
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const dropdownButton = document.querySelector('[data-dropdown-toggle="language-dropdown-menu"]');
-                const dropdownMenu = document.getElementById('language-dropdown-menu');
-
-                dropdownButton.addEventListener('click', function () {
-                    dropdownMenu.classList.toggle('hidden');
-                });
-            });
-        </script>
-        <div>
-            <button type="button" data-dropdown-toggle="language-dropdown-menu"
-                class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
-                <svg class="w-5 h-5 rounded-full me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3900 3900">
-                    <path fill="#b22234" d="M0 0h7410v3900H0z" />
-                    <path d="M0 450h7410m0 600H0m0 600h7410m0 600H0m0 600h7410m0 600H0" stroke="#fff"
-                        stroke-width="300" />
-                    <path fill="#3c3b6e" d="M0 0h2964v2100H0z" />
-                    <g fill="#fff">
-                        <g id="d">
-                            <g id="c">
-                                <g id="e">
-                                    <g id="b">
-                                        <path id="a"
-                                            d="M247 90l70.534 217.082-184.66-134.164h228.253L176.466 307.082z" />
-                                        <use xlink:href="#a" y="420" />
-                                        <use xlink:href="#a" y="840" />
-                                        <use xlink:href="#a" y="1260" />
-                                    </g>
-                                    <use xlink:href="#a" y="1680" />
-                                </g>
-                                <use xlink:href="#b" x="247" y="210" />
-                            </g>
-                            <use xlink:href="#c" x="494" />
-                        </g>
-                        <use xlink:href="#d" x="988" />
-                        <use xlink:href="#c" x="1976" />
-                        <use xlink:href="#e" x="2470" />
-                    </g>
-                </svg>
-                English (US)
-            </button>
-
-            <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700"
-                id="language-dropdown-menu">
-                <ul class="py-2 font-medium" role="none">
-                    <li>
-                        <a href="#"
-                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
-                            role="menuitem">
-                            <div class="inline-flex items-center">
-                                <svg aria-hidden="true" class="h-3.5 w-3.5 rounded-full me-2"
-                                    xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-us" viewBox="0 0 512 512">
-                                    <g fill-rule="evenodd">
-                                        <g stroke-width="1pt">
-                                            <path fill="#bd3d44"
-                                                d="M0 0h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z"
-                                                transform="scale(3.9385)" />
-                                            <path fill="#fff"
-                                                d="M0 10h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0zm0 20h247v10H0z"
-                                                transform="scale(3.9385)" />
-                                        </g>
-                                        <path fill="#192f5d" d="M0 0h98.8v70H0z" transform="scale(3.9385)" />
-                                        <path fill="#fff"
-                                            d="M8.2 3l1 2.8H12L9.7 7.5l.9 2.7-2.4-1.7L6 10.2l.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7L74 8.5l-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 7.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 24.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 21.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 38.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 35.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 52.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 49.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm-74.1 7l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7H65zm16.4 0l1 2.8H86l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm-74 7l.8 2.8h3l-2.4 1.7.9 2.7-2.4-1.7L6 66.2l.9-2.7-2.4-1.7h3zm16.4 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8H45l-2.4 1.7 1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9zm16.4 0l1 2.8h2.8l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h3zm16.5 0l.9 2.8h2.9l-2.3 1.7.9 2.7-2.4-1.7-2.3 1.7.9-2.7-2.4-1.7h2.9zm16.5 0l.9 2.8h2.9L92 63.5l1 2.7-2.4-1.7-2.4 1.7 1-2.7-2.4-1.7h2.9z"
-                                            transform="scale(3.9385)" />
-                                    </g>
-                                </svg>
-                                English (US)
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
-                            role="menuitem">
-                            <div class="inline-flex items-center">
-                                <svg class="h-3.5 w-3.5 rounded-full me-2" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-de" viewBox="0 0 512 512">
-                                    <path fill="#ffce00" d="M0 341.3h512V512H0z" />
-                                    <path d="M0 0h512v170.7H0z" />
-                                    <path fill="#d00" d="M0 170.7h512v170.6H0z" />
-                                </svg>
-                                Deutsch
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
-                            role="menuitem">
-                            <div class="inline-flex items-center">
-                                <svg class="h-3.5 w-3.5 rounded-full me-2" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-it" viewBox="0 0 512 512">
-                                    <g fill-rule="evenodd" stroke-width="1pt">
-                                        <path fill="#fff" d="M0 0h512v512H0z" />
-                                        <path fill="#009246" d="M0 0h170.7v512H0z" />
-                                        <path fill="#ce2b37" d="M341.3 0H512v512H341.3z" />
-                                    </g>
-                                </svg>
-                                Italiano
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
-                            role="menuitem">
-                            <div class="inline-flex items-center">
-                                <svg class="h-3.5 w-3.5 rounded-full me-2" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    id="flag-icon-css-cn" viewBox="0 0 512 512">
-                                    <defs>
-                                        <path id="a" fill="#ffde00" d="M1-.3L-.7.8 0-1 .6.8-1-.3z" />
-                                    </defs>
-                                    <path fill="#de2910" d="M0 0h512v512H0z" />
-                                    <use width="30" height="20" transform="matrix(76.8 0 0 76.8 128 128)"
-                                        xlink:href="#a" />
-                                    <use width="30" height="20" transform="rotate(-121 142.6 -47) scale(25.5827)"
-                                        xlink:href="#a" />
-                                    <use width="30" height="20" transform="rotate(-98.1 198 -82) scale(25.6)"
-                                        xlink:href="#a" />
-                                    <use width="30" height="20" transform="rotate(-74 272.4 -114) scale(25.6137)"
-                                        xlink:href="#a" />
-                                    <use width="30" height="20" transform="matrix(16 -19.968 19.968 16 256 230.4)"
-                                        xlink:href="#a" />
-                                </svg>
-                                中文 (繁體)
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-
+<body class="bg-gray-900 text-white">
+    <!-- Navbar -->
+    <nav class="bg-transparent fixed top-0 left-0 right-0 z-10 w-4/5 m-auto ">
+        
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                      <p class="text-2xl">Mascotier</p>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <!-- Add navigation links here -->
+                        </div>
+                    </div>
+                </div>
+                <button class="md:hidden bg-transparent text-white hover:text-gray-300 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <div class="hidden md:block">
+                    <button class="btn-blue font-bold py-2 px-4 rounded-full focus:outline-none p-2 text-xl" onclick="toggleLoginPopup()">Login</button>
+                </div>
             </div>
-            <button id="pop-up"
-                class=" ml-4 text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">inicia
-                Sesion</button>
-        </div>
+      
     </nav>
 
-
-
-    <div id="main-container" class="flex flex-between items-center">
-        <div id="img-body" class="w-1/2">
-            <!--temporal img-->
-            <img src="./media/cat1.png" class="w-4/5 h-4/5">
-        </div>
-
-        <div class="w-0.7/2">
-            <p class="text-9xl text-[#72a8e5]">Tú compañero</p>
-            <p class="text-9xl text-white text-center">En buenas manos</p>
-            <div class="m-10 flex justify-center">
-                <button type="button"
-                    class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a
-                        href="./signup_owner.html">Dueño</a></button>
-                <button type="button"
-                    class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a
-                    href="./signup_carer.html">Cuidador</a></button>
+    <!-- Main content -->
+   
+        <div class="p-5 grid grid-cols-1 md:grid-cols-2 gap-10 items-center w-5/6 m-auto mt-40">
+            <!-- Text section -->
+            <div class="text-center md:text-left w-full">
+                <h1 class="text-7xl md:text-7xl lg:text-8xl font-bold mb-8">
+                    <span class="text-gradient text-8xl block">Bienvenido a</span> MascoTier
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-8">Conectamos a dueños de mascotas con cuidadores confiables.</p>
+                <div class="flex justify-center md:justify-start">
+                    <a href="signup_carer.html" class="btn-blue font-bold py-4 px-7 rounded-full mr-4 text-lg">¡Sé un Cuidador!</a>
+                    <a href="signup_owner.html" class="btn-green font-bold py-4 px-7 rounded-full text-lg">¡Soy Dueño!</a>
+                </div>
+            </div>
+            <!-- Image section -->
+            <div class="flex justify-end">
+                <img src="./media/cat1.png" alt="Pet Care" class="rounded-lg shadow-2xl w-full max-w-lg">
             </div>
         </div>
+    
 
+    <!-- Login Popup -->
+    <div id="loginPopup" class="login-popup">
+        <div class="login-popup-content">
+            <h2 class="text-2xl font-bold mb-4">Iniciar Sesión</h2>
+            <form>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700">Email</label>
+                    <input type="email" id="email" name="email" class="mt-1 p-2 w-full rounded border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="block text-gray-700">Contraseña</label>
+                    <input type="password" id="password" name="password" class="mt-1 p-2 w-full rounded border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
+                </div>
+                <button type="submit" class="btn-blue text-white font-bold py-2 px-4 rounded-full focus:outline-none">Iniciar Sesión</button>
+            </form>
+        </div>
     </div>
 
-
-    <footer class="bg-transparent ">
-
-    </footer>
-
+    <script>
+        function toggleLoginPopup() {
+            var popup = document.getElementById("loginPopup");
+            if (popup.style.display === "block") {
+                popup.style.display = "none";
+            } else {
+                popup.style.display = "block";
+            }
+        }
+    </script>
 </body>
-<script src="scripts/login-pop-up.js"></script>
+
 </html>
