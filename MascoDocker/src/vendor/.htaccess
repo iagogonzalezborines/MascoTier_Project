@@ -1,0 +1,19 @@
+# Disable directory browsing
+Options -Indexes
+
+# Set the default index file
+DirectoryIndex index.html
+
+# Rewrite engine
+RewriteEngine On
+
+# Rewrite rule for clean URLs
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+
+# Prevent access to configuration files
+<FilesMatch "\.(ini|conf|cfg)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
