@@ -80,7 +80,7 @@
                     </svg>
                 </button>
                 <div class="hidden md:block">
-                    <button class="btn-blue font-bold py-2 px-4 rounded-full focus:outline-none p-2 text-xl" onclick="toggleLoginPopup()">Login</button>
+                    <a href="login.html" class="btn-blue font-bold py-2 px-4 rounded-full focus:outline-none p-2 text-xl">Login</a>
                 </div>
             </div>
       
@@ -107,34 +107,7 @@
         </div>
     
 
-    <!-- Login Popup -->
-    <div id="loginPopup" class="login-popup">
-        <div class="login-popup-content">
-            <h2 class="text-2xl font-bold mb-4">Iniciar Sesión</h2>
-            <form>
-                <div class="mb-4">
-                    <label for="email" class="block text-gray-700">Email</label>
-                    <input type="email" id="email" name="email" class="mt-1 p-2 w-full rounded border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
-                </div>
-                <div class="mb-4">
-                    <label for="password" class="block text-gray-700">Contraseña</label>
-                    <input type="password" id="password" name="password" class="mt-1 p-2 w-full rounded border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
-                </div>
-                <button type="submit" class="btn-blue text-white font-bold py-2 px-4 rounded-full focus:outline-none">Iniciar Sesión</button>
-            </form>
-        </div>
-    </div>
 
-    <script>
-        function toggleLoginPopup() {
-            var popup = document.getElementById("loginPopup");
-            if (popup.style.display === "block") {
-                popup.style.display = "none";
-            } else {
-                popup.style.display = "block";
-            }
-        }
-    </script>
 </body>
 
 </html>

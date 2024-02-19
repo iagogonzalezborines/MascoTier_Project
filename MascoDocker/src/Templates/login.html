@@ -1,99 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            background-color: var(--background-900); /* Color de fondo */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .login-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: var(--text-700); /* Color de texto */
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid var(--background-400); /* Color de borde */
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+
+        .login-container input[type="text"]:focus,
+        .login-container input[type="password"]:focus {
+            outline: none;
+            border-color: var(--primary-500); /* Color de borde al enfocar */
+        }
+
+        .login-container button {
+            background-color: var(--primary-500); /* Color de botón */
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-container button:hover {
+            background-color: var(--primary-600); /* Color de botón al pasar el mouse */
+        }
+    </style>
 </head>
-<script src="scripts/menu-burger.js"></script>
-<body class="bg-gray-800 p-4">
-    <header>
-        <nav class="flex items-center justify-between" id="navbar">
-            <!-- temporal Logo -->
-            <div class="flex items-center mr-10">
-                <img class="h-20 w-20" src="media/logo.svg" alt="Logo" />
-                <span class="text-white font-bold text-lg">MASCOTIER</span>
-            </div>
-            <div class="block lg:hidden">
-                <button id="menu-toggle" class="text-white focus:outline-none">
-                  
-                   burguer
 
-                </button>
-              </div>
-
-            <!-- Links del navbar -->
-            <ul class="flex items-center w-1/2 justify-start p-5" id="main-nav">
-                <li class="mr-6">
-                    <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
-                </li>
-                <li class="mr-6">
-                    <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
-                </li>
-                <li class="mr-6">
-                    <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
-                </li>
-                <li class="mr-6">
-                    <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
-                </li>
-                <li class="mr-6">
-                    <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
-                </li>
-                <li class="mr-6">
-                    <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
-                </li>
-            </ul>
-
-            <ul id="menu" class="hidden lg:flex items-center justify-end space-x-6">
-                <li><a href="#" class="hover:text-blue-400">Item 1</a></li>
-                <li><a href="#" class="hover:text-blue-400">Item 2</a></li>
-                <li><a href="#" class="hover:text-blue-400">Item 3</a></li>
-                <li><a href="#" class="hover:text-blue-400">Item 4</a></li>
-                <li><a href="#" class="hover:text-blue-400">Item 5</a></li>
-                <li><a href="#" class="hover:text-blue-400">Item 6</a></li>
-              </ul>
-        </nav>
-        
-    </header>
-
-    <hr />
-    <h1 class="text-center text-white text-5xl m-5">Login</h1>
-    <main id="main-container" class="mt-10 p-10 bg-[#fdfdfb] rounded-lg max-w-sm mx-auto">
-        <!--the value(prueba.php) within the action is a temporal value-->
-        <form class="max-w-md mx-auto" action="prueba.php" method="post">
-            <div class="relative z-0 w-full mb-5 group">
-                <input type="email" name="email" id="email"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    placeholder=" " />
-                <label for="email"
-                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Correo</label>
-            </div>
-            <div class="relative z-0 w-full mb-5 group">
-                <input type="password" name="pwd" id="pwd"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    placeholder=" " />
-                <label for="pwd"
-                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Contraseña</label>
-            </div>
-            <div class="flex justify-center">
-                <button type="submit"
-                    class="bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Acceder
-                </button>
-            </div>
-            <div class="flex justify-center m-4 w-1/7">
-                <a href="#" class=" m-0 flex w-1/3 text-xs bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"><img
-                        src="media/google.svg" class="w-5/6" alt="google icon" />Google</a>
-            </div>
+<body>
+    <div class="login-container">
+        <h2>Iniciar Sesión</h2>
+        <form>
+            <input type="text" name="email" placeholder="Correo electrónico">
+            <input type="password" name="password" placeholder="Contraseña">
+            <button type="submit">Iniciar Sesión</button>
         </form>
-    </main>
-    <div class="flex justify-center m-1">
-        <p class="text-white mr-5">No tienes cuenta de MascoTier?</p>
-        <a href="signup.html" class="text-blue-400">Registrate</a>
     </div>
-    
 </body>
 
 </html>
