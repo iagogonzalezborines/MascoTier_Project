@@ -16,10 +16,11 @@
             height: 100vh;
             margin: 0;
             padding: 0;
+            background-color: #282A3A;
         }
 
         .login-container {
-            background-color: #3bec1300; /* Color de fondo del contenedor */
+           /* Color de fondo del contenedor */
             border-radius: 10px;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
             padding: 40px;
@@ -42,7 +43,7 @@
             border: 1px solid #0dc5de; /* Color de borde */
             border-radius: 8px; /* Aumentar el radio de borde */
             transition: border-color 0.3s ease;
-            color: black; /* Color de texto */
+            color: white; /* Color de texto */
             background-color: #3bec1300; /* Color de fondo de los inputs */
             font-size: 18px; /* Aumentar el tamaño de fuente */
         }
@@ -54,7 +55,7 @@
             color: white; /* Color de texto al enfocar */
         }
 
-        .login-container button {
+        .login-container #login-button {
             background-image: linear-gradient(to right, #0dc5de, #13ecc4);
             color: white;
             padding: 16px 30px; /* Aumentar el tamaño del padding */
@@ -64,9 +65,11 @@
             transition: background-color 0.3s ease;
             font-size: 18px; /* Aumentar el tamaño de fuente */
         }
+       
 
-        .login-container button:hover {
-            filter: brightness(1.1); /* Aumentar el brillo al pasar el mouse */
+        .login-container #login-button:hover {
+           
+            /* Aumentar el brillo al pasar el mouse */
         }
 
         .login-container .register-link {
@@ -85,7 +88,7 @@
     </style>
 </head>
 
-<body class= "bg-gray-900 text-white">
+<body class= " text-white">
     <nav class="bg-transparent fixed top-0 left-0 right-0 z-10 w-4/5 m-auto ">
         
         <div class="flex items-center justify-between h-16">
@@ -104,14 +107,14 @@
 </nav>
 
     <div class="login-container">
-        <h2>Iniciar Sesión</h2>
+        <h2 class="text-4xl" >Iniciar Sesión</h2>
         <form>
             <input type="text" name="email" placeholder="Correo electrónico">
             <input type="password" name="password" placeholder="Contraseña">
-            <button type="submit">Iniciar Sesión</button>
+            <button type="submit" id="login-button">Iniciar Sesión</button>
         </form>
         <div class="register-link">
-            <p>No tienes cuenta en MascoTier? <a href="#">Regístrate aquí</a></p>
+            <a href="index.html">Volver atras</a>
         </div>
     </div>
 </body>

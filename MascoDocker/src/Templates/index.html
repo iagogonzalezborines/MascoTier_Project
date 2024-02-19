@@ -7,6 +7,9 @@
     <title>MascoTier</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
+        body{
+            background-color: #282A3A;
+        }
         .login-popup {
             position: fixed;
             top: 0;
@@ -59,7 +62,7 @@
     </style>
 </head>
 
-<body class="bg-gray-900 text-white">
+<body class=" text-white">
     <!-- Navbar -->
     <nav class="bg-transparent fixed top-0 left-0 right-0 z-10 w-4/5 m-auto ">
         
@@ -80,7 +83,7 @@
                     </svg>
                 </button>
                 <div class="hidden md:block">
-                    <button class="btn-blue font-bold py-2 px-4 rounded-full focus:outline-none p-2 text-xl" onclick="toggleLoginPopup()">Login</button>
+                    <button class="btn-blue font-bold py-2 px-4 rounded-full focus:outline-none p-2 text-xl"><a href="login.html">Login</a></button>
                 </div>
             </div>
       
