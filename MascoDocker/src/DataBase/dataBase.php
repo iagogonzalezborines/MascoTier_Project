@@ -88,7 +88,7 @@ class dataBase
             try {
                 $stmt = $this->dbh->prepare($query);
                 foreach ($params as $key => $value) {
-                    $stmt->bindParam($key + 1, $value);
+                    $stmt->bindParam($key + 1, $value); //THIS IS NOT WORKING, IT SHOULD BE FIXED BY MEKANIK 
                 }
                 $stmt->execute();
                 return $stmt;
