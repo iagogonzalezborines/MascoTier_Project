@@ -1,0 +1,58 @@
+body {
+    background-color: #282A3A;
+}
+
+.login-popup {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(27, 13, 13, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-popup-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.text-gradient {
+    background-image: linear-gradient(to right, #3bec13, #71f1f4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-blue,
+.btn-green {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-blue {
+    background-image: linear-gradient(to right, #0dc5de, #13ecc4);
+    color: white;
+}
+
+.btn-green {
+    background-image: linear-gradient(to right, #3bec13, #08f960);
+    color: white;
+}
+
+
+
+.logo {
+    position: absolute;
+    top: 20px;
+    /* Ajustar según la posición deseada desde la parte superior */
+    left: 20px;
+    /* Ajustar según la posición deseada desde la parte izquierda */
+    z-index: 10;
+    /* Asegurar que esté sobre otros elementos si es necesario */
+}
