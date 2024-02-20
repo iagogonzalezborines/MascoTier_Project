@@ -6,69 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MascoTier</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/index.css">
     <style>
-        body {
-            background-color: #282A3A;
-        }
-
-        .login-popup {
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background-color: rgba(27, 13, 13, 0.5);
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .login-popup-content {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 400px;
-            width: 100%;
-        }
-
-        .text-gradient {
-            background-image: linear-gradient(to right, #3bec13, #71f1f4);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .btn-blue:hover,
-        .btn-green:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .btn-blue,
-        .btn-green {
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-
-        .btn-blue {
-            background-image: linear-gradient(to right, #0dc5de, #13ecc4);
-            color: white;
-        }
-
-        .btn-green {
-            background-image: linear-gradient(to right, #3bec13, #08f960);
-            color: white;
-        }
-
-        .logo {
-            position: absolute;
-            top: 20px;
-            /* Ajustar según la posición deseada desde la parte superior */
-            left: 20px;
-            /* Ajustar según la posición deseada desde la parte izquierda */
-            z-index: 10;
-            /* Asegurar que esté sobre otros elementos si es necesario */
-        }
+       
     </style>
 </head>
 
@@ -79,7 +19,7 @@
         <div class="flex items-center justify-between h-16">
             <div class="flex items-center">
                 <div class="flex-shrink-0">
-                    <img src="media/extremely_minimal_hexagon_straight_white_very_fe-removebg-preview.svg" class="logo"
+                    <img src="./media/extremely_minimal_hexagon_straight_white_very_fe-removebg-preview.svg" class="logo w-20 h-20"
                         alt="">
                 </div>
                 <div class="hidden md:block">
@@ -114,10 +54,16 @@
             <p class="text-lg md:text-xl text-gray-300 mb-8">Conectamos a dueños de mascotas con cuidadores confiables.
             </p>
             <div class="flex justify-center md:justify-start">
-                <a href="signup_carer.html" class="btn-blue font-bold py-4 px-7 rounded-full mr-4 text-lg">¡Sé un
-                    Cuidador!</a>
-                <a href="signup_owner.html" class="btn-green font-bold py-4 px-7 rounded-full text-lg">¡Soy Dueño!</a>
+                <a href="signup_carer.html" class="transition duration-300 transform hover:scale-105">
+                    <button class="btn-blue font-bold py-4 px-7 rounded-full mr-4 text-lg">¡Sé un Cuidador!</button>
+                </a>
+                <a href="signup_owner.html" class="transition duration-300 transform hover:scale-105">
+                    <button class="btn-green font-bold py-4 px-7 rounded-full text-lg z-10">¡Soy Dueño!</button>
+                </a>
             </div>
+            
+            
+            
         </div>
         <!-- Image section -->
         <div class="flex justify-end">
