@@ -40,3 +40,15 @@ INSERT INTO requests_pets (request_id, pet_id) VALUES
 (3, 3),
 (4, 4),
 (5, 5);
+
+-- actualizar passwords hasheadas
+
+update user set pwd = "$10$w0K74azxdAvmPPwte25hXOUKpBoTNadgIJd.zoDzYA1mS4aUWVfFO" where user_id=1;
+
+update user set pwd = "$2y$10$BpOGykWM/BWZsQjQ/FXRp.kiyeme8WJDZbE13eQxpaK188FGXHpsq" where user_id=2;
+
+update user set pwd = "$2y$10$3NcHKSCQXBVhhQRekyoX8ehew1q4Fdgt8cJkzOzi0NMPABWC3oGTK" where user_id=3;
+
+update user set pwd = "$2y$10$HRpuwzMGLLcoOP7nQMaShu2TCTzjNfD3icaR7UvHAYCau1O1tez12" where user_id=4;
+
+update user set pwd = "$2y$10$T7O.JOAJDlBTO8iClOPLiedy393/UBg8js0wZjJS28/GAlc.ZN6Ja" where user_id=5;
