@@ -1,0 +1,617 @@
+:root {
+	--dog-hair-yellow: #feae0c;
+	--dog-shade-hair-yellow: #ef840e;	
+	--dog-white-hair: #ffffff;
+	--eye-nose-color: #383e56;	
+	--dog-cushion-color: #2d6ccd;
+	--collar-colour-light: #ff6326;
+	--collar-shade-color: #b84517;
+}
+body {
+    padding: 0;
+    margin: 0;
+}
+
+
+.doggy-container {
+    z-index: -3;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+.bg-colour {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #3d95f300;
+}
+
+
+
+.doggy {
+    position: relative;
+    margin: auto;
+    top: 49px;
+    height: 250px;
+    width: 200px;
+    transform: scale(0.4);
+}
+.dog-head-container {
+    position: absolute;
+    top: 0px;
+    height: 104px;
+    width: 114px;
+    z-index: 1;
+    overflow: hidden;
+
+}
+.dog-head-1 {
+    position: absolute;
+    height: 49px;
+    width: 33px;
+    background: linear-gradient(-465deg,rgba(255, 0, 0, 0) 20%, var(--dog-white-hair) 10px, var(--dog-white-hair) 100%);
+    right: 11px;
+    top: 44px;
+}
+.dog-head-2 {
+    position: absolute;
+    height: 21px;
+    width: 41px;
+    background: linear-gradient(105deg,rgba(255, 0, 0, 0) 20%, var(--dog-white-hair) 10px, var(--dog-white-hair) 100%);
+    left: 32px;
+    top: 53px;
+    transform: skew(-18deg);
+}
+.dog-head-spot {
+    position: absolute;
+    height: 32px;
+    width: 50px;
+    background: linear-gradient(252deg,rgba(255, 0, 0, 0) 20%, var(--dog-hair-yellow) 10px, var(--dog-hair-yellow) 100%);
+    right: 5px;
+    top: 53px;
+    z-index: 2;
+    border-bottom-left-radius: 30px;
+}
+.dog-head {
+    position: absolute;
+    background: green;
+    bottom: 1px;
+    height: 31px;
+    width: 130px;
+    border-bottom-left-radius: 21px;
+    z-index: 1;
+    overflow: hidden;
+    background: linear-gradient(-470deg,transparent 20%, var(--dog-white-hair) 10px, var(--dog-white-hair) 100%);
+}
+.dog-nose {
+    position: absolute;
+    background: var(--eye-nose-color);
+    left: -6px;
+    top: -5px;
+    height: 18px;
+    width: 21px;
+    border-radius: 20px;
+}
+.dog-eye {
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background: var(--eye-nose-color);
+    border-radius: 20px;
+    bottom: 7px;
+    left: 0;
+}
+.dog-right-ear {
+    position: absolute;
+    height: 37px;
+    width: 19px;
+    background: var(--dog-hair-yellow);
+    right: 3px;
+    top: 26px;
+    transform: rotate(27deg);
+    border-top-right-radius: 21px;
+    border-bottom-right-radius: 8px;
+}
+.dog-left-ear {
+    position: absolute;
+    height: 39px;
+    width: 17px;
+    background: var(--dog-shade-hair-yellow);
+    left: 40px;
+    top: 25px;
+    transform: rotate(-7deg);
+    border-top-left-radius: 21px;
+    border-bottom-left-radius: 8px;
+}
+.collar {
+    position: absolute;
+    width: 80px;
+    height: 13px;
+    top: 103px;
+    left: 36px;
+	background: var(--collar-colour-light);
+    z-index: 3;
+}
+.collar-shade {
+	position: relative;
+	height: 100%;
+	width: 25%;
+	background: var(--collar-shade-color);
+}
+
+.dog-torso {
+	position: absolute;
+    height: 94px;
+    width: 174px;
+    top: 116px;
+    left: 19px;
+}
+
+
+.dog-torso-chest {
+    position: relative;
+    width: 34px;
+    height: 84%;
+    background: white;
+    left: 17px;
+    border-bottom-left-radius: 70px;
+}
+.left-dog-foot {
+    position: absolute;
+    height: 51px;
+    width: 17px;
+    background: var(--dog-shade-hair-yellow);
+    bottom: -5px;
+    left: 8px;
+    border-bottom-right-radius: 500px;
+    transform: rotate(24deg);
+}
+.right-dog-foot {
+    position: absolute;
+    height: 47px;
+    width: 17px;
+    background: var(--dog-hair-yellow);
+    bottom: -5px;
+    left: 46px;
+    border-bottom-right-radius: 280px;
+    transform: rotate(19deg);
+}
+.dog-torso-light {
+    position: absolute;
+    height: 84%;
+    width: 46px;
+    background: var(--dog-hair-yellow);
+    left: 51px;
+    border-bottom-right-radius: 500px;
+}
+.dog-torso-shade {
+    position: absolute;
+    height: 94px;
+    width: 117px;
+    background: var(--dog-shade-hair-yellow);
+    right: 18px;
+    border-top-right-radius: 54px;
+    top: 0px;
+    overflow: hidden;
+    border-bottom-right-radius: 9px;
+    transform: skew(9deg);
+}
+.light-right-dog-foot {
+    position: absolute;
+    height: 67px;
+    width: 51px;
+    background: var(--dog-hair-yellow);
+    right: 0;
+    bottom: 0;
+	border-top-left-radius: 24px;
+	border-bottom-right-radius: 8px;
+}
+.light-right-dog-paw {
+    position: absolute;
+    height: 24px;
+    width: 51px;
+    background: var(--dog-hair-yellow);
+    right: 12px;
+    bottom: 0;
+    border-top-left-radius: 24px;
+}
+
+.doggy-cushion {
+    position: absolute;
+    height: 20px;
+    width: 100%;
+    background: var(--dog-cushion-color);
+    bottom: 21px;
+    border-radius: 500px;
+}
+
+.look-right {
+	transform: rotateY(180deg);
+    left: 34px;
+    display: none;
+}
+
+.swipe-chest-light-right {
+    right: 0px;
+    top: 13px;
+    z-index: 5;
+}
+.swipe-chest {
+    position: absolute;
+    height: 35px;
+    width: 24px;
+}
+.swipe-1 {
+    position: relative;
+    height: 11px;
+    width: 11px;
+    background: #e7e7e7;
+    top: 23px;
+    left: 1.6px;
+    transform: skew(-40deg) rotate(-39deg);
+}
+.swipe-2 {
+    position: relative;
+    height: 11px;
+    width: 11px;
+    background: #e7e7e7;
+    top: -3px;
+    left: 1.6px;
+    transform: skew(-40deg) rotate(-39deg);
+}
+
+.swipe-chest-light {
+    position: absolute;
+    height: 35px;
+    width: 24px;
+    right: -9px;
+    top: 26px;
+}
+.swipe-1-light {
+    position: absolute;
+    height: 11px;
+    width: 14px;
+    background: var(--dog-shade-hair-yellow);
+    top: 23px;
+    float: right;
+    left: 0px;
+    transform: skew(-40deg) rotate(-39deg);
+}
+.swipe-2-light {
+    position: absolute;
+    height: 12px;
+    width: 14px;
+    background: var(--dog-shade-hair-yellow);
+    float: right;
+    transform: skew(-40deg) rotate(-39deg);
+    top: 4px;
+    right: 8px;
+}
+.swipe-1-light-right {
+    position: absolute;
+    height: 9px;
+    width: 80%;
+    background: var(--dog-shade-hair-yellow);
+    top: 23px;
+    float: right;
+    left: 0px;
+    transform: skewY(26deg) rotate(-2deg);
+}
+.swipe-2-light-right {
+    position: absolute;
+    height: 9px;
+    width: 82%;
+    background: var(--dog-shade-hair-yellow);
+    top: 9px;
+    float: right;
+    left: 0px;
+    transform: skewY(26deg) rotate(-2deg);
+}
+
+.grey-swipe {
+
+}
+.dog-torso-light-standing {
+    position: absolute;
+    height: 90%;
+    width: 84px;
+    background: var(--dog-hair-yellow);
+    left: 57px;
+    border-bottom-right-radius: 500px;
+    border-bottom-left-radius: 500px;
+    top: -1px;
+}
+
+
+
+/*
+// Standing up up*/
+
+
+.swipe-chest-standing-1 {
+    top: 22px;
+    right: 16px;
+    transform: skewY(-47deg);
+}
+
+.swipe-chest-standing-2 {
+    top: 26px;
+    left: 46px;
+    transform: skewY(2deg);
+}
+
+
+.swipe-chest-standing {
+    top: 22px;
+    right: 6px;
+}
+
+.dog-head-standing-up {
+    top: -17px;
+    left: -17px;
+}
+.collar-standing-up {
+    top: 87px;
+    left: 14px;
+}
+.dog-torso-standing-up {
+    top: 98px;
+    left: 0px;
+}
+.right-dog-foot-standing {
+    height: 47px;
+    width: 23px;
+    bottom: -19px;
+    left: 74px;
+    transform: rotate(0deg);
+}
+.left-dog-foot-standing {
+    height: 72px;
+    width: 22px;
+    bottom: -20px;
+    left: 27px;
+    transform: rotate(0deg);
+}
+
+.dog-chesting-standing-up {
+    position: relative;
+    width: 59px;
+    height: 84%;
+    background: white;
+    left: 17px;
+    border-bottom-left-radius: 40px;
+}
+
+.left-leg-standing {
+    position: absolute;
+    width: 78px;
+    height: 77px;
+    background: #feae0c;
+    right: -66px;
+    top: 0;
+    border-bottom-left-radius: 54px;
+    border-top-right-radius: 50px;
+}
+.left-hind-standing {
+    position: absolute;
+    width: 26px;
+    height: 77px;
+    background: #feae0c;
+    right: -75px;
+    top: 41px;
+    border-bottom-right-radius: 54px;
+    border-top-right-radius: 34px;
+}
+
+.right-leg-standing {
+    position: absolute;
+    width: 78px;
+    height: 77px;
+    background: #ef840e;
+    right: -34px;
+    top: 0;
+    border-bottom-left-radius: 54px;
+    border-top-right-radius: 50px;
+}
+.right-hind-standing {
+    position: absolute;
+    width: 26px;
+    height: 77px;
+    background: #ef840e;
+    right: -34px;
+    top: 41px;
+    border-bottom-right-radius: 54px;
+    border-top-right-radius: 34px;
+}
+.dog-right-ear-standing {
+    right: 14px;
+    top: 21px;
+    transform: rotate(1deg);
+}
+.dog-left-ear-standing {
+    transform: rotate(1deg);
+    left: 43px;
+    top: 20px;
+}
+.dog-head-spot-standing {
+    top: 52px;
+}
+.doggy-standing {
+    width: 240px;
+}
+.doggy-cushion-standing {
+    width: 90%;
+    left: 10%;
+}
+
+/*
+    Doggy jumping
+*/
+
+.swipe-chest-jumping-1 {
+    right: -24px;
+    transform: rotate(-4deg);
+}
+
+.swipe-chest-jumping-2 {
+    right: 16px;
+    transform: rotate(-32deg) skewX(-32deg) skewY(-18deg);
+    height: 3px;
+    width: 34px;
+}
+
+.swipe-chest-jumping {
+    top: 22px;
+    right: 6px;
+}
+
+.doggy-jumping {
+    top: 26px;
+    width: 220px;
+}
+.doggy-jumping-cushion {
+    bottom: -25px;
+    position: absolute;
+    height: 20px;
+    width: 70%;
+    left: 20%;
+    background: var(--dog-cushion-color);
+    border-radius: 500px;
+}
+
+
+.left-dog-foot-jumping {
+    height: 72px;
+    width: 22px;
+    bottom: -6px;
+    left: 18px;
+    transform: rotate(50deg);
+}
+
+
+.right-dog-foot-jumping {
+    height: 63px;
+    width: 24px;
+    bottom: -19px;
+    left: 59px;
+    transform: rotate(33deg);
+}
+
+
+
+
+.left-leg-jumping {
+    right: -66px;
+    top: -9px;
+    transform: rotate(-13deg);
+}
+
+.left-hind-jumping {
+    right: -75px;
+    top: 25px;
+    transform: rotate(-49deg);
+}
+
+.right-hind-jumping {
+    right: -34px;
+    top: 28px;
+    transform: rotate(-27deg);
+}
+
+.dog-left-ear-jumping {
+    left: 38px;
+    top: 25px;
+    transform: rotate(-15deg);
+}
+
+
+.dog-right-ear-jumping {
+    right: 7px;
+    top: 21px;
+    transform: rotate(14deg);
+}
+
+.stars {
+    position: absolute;
+    height: 45%;
+    width: 100%;
+    top: 5px;
+    left: -24px;
+}
+
+.circle-star {
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    border-radius: 100%;
+}
+
+.circle-star-1 {
+    top: 104px;
+    left: -17px;
+}
+
+.circle-star-2 {
+    top: -16px;
+    left: 133px;
+}
+
+.circle-star-3 {
+    top: 60px;
+    left: 157px;
+}
+
+.circle-star-4 {
+    top: 0px;
+    left: 250px;
+}
+
+.diamond-star {
+    position: absolute;
+    background: #fff;
+    transform: rotate(45deg);
+}
+
+.diamond-star-1 {
+    height: 13px;
+    width: 13px;
+    left: 5px;
+    top: 12px;
+}
+.diamond-star-2 {
+    height: 16px;
+    width: 16px;
+    left: 163px;
+    top: -3px;
+}
+.diamond-star-3 {
+    height: 11px;
+    width: 11px;
+    left: 252px;
+    top: 59px;
+}
+
+
+
+.look-left {
+    animation: lookLeft 2s infinite;
+    transition: 0s;
+}
+
+/*.look-right {
+    animation: dogCycle 5s infinite;
+}*/
+
+
+
+
+.doggy-standing {
+    display: none;
+}
+
+.doggy-jumping {
+    display: none;
+}
+
