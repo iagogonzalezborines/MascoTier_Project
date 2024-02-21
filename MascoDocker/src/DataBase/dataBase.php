@@ -87,8 +87,11 @@ class dataBase
         } else { // In case there are parameters it uses the prepare method in order to avoid SQL injection
             try {
                 $stmt = $this->dbh->prepare($query);
-                foreach ($params as $key => $value) {
-                    $stmt->bindParam($key + 1, $value);
+           /*     foreach ($params as $key => $value) {
+                    $stmt->bindParam($key + 1, $value); //THIS IS NOT WORKING, IT SHOULD BE FIXED BY MEKANIK 
+                }*/
+                for ($i=1; $i <= count($params); $i++) { 
+                    $stmt->bindParam($i,$params[$i-1]);
                 }
                 $stmt->execute();
                 return $stmt;
@@ -113,7 +116,7 @@ class dataBase
     public function transformResultSetIntoUserArray($result)
     {
         $userArray = [];
-        while ($row = $result->fetch_assoc()) {
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             $userArray[] = $row;
         }
         return $userArray;

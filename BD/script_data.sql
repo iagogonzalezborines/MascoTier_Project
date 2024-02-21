@@ -1,7 +1,7 @@
 -- Agregar tuplas a la tabla user
 INSERT INTO users (username, email, pwd, phone, area, verified, type, contactNumber, pets, hasPlace, idDocument, place, rating)
 VALUES
-('user1', 'user1@example.com', 'password1', '+123456789', 'Area A', 1, 'owner', '+987654321', 'dog', NULL, NULL, NULL, NULL),
+('user1', 'user1@example.com', '$2y$10$n/3fzfBckHrK7SMK/vIrFuQ.6zc.fPPY5uKhkFGy0DiRQv/CfOrPS', '+123456789', 'Area A', 1, 'owner', '+987654321', 'dog', NULL, NULL, NULL, NULL),
 ('user2', 'user2@example.com', 'password2', '+987654321', 'Area B', 1, 'carer', NULL, NULL, 1, 'ID123', 'Place X', '4.5'),
 ('user3', 'user3@example.com', 'password3', NULL, NULL, 0, 'owner', '+555666777', 'cat', NULL, NULL, NULL, NULL),
 ('user4', 'user4@example.com', 'password4', '+111222333', 'Area C', 1, 'carer', NULL, NULL, 1, 'ID456', 'Place Y', '3.8'),
@@ -40,3 +40,5 @@ INSERT INTO requests_pets (request_id, pet_id) VALUES
 (3, 3),
 (4, 4),
 (5, 5);
+
+-- actualizar passwords hasheadas

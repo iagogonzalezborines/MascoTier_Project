@@ -1,5 +1,5 @@
 <?php
-
+ session_start();
 /**
  * This file is the login controller for the application.
  */
@@ -17,10 +17,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $db = dataBase::getInstance();
     $dbh = $db->connectToDatabase();
 
-    $query = "SELECT * FROM users WHERE email = :email";
-    $result = $db->executeQuery($query, array(':email' => $email));
+    $query = "SELECT * FROM users WHERE email = ?";
+    $result = $db->executeQuery($query, array($email));
     $arrayResult = $db->transformResultSetIntoUserArray($result);
-
+   
     if (count($arrayResult) === 0) {
         echo "LOGIN FAILED: USER NOT FOUND";
         $db->disconnectFromDatabase();
@@ -28,7 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     $password = $_POST['password'];
-    $hashedPassword = $arrayResult[0]['password'];
+    echo "<br>";
+
+    $hashedPassword = $arrayResult[0]["pwd"];
 
     if (!password_verify($password, $hashedPassword)) {
         echo "LOGIN FAILED: PASSWORD INCORRECT";
@@ -37,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Start session
-    session_start();
+   
     $_SESSION['email'] = $arrayResult[0];
     echo "LOGIN SUCCESSFUL";
 
