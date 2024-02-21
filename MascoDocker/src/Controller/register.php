@@ -6,16 +6,25 @@
 
 require_once '../DataBase/dataBase.php';
 require_once '../Classes/User.php';
-
+require_once '../Methods/formFilters.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+   var_dump($_POST);
     // Retrieve register information from register.html
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $phone = $_POST['phone'];
+    $username = test_text($_POST['name']) ;
+    $password = password_hash($_POST["pwd"],PASSWORD_DEFAULT);
+    $phone = test_text($_POST['phone']);
     $hasPlace = $_POST['hasPlace'];
-    $area = $_POST['area'];
-    $verified = $_POST['verified'];
+    $area = test_text($_POST['area']);
+    $email = test_email($_POST['email']);
+    $verified = 0;
+    if (is_bool($email)) {
+        echo "email no valido";
+    }
+    if (test_dni($_POST["dni"])) {
+       $idDocument= $_POST["idDocument"];
+    }else{
+        echo "dni no valido";
+    }
 
     if($phone != null){ 
      $type = "carer";
