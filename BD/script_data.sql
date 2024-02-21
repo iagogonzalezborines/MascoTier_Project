@@ -41,4 +41,8 @@ INSERT INTO requests_pets (request_id, pet_id) VALUES
 (4, 4),
 (5, 5);
 
+
+CREATE USER 'connection'@'%' IDENTIFIED BY 'connection';
+GRANT SELECT, INSERT, UPDATE ON mascotier.* TO 'connection'@'%';
+FLUSH PRIVILEGES;
 -- actualizar passwords hasheadas
