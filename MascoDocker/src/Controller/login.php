@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $db = dataBase::getInstance();
     $dbh = $db->connectToDatabase();
 
-    $query = "SELECT * FROM user WHERE email = ?";
+    $query = "SELECT * FROM users WHERE email = ?";
     $result = $db->executeQuery($query, array($email));
     $arrayResult = $db->transformResultSetIntoUserArray($result);
    
@@ -28,8 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     $password = $_POST['password'];
-    //password123.
-    echo password_hash($password, PASSWORD_DEFAULT);
     echo "<br>";
 
     $hashedPassword = $arrayResult[0]["pwd"];
