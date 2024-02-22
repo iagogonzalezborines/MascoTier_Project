@@ -42,7 +42,18 @@
             return false;
         }
     }
-    
+
+    function calculateAge($birthDate) {
+        // Convertir la fecha de nacimiento a objeto de fecha
+        $birthDate = new DateTime($birthDate);
+        // Obtener la fecha actual
+        $currentDate = new DateTime();
+        // Calcular la diferencia entre la fecha actual y la fecha de nacimiento
+        $age = $currentDate->diff($birthDate)->y;
+        return $age;
+    }
+
+   
    /*
    function password_hash($password): string{
     return password_hash($password);
