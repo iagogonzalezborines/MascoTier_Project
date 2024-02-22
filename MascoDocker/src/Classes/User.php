@@ -170,7 +170,7 @@ class User
         try {
             $db = dataBase::getInstance();
             $db->connectToDatabase();
-            $executed = $db->executeQuery($query,[$this->getUsername(),$this->getEmail(),$this->getPassword(),$this->getPhone(),$this->getArea(),$this->getBirthDate(),$this->getVerified(),$this->getType(),$this->getPhone(),0,$this->getIdDocument()]);
+            $executed = $db->executeQuery($query,[$this->getUsername(),$this->getEmail(),$this->getPassword(),$this->getPhone(),$this->getArea(),$this->getBirthDate(),$this->getVerified(),$this->getType(),$this->getPhone(),$this->getVerified(),$this->getIdDocument()]);
             //Testing echoes for comprobation
           
             $db->disconnectFromDatabase();
