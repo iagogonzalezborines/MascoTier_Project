@@ -4,7 +4,7 @@ Generic class for the user
 Access to the database, and PHPMailer
 */
 require_once '../DataBase/dataBase.php';
-require_once 'PHPMailer/PHPMailer.php';
+// require_once 'PHPMailer/PHPMailer.php';
 
 
 class User
