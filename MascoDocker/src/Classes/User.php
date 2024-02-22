@@ -22,6 +22,7 @@ class User
     //Exclusive for Carer
     private bool $hasPlace;
     private $idDocument;
+    private $birth_date;
     private $place;
     private $rating;
 
@@ -47,6 +48,7 @@ class User
         string $email,
         string $password,
         string $type,
+        string $birth_date,
         string $username = null,
         string $phone = null,
         string $area = null,
@@ -69,6 +71,7 @@ class User
         $this->type = $type;
         $this->pets = $pets;
         $this->idDocument = $idDocument;
+        $this->birth_date=$birth_date;
         $this->place = $place;
         $this->rating = $rating;
     }

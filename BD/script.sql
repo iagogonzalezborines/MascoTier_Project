@@ -10,13 +10,13 @@ CREATE TABLE users (
     pwd VARCHAR(1000) NOT NULL,
     phone VARCHAR(20),
     area VARCHAR(100),
+	birth_date date,
     verified TINYINT(1) DEFAULT 0,
-    type ENUM('owner', 'carer') NOT NULL,
+    type ENUM('owner', 'carer',"both") NOT NULL,
     contactNumber VARCHAR(20),
     pets TEXT,
     hasPlace TINYINT(1),
     idDocument VARCHAR(100),
-    place VARCHAR(255),
     rating VARCHAR(10)
 );
 

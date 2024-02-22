@@ -1,21 +1,16 @@
 -- Agregar tuplas a la tabla user
-INSERT INTO users (username, email, pwd, phone, area, verified, type, contactNumber, pets, hasPlace, idDocument, place, rating)
-VALUES
-('user1', 'user1@example.com', '$2y$10$n/3fzfBckHrK7SMK/vIrFuQ.6zc.fPPY5uKhkFGy0DiRQv/CfOrPS', '+123456789', 'Area A', 1, 'owner', '+987654321', 'dog', NULL, NULL, NULL, NULL),
-('user2', 'user2@example.com', 'password2', '+987654321', 'Area B', 1, 'carer', NULL, NULL, 1, 'ID123', 'Place X', '4.5'),
-('user3', 'user3@example.com', 'password3', NULL, NULL, 0, 'owner', '+555666777', 'cat', NULL, NULL, NULL, NULL),
-('user4', 'user4@example.com', 'password4', '+111222333', 'Area C', 1, 'carer', NULL, NULL, 1, 'ID456', 'Place Y', '3.8'),
-('user5', 'user5@example.com', 'password5', NULL, 'Area D', 1, 'owner', '+999888777', 'bird', NULL, NULL, NULL, NULL),
-('user6', 'user6@example.com', 'password6', '+444555666', 'Area E', 0, 'carer', NULL, NULL, 0, 'ID789', 'Place Z', '4.2'),
-('user7', 'user7@example.com', 'password7', NULL, NULL, 1, 'owner', '+777888999', 'hamster', NULL, NULL, NULL, NULL),
-('user8', 'user8@example.com', 'password8', '+666777888', 'Area F', 0, 'carer', NULL, NULL, 1, 'ID321', 'Place W', '4.9'),
-('user9', 'user9@example.com', 'password9', NULL, 'Area G', 1, 'owner', '+222333444', 'snake', NULL, NULL, NULL, NULL),
-('user10', 'user10@example.com', 'password10', '+555444333', NULL, 0, 'carer', NULL, NULL, 0, 'ID654', 'Place V', '3.5'),
-('user11', 'user11@example.com', 'password11', NULL, 'Area H', 1, 'owner', '+777999111', 'rabbit', NULL, NULL, NULL, NULL),
-('user12', 'user12@example.com', 'password12', '+888999000', 'Area I', 1, 'carer', NULL, NULL, 1, 'ID987', 'Place U', '4.7'),
-('user13', 'user13@example.com', 'password13', NULL, NULL, 0, 'owner', '+111222333', 'fish', NULL, NULL, NULL, NULL),
-('user14', 'user14@example.com', 'password14', '+333222111', 'Area J', 1, 'carer', NULL, NULL, 0, 'ID456', 'Place T', '3.2'),
-('user15', 'user15@example.com', 'password15', '+222333444', 'Area K', 1, 'owner', '+444555666', 'dog', NULL, NULL, NULL, NULL);
+INSERT INTO users (username, email, pwd, phone, area, birth_date, verified, type, contactNumber, pets, hasPlace, idDocument, rating) VALUES
+('usuario1', 'usuario1@example.com', '$2y$10$E/eU5cpgtRjk0wfNqE1eJOWfEMo6DOjNi.H31wD.nASKQ16Ew7EPO', '123456789', 'Área1', '1990-01-01', 1, 'owner', '987654321', 'Perro', 1, '123ABC', null),
+('usuario2', 'usuario2@example.com', '$2y$10$WsTnqO9eIvLpviNh.dgLCOlwH2R9jic0i2040oZ2GrmLCRjJKPnkm', '987654321', 'Área2', '1995-02-15', 1, 'carer', '123456789', null, 0, '456DEF', '4.5'),
+('usuario3', 'usuario3@example.com', 'contraseña3', '555555555', 'Área3', '1988-05-20', 0, 'both', '888888888', 'Perro, Gato', 1, '789GHI', '4.8'),
+('usuario4', 'usuario4@example.com', 'contraseña4', '666666666', 'Área4', '1992-11-10', 1, 'owner', '222222222', 'Pájaro', 0, '321JKL', '4.2'),
+('usuario5', 'usuario5@example.com', 'contraseña5', '444444444', 'Área5', '1998-07-30', 0, 'carer', '444444444', 'Pez', 1, '654MNO', '4.9'),
+('usuario6', 'usuario6@example.com', 'contraseña6', '333333333', 'Área6', '1993-09-25', 1, 'both', '555555555', 'Perro, Gato, Pájaro', 0, '987PQR', '4.7'),
+('usuario7', 'usuario7@example.com', 'contraseña7', '222222222', 'Área7', '1985-03-18', 1, 'owner', '333333333', 'Hamster', 1, '147STU', '4.6'),
+('usuario8', 'usuario8@example.com', 'contraseña8', '111111111', 'Área8', '1979-12-05', 0, 'carer', '666666666', 'Conejo', 0, '258VWX', '4.3'),
+('usuario9', 'usuario9@example.com', 'contraseña9', '999999999', 'Área9', '1983-04-22', 1, 'both', '777777777', 'Perro, Conejo', 1, '369YZA', '4.1'),
+('usuario10', 'usuario10@example.com', 'contraseña10', '888888888', 'Área10', '1996-08-12', 0, 'owner', '999999999', 'Gato, Pájaro', 0, '741BCD', '4.4');
+
 
 -- Agregar tuplas a la tabla pet
 INSERT INTO pet (user_owner_id, descr, pet_type, pet_rating) VALUES
