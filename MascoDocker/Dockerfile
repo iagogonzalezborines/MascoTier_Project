@@ -8,19 +8,6 @@ RUN docker-php-ext-install mysqli pdo_mysql
 # Habilita el módulo de Apache mod_rewrite
 RUN a2enmod rewrite
 
-# Actualiza la lista de paquetes y luego instala npm
-RUN apt-get update && apt-get install -y npm
-
-# Instala Node.js
-RUN apt-get install -y nodejs
-
-#
-RUN npm innit -y
-
-# Generar archivos de configuracion .json
-RUN npm install tailwindcss postcss autoprefixer
-
-
 # Instala Composer globalmente
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
