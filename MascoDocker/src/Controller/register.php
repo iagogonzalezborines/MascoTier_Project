@@ -11,24 +11,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    var_dump($_POST);
     // Retrieve register information from register.html
     $username = test_text($_POST['name']) ;
-    $password = password_hash($_POST["pwd"],PASSWORD_DEFAULT);
+    $password = $_POST["pwd"];
+    $repassword=$_POST["repeat_pwd"];
     $phone = test_text($_POST['phone']);
     $hasPlace = $_POST['hasPlace'];
     $area = test_text($_POST['area']);
     $email = test_email($_POST['email']);
+    $birthDate = $_POST["birth-date"];
     $verified = 0;
     if (is_bool($email)) {
         echo "email no valido";
     }
-    if (test_dni($_POST["dni"])) {
+    if (test_dni($_POST["idDocument"])) {
        $idDocument= $_POST["idDocument"];
     }else{
         echo "dni no valido";
     }
 
-    if($phone != null){ 
+    if ($password == $repassword) {
+        
+        $password=password_hash($password,PASSWORD_DEFAULT);
+        echo $password;
+        echo "<br>";
+    }
+
+    if (calculateAge($birthDate)<18) {
+        echo "eres menor de edadd"; 
+        
+    }
+
+   
+    if($phone != null){
      $type = "carer";
-     $user = new User($type, $username, $email, $password, $phone, $hasPlace, $area, $verified, $idDocument, $place, $rating);
+     $user = new User($email, $password, $type, $password,$birthDate,$username, $phone,$area,  $verified, $idDocument, $place, $rating);
     $user->saveUserToDb($user);
     if ($result) {
         echo "REGISTER SUCCESSFUL"; //Hacer popup   con los echos de comprobacion
@@ -40,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     else{
      $type = "owner";
-     $user = new User($email, $password, $area, $type);
+    // $user = new User($email, $password, $area, $type);
     $user->saveUserToDb($user);
     if ($result) {
         echo "REGISTER SUCCESSFUL";

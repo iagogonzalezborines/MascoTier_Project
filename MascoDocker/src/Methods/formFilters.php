@@ -6,9 +6,14 @@
         return $toret;
     }
 
-    function test_email($email) : bool|string  {
+    function test_email($email) : bool  {
       
-        return filter_var($email,FILTER_VALIDATE_EMAIL);
+    if(filter_var($email,FILTER_VALIDATE_EMAIL)!=false){ //Did this cuz filter var returns the email or false not true
+            return true;
+    }
+    else{
+        return false;
+    }
     }
 
     function test_dni($idDocument) {
@@ -37,7 +42,18 @@
             return false;
         }
     }
-    
+
+    function calculateAge($birthDate) {
+        // Convertir la fecha de nacimiento a objeto de fecha
+        $birthDate = new DateTime($birthDate);
+        // Obtener la fecha actual
+        $currentDate = new DateTime();
+        // Calcular la diferencia entre la fecha actual y la fecha de nacimiento
+        $age = $currentDate->diff($birthDate)->y;
+        return $age;
+    }
+
+   
    /*
    function password_hash($password): string{
     return password_hash($password);
