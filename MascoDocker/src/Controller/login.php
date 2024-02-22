@@ -1,5 +1,5 @@
 <?php
- session_start();
+session_start();
 /**
  * This file is the login controller for the application.
  */
@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "LOGIN FAILED: EMAIL NOT VALID";
+        echo "<script>alert('LOGIN FAILED: EMAIL NOT VALID'); window.location.href = '../Templates/login.html';</script>";
         return;
     }
 
@@ -20,28 +20,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $query = "SELECT * FROM users WHERE email = ?";
     $result = $db->executeQuery($query, array($email));
     $arrayResult = $db->transformResultSetIntoUserArray($result);
-   
+
     if (count($arrayResult) === 0) {
-        echo "LOGIN FAILED: USER NOT FOUND";
+        echo "<script>alert('LOGIN FAILED: USER NOT FOUND'); window.location.href = '../Templates/login.html';</script>";
         $db->disconnectFromDatabase();
         return;
     }
 
     $password = $_POST['password'];
-    echo "<br>";
 
     $hashedPassword = $arrayResult[0]["pwd"];
 
     if (!password_verify($password, $hashedPassword)) {
-        echo "LOGIN FAILED: PASSWORD INCORRECT";
+        echo "<script>alert('LOGIN FAILED: PASSWORD INCORRECT'); window.location.href = '../Templates/login.html';</script>";
         $db->disconnectFromDatabase();
         return;
     }
 
     // Start session
-   
+
     $_SESSION['email'] = $arrayResult[0];
-    echo "LOGIN SUCCESSFUL";
+    echo "<script>alert('LOGIN SUCCESSFUL'); window.location.href = '../Templates/login.html';</script>";
 
     $db->disconnectFromDatabase();
 }
