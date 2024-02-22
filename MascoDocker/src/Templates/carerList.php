@@ -10,6 +10,7 @@ require_once '../DataBase/dataBase.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lista de cuidadores</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="scripts/carerListDropDown.js"></script>
 
 </head>
 
@@ -56,6 +57,9 @@ require_once '../DataBase/dataBase.php';
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
+                    <th class="px-6 py-3">
+                            
+                        </th>
                         <th class="px-6 py-3">
                             Nombre
                         </th>
@@ -66,7 +70,7 @@ require_once '../DataBase/dataBase.php';
                             Valoración
                         </th>
                         <th class="px-6 py-3">
-                            Estado
+                            Disponibilidad
                         </th>
                         <th class="px-6">
                             Reservar
@@ -95,7 +99,12 @@ require_once '../DataBase/dataBase.php';
                         $rating = $row['rating'];
                         $hasPlace = $row['hasPlace'];
                     ?>
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                        <tr class="trFeedUser bg-white border-b dark:bg-gray-800 dark:border-gray-700 ">
+                            <th>
+                                <svg class="arrowDownDropDown w-10 h-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </th>
                             <th scope='row' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
                                 <?php echo "$username"; // Display the username 
                                 ?>
