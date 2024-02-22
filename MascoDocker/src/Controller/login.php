@@ -5,18 +5,13 @@ session_start();
  */
 
 require_once '../DataBase/dataBase.php';
-$validLogin = false;
+
 function logIn(){
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $email = $_POST['email'];
-        if($_POST['email'] != "" || $_POST['password'] != "" || $_POST['email'] != null || $_POST['password'] != null){
-           $email = $_POST['email'];
-           $email = test_text($email);
-           $password = $_POST['password'];
-           if(!test_email($email)){
-            $validLogin = false;
-            }
-        }else{
+        $password = $_POST['password'];
+        
+        if(!empty($email) && !empty($password)){
             $db = dataBase::getInstance();
             $dbh = $db->connectToDatabase();
         
@@ -26,34 +21,25 @@ function logIn(){
         
             if (count($arrayResult) === 0) {
                 $db->disconnectFromDatabase();
-                $validLogin = false;
+                return false;
             }
-            else{
-                $password = $_POST['password'];
-                $hashedPassword = $arrayResult[0]["pwd"];
-                if (!password_verify($password, $hashedPassword)) {
-                    $db->disconnectFromDatabase();
-                    $validLogin = false;
-                }
-                $_SESSION['email'] = $arrayResult[0];
-                $validLogin = true;
+            
+            $hashedPassword = $arrayResult[0]["pwd"];
+            if (!password_verify($password, $hashedPassword)) {
                 $db->disconnectFromDatabase();
-                session_start();
-                $_SESSION['email'] = $arrayResult[0];
+                return false;
             }
+            
+            $_SESSION['email'] = $arrayResult[0];
+            $db->disconnectFromDatabase();
+            session_start();
+            $_SESSION['email'] = $arrayResult[0];
+            
+            return true;
         }
-        }
-        return $validLogin;
+    }
     
+    return false;
 }
 
-logIn();
-   
-
-
-
-   
-
-    
-
-?>
+$validLogin = logIn();
