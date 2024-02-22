@@ -6,9 +6,14 @@
         return $toret;
     }
 
-    function test_email($email) : bool|string  {
+    function test_email($email) : bool  {
       
-        return filter_var($email,FILTER_VALIDATE_EMAIL);
+    if(filter_var($email,FILTER_VALIDATE_EMAIL)!=false){ //Did this cuz filter var returns the email or false not true
+            return true;
+    }
+    else{
+        return false;
+    }
     }
 
     function test_dni($idDocument) {
