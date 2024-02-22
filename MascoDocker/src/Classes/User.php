@@ -23,7 +23,6 @@ class User
     private bool $hasPlace;
     private $idDocument;
     private $birth_date;
-    private $place;
     private $rating;
 
     /**
@@ -53,13 +52,12 @@ class User
         string $phone = null,
         string $area = null,
         bool $verified = null,
-        //Exclusive for Owner
-        $pets = null,
         //Exclusive for Carer
         bool $hasPlace = null,
         $idDocument = null,
-        $place = null,
-        $rating = null
+        $rating = null,
+        //Exclusive for Owner
+        $pets = null,
     ) {
         $this->username = $username;
         $this->email = $email;
@@ -71,8 +69,7 @@ class User
         $this->type = $type;
         $this->pets = $pets;
         $this->idDocument = $idDocument;
-        $this->birth_date=$birth_date;
-        $this->place = $place;
+        $this->birth_date = $birth_date;
         $this->rating = $rating;
     }
 
@@ -158,7 +155,7 @@ class User
     {
         $hashedPassword = $this->hashPassword();
         $query = "INSERT INTO users (username, email, psw, phone, area, verified, type, contactNumber, pets, hasPlace, idDocument, place, rating) 
-        VALUES ('$this->username', '$this->email', '$hashedPassword', '$this->phone', '$this->area', '$this->verified', '$this->type', '$this->pets', '$this->hasPlace', '$this->idDocument', '$this->place', '$this->rating)";
+        VALUES ('$this->username', '$this->email', '$hashedPassword', '$this->phone', '$this->area', '$this->verified', '$this->type', '$this->pets', '$this->hasPlace', '$this->idDocument', '$this->hasPlace', '$this->rating)";
 
         $db = dataBase::getInstance();
         $db->connectToDatabase();
@@ -166,7 +163,7 @@ class User
         //Testing echoes for comprobation
         $db->executeQuery($query);
         $db->disconnectFromDatabase();
-        
+
         if ($executed) {
             return true;
         } else {
