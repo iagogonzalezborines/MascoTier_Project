@@ -116,9 +116,21 @@ class User
     {
         return $this->hasPlace;
     }
-    public function getVerified(): bool
+    public function getVerified(): int
     {
         return $this->verified;
+    }
+    public function getPassword(): string
+    {
+        return $this->password;
+    }
+    public function getBirthDate(): string
+    {
+        return $this->birth_date;
+    }
+    public function getIdDocument(): string
+    {
+        return $this->idDocument;
     }
 
     /**
@@ -153,22 +165,25 @@ class User
      */
     public function saveUserToDb($userToSave)
     {
-        $hashedPassword = $this->hashPassword();
-        $query = "INSERT INTO users (username, email, psw, phone, area, verified, type, contactNumber, pets, hasPlace, idDocument, place, rating) 
-        VALUES ('$this->username', '$this->email', '$hashedPassword', '$this->phone', '$this->area', '$this->verified', '$this->type', '$this->pets', '$this->hasPlace', '$this->idDocument', '$this->hasPlace', '$this->rating)";
-
-        $db = dataBase::getInstance();
-        $db->connectToDatabase();
-        $executed = $db->executeQuery($query);
-        //Testing echoes for comprobation
-        $db->executeQuery($query);
-        $db->disconnectFromDatabase();
-
-        if ($executed) {
-            return true;
-        } else {
-            return false;
+        $query = "INSERT INTO users (username, email, pwd, phone, area, birth_date, verified, type, contactNumber, hasPlace, idDocument) VALUES
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        try {
+            $db = dataBase::getInstance();
+            $db->connectToDatabase();
+            $executed = $db->executeQuery($query,[$this->getUsername(),$this->getEmail(),$this->getPassword(),$this->getPhone(),$this->getArea(),$this->getBirthDate(),$this->getVerified(),$this->getType(),$this->getPhone(),0,$this->getIdDocument()]);
+            //Testing echoes for comprobation
+          
+            $db->disconnectFromDatabase();
+    
+            if ($executed) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (PDOException $th) {
+            echo $th->getMessage();
         }
+       
     }
 
     /**

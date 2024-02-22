@@ -38,15 +38,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
             $type = "carer";
             $user = new User($email, $password, $type,$birthDate,$username, $phone,$area,  $verified,$hasPlace, $idDocument);
+
            $user->saveUserToDb($user);
 
            if ($user) {
                echo "REGISTER SUCCESSFUL"; //Hacer popup   con los echos de comprobacion
            } else {
                echo "REGISTER FAILED";
+               header('Location: ../Templates/login.html');
            }
           // $db->disconnectFromDatabase();
-           header('Location: ../Templates/login.html');
+        
            
         /*
             $type = "owner";
