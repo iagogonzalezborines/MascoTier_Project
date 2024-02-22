@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "<script>alert('LOGIN FAILED: EMAIL NOT VALID'); window.location.href = '../Templates/login.html';</script>";
+        echo "<script>alert('LOGIN FAILED: EMAIL NOT VALID'); </script>";
         return;
     }
 
@@ -22,9 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $arrayResult = $db->transformResultSetIntoUserArray($result);
 
     if (count($arrayResult) === 0) {
-        echo "<script>alert('LOGIN FAILED: USER NOT FOUND'); window.location.href = '../Templates/login.html';</script>";
+        echo "<script>alert('LOGIN FAILED: USER NOT FOUND');';</script>";
         $db->disconnectFromDatabase();
-        return;
+        
     }
 
     $password = $_POST['password'];
@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $hashedPassword = $arrayResult[0]["pwd"];
 
     if (!password_verify($password, $hashedPassword)) {
-        echo "<script>alert('LOGIN FAILED: PASSWORD INCORRECT'); window.location.href = '../Templates/login.html';</script>";
+        echo "<script>alert('LOGIN FAILED: PASSWORD INCORRECT'); ';</script>";
         $db->disconnectFromDatabase();
         return;
     }
