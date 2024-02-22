@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel="stylesheet" href="./assets/outstyles.css">
+    <style>
+        body{
+            background-color:  #282A3A;
+        }
+    </style>
 </head>
 
-<body class=" text-white">
+<body class=" text-white ">
     <!-- Navbar -->
     <nav class="bg-transparent fixed top-0 left-0 right-0 z-10 w-4/5 m-auto">
 
@@ -18,7 +23,7 @@
                     <img src="./media/extremely_minimal_hexagon_straight_white_very_fe-removebg-preview.svg" class="logo w-20 h-20"
                         alt="">
                 </div>
-                <div class="hidden md:block">
+                <div class="  hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <!-- Add navigation links here -->
                     </div>
@@ -56,6 +61,8 @@
                 <a href="signup_owner.html" class="transition duration-300 transform hover:scale-105">
                     <button class="btn-green font-bold py-4 px-7 rounded-full text-lg z-10">¡Soy Dueño!</button>
                 </a>
+                <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Default</button>
+
             </div>
             
             
@@ -68,27 +75,7 @@
     </div>
 
 
-    <!-- Login Popup -->
-    <div id="loginPopup" class="login-popup">
-        <div class="login-popup-content">
-            <h2 class="text-2xl font-bold mb-4">Iniciar Sesión</h2>
-            <form>
-                <div class="mb-4">
-                    <label for="email" class="block text-gray-700">Email</label>
-                    <input type="email" id="email" name="email"
-                        class="mt-1 p-2 w-full rounded border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
-                </div>
-                <div class="mb-4">
-                    <label for="password" class="block text-gray-700">Contraseña</label>
-                    <input type="password" id="password" name="password"
-                        class="mt-1 p-2 w-full rounded border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
-                </div>
-                <button type="submit"
-                    class="btn-blue text-white font-bold py-2 px-4 rounded-full focus:outline-none">Iniciar
-                    Sesión</button>
-            </form>
-        </div>
-    </div>
+    
 
     <script>
         function toggleLoginPopup() {
