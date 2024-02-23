@@ -23,8 +23,8 @@ class dataBase
         $this->tipo = $this->config['bbdd']['tipo'];
         $this->database = $this->config['bbdd']['database'];
         $this->hostname = $this->config['bbdd']['hostname'];
-        $this->username = $this->config['mascoroot']['username'];
-        $this->password = $this->config['mascoroot']['password'];
+        $this->username = $this->config['connection']['username'];
+        $this->password = $this->config['connection']['password'];
     }
 
     /**
@@ -90,9 +90,11 @@ class dataBase
            /*     foreach ($params as $key => $value) {
                     $stmt->bindParam($key + 1, $value); //THIS IS NOT WORKING, IT SHOULD BE FIXED BY MEKANIK 
                 }*/
-                for ($i=1; $i <= count($params); $i++) { 
-                    $stmt->bindParam($i,$params[$i-1]);
+                for ($i = 1; $i <= count($params); $i++) { 
+                    $stmt->bindParam($i, $params[$i - 1]);
                 }
+                
+                // Ejecuta la consulta preparada
                 $stmt->execute();
                 return $stmt;
             } catch (PDOException $e) {
@@ -121,5 +123,33 @@ class dataBase
         }
         return $userArray;
     }
-}
+
+    public function logIn($email, $password, $db){
+        if(!empty($email) && !empty($password)){
+           
+        
+            $query = "SELECT * FROM users WHERE email = ?";
+            $result = $db->executeQuery($query, array($email));
+            $arrayResult = $db->transformResultSetIntoUserArray($result);
+        
+            if (count($arrayResult) === 0) {
+                $db->disconnectFromDatabase();
+                return false;
+            }
+            
+            $hashedPassword = $arrayResult[0]["pwd"];
+            if (!password_verify($password, $hashedPassword)) {
+                $db->disconnectFromDatabase();
+                return false;
+            }
+            session_start();
+            $_SESSION['email'] = $arrayResult[0];
+            $db->disconnectFromDatabase();
+            return true;
+        }
+    }
+    }
+
+
+
 ?>

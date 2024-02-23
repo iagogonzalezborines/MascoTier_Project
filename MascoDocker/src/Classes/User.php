@@ -23,7 +23,6 @@ class User
     private bool $hasPlace;
     private $idDocument;
     private $birth_date;
-    private $place;
     private $rating;
 
     /**
@@ -53,13 +52,12 @@ class User
         string $phone = null,
         string $area = null,
         bool $verified = null,
-        //Exclusive for Owner
-        $pets = null,
         //Exclusive for Carer
         bool $hasPlace = null,
         $idDocument = null,
-        $place = null,
-        $rating = null
+        $rating = null,
+        //Exclusive for Owner
+        $pets = null,
     ) {
         $this->username = $username;
         $this->email = $email;
@@ -71,8 +69,7 @@ class User
         $this->type = $type;
         $this->pets = $pets;
         $this->idDocument = $idDocument;
-        $this->birth_date=$birth_date;
-        $this->place = $place;
+        $this->birth_date = $birth_date;
         $this->rating = $rating;
     }
 
@@ -119,9 +116,21 @@ class User
     {
         return $this->hasPlace;
     }
-    public function getVerified(): bool
+    public function getVerified(): int
     {
         return $this->verified;
+    }
+    public function getPassword(): string
+    {
+        return $this->password;
+    }
+    public function getBirthDate(): string
+    {
+        return $this->birth_date;
+    }
+    public function getIdDocument(): string
+    {
+        return $this->idDocument;
     }
 
     /**
@@ -156,22 +165,25 @@ class User
      */
     public function saveUserToDb($userToSave)
     {
-        $hashedPassword = $this->hashPassword();
-        $query = "INSERT INTO users (username, email, psw, phone, area, verified, type, contactNumber, pets, hasPlace, idDocument, place, rating) 
-        VALUES ('$this->username', '$this->email', '$hashedPassword', '$this->phone', '$this->area', '$this->verified', '$this->type', '$this->pets', '$this->hasPlace', '$this->idDocument', '$this->place', '$this->rating)";
-
-        $db = dataBase::getInstance();
-        $db->connectToDatabase();
-        $executed = $db->executeQuery($query);
-        //Testing echoes for comprobation
-        $db->executeQuery($query);
-        $db->disconnectFromDatabase();
-        
-        if ($executed) {
-            return true;
-        } else {
-            return false;
+        $query = "INSERT INTO users (username, email, pwd, phone, area, birth_date, verified, type, contactNumber, hasPlace, idDocument) VALUES
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        try {
+            $db = dataBase::getInstance();
+            $db->connectToDatabase();
+            $executed = $db->executeQuery($query,[$this->getUsername(),$this->getEmail(),$this->getPassword(),$this->getPhone(),$this->getArea(),$this->getBirthDate(),$this->getVerified(),$this->getType(),$this->getPhone(),$this->getVerified(),$this->getIdDocument()]);
+            //Testing echoes for comprobation
+          
+            $db->disconnectFromDatabase();
+    
+            if ($executed) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (PDOException $th) {
+            echo $th->getMessage();
         }
+       
     }
 
     /**

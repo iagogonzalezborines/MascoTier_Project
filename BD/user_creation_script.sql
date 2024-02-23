@@ -12,16 +12,17 @@ PURPOSE:
 */
 
 CREATE USER 'mascoadmin'@'localhost' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'mascoadmin'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
 
 CREATE USER 'connection'@'%' IDENTIFIED BY 'connection';
 GRANT SELECT, INSERT, UPDATE ON mascotier.* TO 'connection'@'%';
 FLUSH PRIVILEGES;
 
 CREATE USER 'mascouser'@'localhost' IDENTIFIED BY 'password';
-GRANT SELECT, INSERT, UPDATE, DELETE ON `database_name`.`table_name` TO 'user'@'localhost';
+GRANT SELECT, INSERT, UPDATE, DELETE ON mascouser.* TO 'mascouser'@'localhost';
 
-
+FLUSH PRIVILEGES;
 
 -- Path: BD/user_deletion_script.sql
 
