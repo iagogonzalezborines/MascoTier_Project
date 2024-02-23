@@ -4,6 +4,7 @@ content: ["./**/*.{html,php,js,jsx,ts,tsx,vue}"],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@headlessui/react'),    
+  ],
 }
-
