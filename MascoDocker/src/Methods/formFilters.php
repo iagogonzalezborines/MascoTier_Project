@@ -8,7 +8,7 @@
 
     function test_email($email) : bool  {
       
-    if(filter_var($email,FILTER_VALIDATE_EMAIL)!=false){ //Did this cuz filter var returns the email or false not true
+    if(filter_var($email,FILTER_VALIDATE_EMAIL)!=false){ //Did this cuz filter var returns the email or false, does not return true
             return true;
     }
     else{
