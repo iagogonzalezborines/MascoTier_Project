@@ -42,7 +42,6 @@ CREATE TABLE request (
     FOREIGN KEY (user_owner_id) REFERENCES users(user_id),
     FOREIGN KEY (user_carer_id) REFERENCES users(user_id)
 );
-
 -- Create table requests_pets (Relationship table between request and pet)
 CREATE TABLE requests_pets (
     request_id INT NOT NULL,
