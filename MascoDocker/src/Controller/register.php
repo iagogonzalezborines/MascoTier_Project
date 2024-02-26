@@ -7,6 +7,7 @@
 require_once '../DataBase/dataBase.php';
 require_once '../Classes/User.php';
 require_once '../Methods/formFilters.php';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    var_dump($_POST);
     // Retrieve register information from register.html
@@ -14,11 +15,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST["pwd"];
     $repassword=$_POST["repeat_pwd"];
     $phone = test_text($_POST['phone']);
-    $hasPlace = $_POST['hasPlace'];
+   
     $area = test_text($_POST['area']);
     $email = $_POST['email'];
     $birthDate = $_POST["birth-date"];
     $verified = 0;
+    $userType = $_POST["userType"];
     if (test_email($email) ==false) {
      
         echo "email no valido";
@@ -31,40 +33,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($password == $repassword && calculateAge($birthDate)>18 ) {
         
+
         $password=password_hash($password,PASSWORD_DEFAULT);
         echo $password;
-        echo "<br>";
+   
 
-        
-            $type = "carer";
-            $user = new User($email, $password, $type,$birthDate,$username, $phone,$area,  $verified,$hasPlace, $idDocument);
-
-           $user->saveUserToDb($user);
-
-           if ($user) {
-               echo "REGISTER SUCCESSFUL"; //Hacer popup   con los echos de comprobacion
-           } else {
-               echo "REGISTER FAILED";
-               header('Location: ../Templates/login.html');
-           }
-          // $db->disconnectFromDatabase();
-        
+        switch ($userType) {
+            case 'carer':
+                $type = "carer";
+                $hasPlace = $_POST['hasPlace'];
+                $user = new User($email, $password, $type,$birthDate,$username, $phone,$area,  $verified,$hasPlace, $idDocument);
+    
+               $user->saveUserToDb($user);
+    
+               if ($user) {
+                   echo "REGISTER SUCCESSFUL"; //Hacer popup   con los echos de comprobacion
+               } else {
+                   echo "REGISTER FAILED";
+                   header('Location: ../Templates/login.html');
+               }
+                break;
+            case 'owner':
+                $type = "owner";
+                $user = new User($email, $password, $type,$birthDate,$username, $phone,$area,  $verified,null, $idDocument,null,null);
+    
+               $user->saveUserToDb($user);
+    
+               if ($user) {
+                   echo "REGISTER SUCCESSFUL"; //Hacer popup   con los echos de comprobacion
+               } else {
+                   echo "REGISTER FAILED";
+                   header('Location: ../Templates/login.html');
+               }
+            default:
+              
+                break;
+        }
            
-        /*
-            $type = "owner";
-           // $user = new User($email, $password, $area, $type);
-           $user->saveUserToDb($user);
-           if ($result) {
-               echo "REGISTER SUCCESSFUL";
-           } else {
-               echo "REGISTER FAILED";
-           }
            $db->disconnectFromDatabase();
-           header('../Templates/login.html');
-           
-       */
-       
-           // Validate email
        }
     }else{
       echo  "errores";
