@@ -57,9 +57,6 @@ require_once '../DataBase/dataBase.php';
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                    <th class="px-6 py-3">
-                            
-                        </th>
                         <th class="px-6 py-3">
                             Nombre
                         </th>
@@ -75,6 +72,10 @@ require_once '../DataBase/dataBase.php';
                         <th class="px-6">
                             Reservar
                         </th>
+                        <th class="px-6">
+                            Saber más
+                        </th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -100,11 +101,7 @@ require_once '../DataBase/dataBase.php';
                         $hasPlace = $row['hasPlace'];
                     ?>
                         <tr class="trFeedUser bg-white border-b dark:bg-gray-800 dark:border-gray-700 ">
-                            <th>
-                                <svg class="arrowDownDropDown w-10 h-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                                </svg>
-                            </th>
+
                             <th scope='row' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
                                 <?php echo "$username"; // Display the username 
                                 ?>
@@ -132,6 +129,11 @@ require_once '../DataBase/dataBase.php';
                             <th scope='row' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
                                 <!--Display the rating -->
                                 <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a href="./signup_owner.html">Enviar petición</a></button>
+                            </th>
+                            
+                            <th scope='row' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
+                                <!--Display the rating -->
+                                <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a href="./signup_owner.html">Ir al perfil</a></button>
                             </th>
                         </tr>
                     <?php } ?>
