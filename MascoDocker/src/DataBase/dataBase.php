@@ -1,5 +1,6 @@
 
 <?php
+
 /*ANOTACION PARA EL FUTURO*/
 /*Creates functions for select(params: table, fields, where, order, limit), insert(params: table, fields, values), update(params: table, fields, values, where), delete(params: table, where)*/
 /*SINGLETON PATTERN USED*/
@@ -126,6 +127,7 @@ class dataBase
 
     public function logIn($email, $password, $db){
         if(!empty($email) && !empty($password)){
+            
            
         
             $query = "SELECT * FROM users WHERE email = ?";
@@ -142,7 +144,7 @@ class dataBase
                 $db->disconnectFromDatabase();
                 return false;
             }
-            session_start();
+            
             $_SESSION['email'] = $arrayResult[0];
             $db->disconnectFromDatabase();
             return true;
