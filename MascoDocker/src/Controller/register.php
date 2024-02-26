@@ -8,6 +8,7 @@ require_once '../DataBase/dataBase.php';
 require_once '../Classes/User.php';
 require_once '../Methods/formFilters.php';
 
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    var_dump($_POST);
     // Retrieve register information from register.html
@@ -37,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $password=password_hash($password,PASSWORD_DEFAULT);
         echo $password;
    
-
+        // this is the controller of the user create 
         switch ($userType) {
             case 'carer':
                 $type = "carer";
@@ -45,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $user = new User($email, $password, $type,$birthDate,$username, $phone,$area,  $verified,$hasPlace, $idDocument);
     
                $user->saveUserToDb($user);
+             
     
                if ($user) {
                    echo "REGISTER SUCCESSFUL"; //Hacer popup   con los echos de comprobacion
@@ -58,7 +60,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $user = new User($email, $password, $type,$birthDate,$username, $phone,$area,  $verified,null, $idDocument,null,null);
     
                $user->saveUserToDb($user);
-    
+             
+             //  
                if ($user) {
                    echo "REGISTER SUCCESSFUL"; //Hacer popup   con los echos de comprobacion
                } else {
@@ -70,7 +73,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 break;
         }
            
-           $db->disconnectFromDatabase();
        }
     }else{
       echo  "errores";
