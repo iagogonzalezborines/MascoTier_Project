@@ -20,7 +20,7 @@ class User
     //Exclusive for Owner
     private $pets;
     //Exclusive for Carer
-    private bool $hasPlace;
+    private  $hasPlace;
     private $idDocument;
     private $birth_date;
     private $rating;
@@ -53,7 +53,7 @@ class User
         string $area = null,
         bool $verified = null,
         //Exclusive for Carer
-        bool $hasPlace = null,
+        $hasPlace = null,
         $idDocument = null,
         $rating = null,
         //Exclusive for Owner
