@@ -23,8 +23,8 @@ class dataBase
         $this->tipo = $this->config['bbdd']['tipo'];
         $this->database = $this->config['bbdd']['database'];
         $this->hostname = $this->config['bbdd']['hostname'];
-        $this->username = $this->config['connection']['username'];
-        $this->password = $this->config['connection']['password'];
+        $this->username = $this->config['mascoroot']['username'];
+        $this->password = $this->config['mascoroot']['password'];
     }
 
     /**

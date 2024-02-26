@@ -1,11 +1,7 @@
+// TEMPORALLY NOT USED - 26-02-2024
 window.onload = () => {
   let trFeedUser = document.querySelectorAll(".trFeedUser");
   console.log(trFeedUser);
-
-
-
-
-
 
   trFeedUser.forEach((arrow) => { 
     arrow.addEventListener("click", () => {

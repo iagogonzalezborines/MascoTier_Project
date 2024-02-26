@@ -1,7 +1,7 @@
 DROP DATABASE IF EXISTS mascotier;
 CREATE DATABASE IF NOT EXISTS mascotier;
 use mascotier;
---This should be refactored, this all may not be necesary :/
+-- This should be refactored, this all may not be necesary :/
 -- Create table user
 CREATE TABLE users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
