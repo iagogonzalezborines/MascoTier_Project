@@ -4,7 +4,7 @@ session_start();
 /**
  * This file is the login controller for the application.
  */
-
+session_start();
 require_once '../DataBase/dataBase.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
