@@ -63,6 +63,19 @@ services:
     tty: true
     command: php -S 0.0.0.0:80
 
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile.node
+    volumes:
+      - ./src:/var/www/html
+    working_dir: /var/www/html
+    networks:
+      - Mascotier
+      - MascotierLan
+    depends_on:
+      - php8.3
+
 networks:
   MascotierLan:
     internal: true

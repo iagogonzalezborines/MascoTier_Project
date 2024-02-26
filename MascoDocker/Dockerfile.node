@@ -1,0 +1,12 @@
+# Dockerfile.node for Node.js
+FROM node:14
+
+WORKDIR /var/www/html
+
+COPY package.json .
+COPY package-lock.json .
+RUN npm install
+
+# ... (any other node-related configurations)
+
+CMD ["npm", "start"]
