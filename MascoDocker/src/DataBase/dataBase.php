@@ -124,34 +124,6 @@ class dataBase
         }
         return $userArray;
     }
-
-    public function logIn($email, $password, $db){
-        if(!empty($email) && !empty($password)){
-            
-           
-        
-            $query = "SELECT * FROM users WHERE email = ?";
-            $result = $db->executeQuery($query, array($email));
-            $arrayResult = $db->transformResultSetIntoUserArray($result);
-        
-            if (count($arrayResult) === 0) {
-                $db->disconnectFromDatabase();
-                return false;
-            }
-            
-            $hashedPassword = $arrayResult[0]["pwd"];
-            if (!password_verify($password, $hashedPassword)) {
-                $db->disconnectFromDatabase();
-                return false;
-            }
-            
-            $_SESSION['email'] = $arrayResult[0];
-            $db->disconnectFromDatabase();
-            return true;
-        }
     }
-    }
-
-
 
 ?>
