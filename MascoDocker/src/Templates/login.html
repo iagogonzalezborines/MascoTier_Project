@@ -18,23 +18,25 @@
             height: 100vh;
             margin: 0;
             padding: 0;
-            background-color: #282A3A;
+            background-color: #e6e3d1;
         }
+	
 
         .login-container {
            /* Color de fondo del contenedor */
+		   background-color:#73cce71a ;
             border-radius: 10px;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
             padding: 40px;
             max-width: 400px;
             width: 80%; /* Ajustar el ancho */
             text-align: center;
-            border: 2px solid #0dc5de; /* Color de borde del contenedor */
+            border: 2px solid #e7737991; /* Color de borde del contenedor */
         }
 
         .login-container h2 {
             margin-bottom: 20px;
-            color: white; /* Color de texto */
+            color: rgb(0, 0, 0); /* Color de texto */
         }
 
         .login-container input[type="text"],
@@ -42,7 +44,7 @@
             width: 100%;
             padding: 16px; /* Aumentar el tamaño del padding */
             margin-bottom: 20px;
-            border: 1px solid #0dc5de; /* Color de borde */
+            border: 1px solid #e7737991; /* Color de borde */
             border-radius: 8px; /* Aumentar el radio de borde */
             transition: border-color 0.3s ease;
             color: white; /* Color de texto */
@@ -82,6 +84,11 @@
         .login-container .register-link a:hover {
             text-decoration: underline; /* Subrayar el enlace al pasar el mouse */
         }
+		#login-button {
+			background-color: linear-gradient(to right, #e7737991, #13ecc4);
+			transform: scale(1.05);
+			box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+		}
     </style>
 </head>
 
@@ -108,7 +115,7 @@
         <form action="../Controller/login.php" method="post">
             <input type="text" name="email" placeholder="Correo electrónico">
             <input type="password" name="password" placeholder="Contraseña">
-            <button type="submit" id="login-button">Iniciar Sesión</button>
+            <button type="submit" id="login-button">Vamos!</button>
         </form>
         <div class="register-link">
             <a href="index.html">Volver atrás</a>
