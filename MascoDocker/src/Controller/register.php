@@ -10,7 +10,7 @@ require_once '../Methods/formFilters.php';
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-   var_dump($_POST);
+ 
     // Retrieve register information from register.html
     $username = test_text($_POST['name']) ;
     $password = $_POST["pwd"];
@@ -31,49 +31,71 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }else{
         echo "dni no valido";
     }
+    $checkEmail = "Select count(email) as total from users where email = ?";
+    $db = dataBase::getInstance();
+    $db->connectToDatabase();
 
-    if ($password == $repassword && calculateAge($birthDate)>18 ) {
-        
 
-        $password=password_hash($password,PASSWORD_DEFAULT);
-        echo $password;
-   
-        // this is the controller of the user create 
+    $result= $db->executeQuery($checkEmail,[$email]);
+    $row = $result->fetch();
+    if ($row["total"]>0) {
+        $msg_error= "este correo ya existe";
         switch ($userType) {
             case 'carer':
-                $type = "carer";
-                $hasPlace = $_POST['hasPlace'];
-                $user = new User($email, $password, $type,$birthDate,$username, $phone,$area,  $verified,$hasPlace, $idDocument);
-    
-               $user->saveUserToDb($user);
-             
-    
-               if ($user) {
-                   echo "REGISTER SUCCESSFUL"; //Hacer popup   con los echos de comprobacion
-               } else {
-                   echo "REGISTER FAILED";
-                   header('Location: ../Templates/login.html');
-               }
+                
+                require_once "../Templates/signup_carer.php";
                 break;
-            case 'owner':
-                $type = "owner";
-                $user = new User($email, $password, $type,$birthDate,$username, $phone,$area,  $verified,null, $idDocument,null,null);
-    
-               $user->saveUserToDb($user);
-             
-             //  
-               if ($user) {
-                   echo "REGISTER SUCCESSFUL"; //Hacer popup   con los echos de comprobacion
-               } else {
-                   echo "REGISTER FAILED";
-                   header('Location: ../Templates/login.html');
-               }
+            
             default:
-              
+                # code...
                 break;
         }
-           
-       }
+    }else{
+        if ($password == $repassword && calculateAge($birthDate)>18 ) {
+        
+
+            $password=password_hash($password,PASSWORD_DEFAULT);
+            echo $password;
+       
+            // this is the controller of the user create 
+            switch ($userType) {
+                case 'carer':
+                    $type = "carer";
+                    $hasPlace = $_POST['hasPlace'];
+                    $user = new User($email, $password, $type,$birthDate,$username, $phone,$area,  $verified,$hasPlace, $idDocument);
+        
+                   $user->saveUserToDb($user);
+                 
+        
+                   if ($user) {
+                       echo "REGISTER SUCCESSFUL"; //Hacer popup   con los echos de comprobacion
+                   } else {
+                       echo "REGISTER FAILED";
+                       header('Location: ../Templates/login.html');
+                   }
+                    break;
+                case 'owner':
+                    $type = "owner";
+                    $user = new User($email, $password, $type,$birthDate,$username, $phone,$area,  $verified,null, $idDocument,null,null);
+        
+                   $user->saveUserToDb($user);
+                 
+                 //  
+                   if ($user) {
+                       echo "REGISTER SUCCESSFUL"; //Hacer popup   con los echos de comprobacion
+                   } else {
+                       echo "REGISTER FAILED";
+                       header('Location: ../Templates/login.html');
+                   }
+                default:
+                  
+                    break;
+            }
+               
+           }
+    }
+    
+   
     }else{
       echo  "errores";
     }
