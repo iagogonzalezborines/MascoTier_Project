@@ -38,5 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $msg_error = "introduzca sus creedenciales por favor";
     }
 }
+
+// if exists an error throw a error menssage then include then template login
 require_once "../Templates/login.php";
 

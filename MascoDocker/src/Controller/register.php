@@ -31,13 +31,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }else{
         echo "dni no valido";
     }
+    // this is the controller that checks if exists or not the email in the database
     $checkEmail = "Select count(email) as total from users where email = ?";
     $db = dataBase::getInstance();
     $db->connectToDatabase();
-
-
     $result= $db->executeQuery($checkEmail,[$email]);
     $row = $result->fetch();
+    // Throw an error message, then dynamically include the template for carer or owner.
     if ($row["total"]>0) {
         $msg_error= "este correo ya existe";
         switch ($userType) {
