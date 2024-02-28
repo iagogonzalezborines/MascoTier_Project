@@ -41,13 +41,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($row["total"]>0) {
         $msg_error= "este correo ya existe";
         switch ($userType) {
-            case 'carer':
-                
+            case 'carer':  
                 require_once "../Templates/signup_carer.php";
                 break;
-            
+            case "owner":
+            require_once "../Templates/signup_owner.php";
             default:
-                # code...
                 break;
         }
     }else{
