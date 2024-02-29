@@ -127,12 +127,12 @@ require_once '../DataBase/dataBase.php';
                             </th>
 
                             <th scope='row' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
-                                <!--Display the rating -->
+                                <!--Send petition -->
                                 <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a href="./signup_owner.html">Enviar petición</a></button>
                             </th>
                             
-                            <th scope='row' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
-                                <!--Display the rating -->
+                            <th scope='row' class='  font-medium text-gray-900 whitespace-nowrap dark:text-white'>
+                                <!--Go to profile -->
                                 <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a href="./signup_owner.html">Ir al perfil</a></button>
                             </th>
                         </tr>
