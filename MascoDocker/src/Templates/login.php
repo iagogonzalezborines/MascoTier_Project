@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     
-	<link rel="stylesheet" href="./assets/outstyles.css">
+	<link rel="stylesheet" href="../Templates/assets/outstyles.css">
 
-    <link rel="stylesheet" href="assets/dog.css">
+    <link rel="stylesheet" href="../Templates/assets/dog.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -86,12 +86,11 @@
 </head>
 
 <body class= " text-white">
-    <nav class="bg-transparent fixed top-0 left-0 right-0 z-10 w-4/5 m-auto ">
-        
+    <nav class="bg-transparent fixed top-0 left-0 right-0 z-10 w-4/5 m-auto "> 
         <div class="flex items-center justify-between h-16">
             <div class="flex items-center">
                 <div class="flex-shrink-0">
-                  <p class="text-2xl">Mascotier</p>
+				<span class="text-2xl">Mascotier</span>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
@@ -100,18 +99,18 @@
                 </div>
             </div>
         </div>
-  
 </nav>
 
     <div class="login-container">
         <h2 class="text-4xl" >Iniciar Sesión</h2>
+		<?php if(isset($msg_error)){echo $msg_error;}?>
         <form action="../Controller/login.php" method="post">
             <input type="text" name="email" placeholder="Correo electrónico">
             <input type="password" name="password" placeholder="Contraseña">
             <button type="submit" id="login-button">Iniciar Sesión</button>
         </form>
         <div class="register-link">
-            <a href="index.html">Volver atrás</a>
+            <a href="../Templates/index.html">Volver atrás</a>
         </div>
     </div>
     <link rel="stylesheet" href="style.css">
