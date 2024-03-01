@@ -18,7 +18,7 @@
             height: 100vh;
             margin: 0;
             padding: 0;
-            background-color: #282A3A;
+            background-image: 'url(../Templates/media/dalmatian-spots.svg)';
         }
 
         .login-container {
