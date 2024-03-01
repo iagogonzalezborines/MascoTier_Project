@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
 
             $password=password_hash($password,PASSWORD_DEFAULT);
-            echo $password;
+            
        
             // this is the controller of the user create 
             switch ($userType) {
@@ -67,9 +67,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                  
         
                    if ($user) {
-                       echo "REGISTER SUCCESSFUL"; //Hacer popup   con los echos de comprobacion
+                       header('Location: ../Templates/carerList.php');
                    } else {
-                       echo "REGISTER FAILED";
                        header('Location: ../Templates/login.html');
                    }
                     break;
@@ -79,11 +78,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
                    $user->saveUserToDb($user);
                  
-                 //  
                    if ($user) {
-                       echo "REGISTER SUCCESSFUL"; //Hacer popup   con los echos de comprobacion
+                       header('Location: ../Templates/carerList.php');
+                       
                    } else {
-                       echo "REGISTER FAILED";
                        header('Location: ../Templates/login.html');
                    }
                 default:
