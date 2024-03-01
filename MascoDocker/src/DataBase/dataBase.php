@@ -67,7 +67,7 @@ class dataBase
     /**
      * Function that executes queries generally, it does have a generic use, so it can be used for any query and avoids SQL injection by using prepared statements
      * params: $query: the query to be executed 
-     * $params: the parameters(if necessary) to be bound to the query
+     * $params: the parameters(if necessary) to be bound treturn false;o the query
      */
 
     public function executeQuery($query, $params = null)
