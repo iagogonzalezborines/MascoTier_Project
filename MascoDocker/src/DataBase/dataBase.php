@@ -99,6 +99,7 @@ class dataBase
                 return $stmt;
             } catch (PDOException $e) {
                 echo $e->getMessage();
+                var_dump($this->dbh);
                 return false;
             } finally {
                 unset($stmt);
