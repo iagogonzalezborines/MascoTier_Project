@@ -10,7 +10,7 @@ require_once '../DataBase/dataBase.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lista de cuidadores</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="scripts/carerListDropDown.js"></script>
+    <script src="../Templates/scripts/carerListDropDown.js"></script>
 
 </head>
 
@@ -42,7 +42,13 @@ require_once '../DataBase/dataBase.php';
                 <li class="mr-6">
                     <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
                 </li>
+                <div class="w-1/12">
+                <a href="../Controller/profileCarer.php"
+                    class="btn-blue font-bold py-2 px-4 rounded-full focus:outline-none p-2 text-xl">Perfil</a>
+            </div>
             </ul>
+          
+           
         </nav>
         <h1 class="text-white text-center text-5xl">lista de cuidadores</h1>
     </header>
