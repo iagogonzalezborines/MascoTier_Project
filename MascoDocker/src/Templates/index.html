@@ -7,55 +7,62 @@
     <title>MascoTier</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-    <style>
-        body {
-            background-color: #f8f0c8;
-        }
+        <style>
+            body {
+                background-color: #f8f0c8;
+            }
 
-        .text-gradient-mascotier {
-            background-image: linear-gradient(to right, #92b513, #1ad3eb);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+            .text-gradient-mascotier {
+                background-image: linear-gradient(to right, #92b513, #1ad3eb);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
 
-        .text-black {
-            color: #252f48;
-        }
+            .text-black {
+                color: #252f48;
+            }
 
-        .btn-blue:hover,
-        .btn-green:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-        }
+            .btn-blue:hover,
+            .btn-green:hover {
+                transform: scale(1.05);
+                box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+            }
 
-        .btn-blue,
-        .btn-green {
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
+            .btn-blue,
+            .btn-green {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
 
-        .btn-blue {
-            background-color: #49c2b0;
-            color: white;
-        }
+            .btn-blue {
+                background-color: #49c2b0;
+                color: white;
+            }
 
-        .btn-green {
-            background-color: #a7cc23;
-            color: white;
-        }
+            .btn-green {
+                background-color: #a7cc23;
+                color: white;
+            }
 
-    </style>
-</head>
+            .logo {
+                width: 100px;
+                position: absolute;
+                top: 10px;
+                left: 10px;
+            }
 
-<body >
-    <!-- Navbar -->
-    <nav class="bg-transparent fixed top-0 left-0 right-0 z-10 w-4/5 m-auto ">
-        <div class="flex items-center justify-between h-16">
-            <div class="flex items-center">
-                <div class="flex-shrink-0">
-                    <p class="text-2xl">Mascotier</p>
-                </div>
+        </style>
+    </head>
+
+    <body>
+        <!-- Navbar -->
+        <nav class="bg-transparent fixed top-0 left-0 right-0 z-10 w-4/5 m-auto ">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <img src="media/logo-removebg-preview.png" alt="" class="logo">
+                    </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <!-- Add navigation links here -->
