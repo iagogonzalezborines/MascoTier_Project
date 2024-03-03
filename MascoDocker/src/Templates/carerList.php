@@ -25,7 +25,7 @@ require_once '../DataBase/dataBase.php';
                 <!-- temporal Logo -->
                 <div class="flex items-center mr-10">
                     <img class="h-20 w-20" src="media/logo.svg" alt="Logo" />
-                    <span class="text-white font-bold text-lg">MASCOTIER</span>
+                    <a href="/Templates/carerList"><span class="text-white font-bold text-lg">MASCOTIER</span></a>
                 </div>
                 <!-- Links del navbar -->
                 <ul class="flex items-center w-1/2 justify-start p-5">
@@ -47,9 +47,12 @@ require_once '../DataBase/dataBase.php';
                     <li class="mr-6">
                         <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
                     </li>
-                    <div class="w-1/12">
+                    <li class="">
                         <a href="../Controller/profileCarer.php" class="btn-blue font-bold py-2 px-4 rounded-full focus:outline-none p-2 text-xl">Perfil</a>
-                    </div>
+                    </li>
+                    <li class="">
+                        <a href="/templates" class="btn-blue font-bold py-2 px-4 rounded-full focus:outline-none p-2 text-xl">Cerrar sesión</a>
+                    </li>
                 </ul>
             </div>
 
