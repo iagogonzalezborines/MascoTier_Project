@@ -53,7 +53,7 @@
 			border-radius: 8px;
 			/* Aumentar el radio de borde */
 			transition: border-color 0.3s ease;
-			color: white;
+			color: black;
 			/* Color de texto */
 			background-color: #3bec1300;
 			/* Color de fondo de los inputs */
@@ -66,7 +66,7 @@
 			outline: none;
 			border-color: linear-gradient(to right, #3bec13, #71f1f4);
 			/* Color de borde al enfocar */
-			color: white;
+			color: black;
 			/* Color de texto al enfocar */
 		}
 
@@ -87,7 +87,7 @@
 
 		.login-container .register-link {
 			margin-top: 20px;
-			color: white;
+			color: black;
 			/* Color del texto del enlace */
 		}
 
@@ -104,7 +104,7 @@
 	</style>
 </head>
 
-<body class=" text-white">
+<body class="dark:text-black ">
 	<nav class="bg-transparent fixed top-0 left-0 right-0 z-10 w-4/5 m-auto ">
 		<div class="flex items-center justify-between h-16">
 			<div class="flex items-center">
@@ -120,7 +120,7 @@
 		</div>
 	</nav>
 
-	<div class="login-container">
+	<div class="login-container ">
 		<h2 class="text-4xl">Iniciar Sesión</h2>
 		<?php if (isset($msg_error)) {
 			echo $msg_error;
