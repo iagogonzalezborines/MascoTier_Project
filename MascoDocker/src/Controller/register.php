@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $repassword=$_POST["repeat_pwd"];
     $phone = test_text($_POST['phone']);
    
-    $area = test_text($_POST['area']);
+    $area = test_text($_POST['city']);
     $email = $_POST['email'];
     $birthDate = $_POST["birth-date"];
     $verified = 0;
