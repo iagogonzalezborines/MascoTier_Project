@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 /**
  * This file is the register controller for the application.
  */
@@ -74,6 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     break;
                 case 'owner':
                     $type = "owner";
+                    $_SESSION["email"]==$email;
                     $user = new User($email, $password, $type,$birthDate,$username, $phone,$area,  $verified,null, $idDocument,null,null);
         
                    $user->saveUserToDb($user);

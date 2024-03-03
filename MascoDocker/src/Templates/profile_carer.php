@@ -44,7 +44,7 @@
     </div>
     <div class="w-full flex  flex-wrap">
         <h1 class="text-7xl w-full text-center m-auto ">Perfil</h1>
-    <form class="max-w-md mx-auto ml-auto mb-auto p-5 bg-white rounded-lg" action="../Controller/profileCarer.php" method="post">
+    <form class="max-w-md mx-auto ml-auto mb-auto p-5 bg-white rounded-lg" action="<?php $_SERVER["PHP_SELF"]?>" method="post">
         <div class="relative z-0 w-full mb-5 group">
             <input type="email" name="email" id="email"
                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
