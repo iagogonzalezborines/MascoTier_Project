@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 /**
  * This file is the register controller for the application.
  */
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $repassword=$_POST["repeat_pwd"];
     $phone = test_text($_POST['phone']);
    
-    $area = test_text($_POST['area']);
+    $area = test_text($_POST['city']);
     $email = $_POST['email'];
     $birthDate = $_POST["birth-date"];
     $verified = 0;
@@ -74,6 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     break;
                 case 'owner':
                     $type = "owner";
+                    $_SESSION["email"]==$email;
                     $user = new User($email, $password, $type,$birthDate,$username, $phone,$area,  $verified,null, $idDocument,null,null);
         
                    $user->saveUserToDb($user);

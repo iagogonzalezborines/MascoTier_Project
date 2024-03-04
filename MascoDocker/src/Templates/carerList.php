@@ -11,46 +11,60 @@ require_once '../DataBase/dataBase.php';
     <title>lista de cuidadores</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../Templates/scripts/carerListDropDown.js"></script>
-
+    <style>
+        .trFeedUser {
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body class="bg-gray-800 p-4">
     <header>
-        <nav class="flex items-center justify-between" id="navbar">
-            <!-- temporal Logo -->
-            <div class="flex items-center mr-10">
-                <img class="h-20 w-20" src="media/logo.svg" alt="Logo" />
-                <span class="text-white font-bold text-lg">MASCOTIER</span>
+        <nav  id="navbar">
+            <div class="flex items-center justify-between">
+                <!-- temporal Logo -->
+                <div class="flex items-center mr-10">
+                    <img class="h-20 w-20" src="media/logo.svg" alt="Logo" />
+                    <a href="/Templates/carerList"><span class="text-white font-bold text-lg">MASCOTIER</span></a>
+                </div>
+                <!-- Links del navbar -->
+                <ul class="flex items-center w-1/2 justify-start p-5">
+                    <li class="mr-6">
+                        <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
+                    </li>
+                    <li class="mr-6">
+                        <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
+                    </li>
+                    <li class="mr-6">
+                        <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
+                    </li>
+                    <li class="mr-6">
+                        <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
+                    </li>
+                    <li class="mr-6">
+                        <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
+                    </li>
+                    <li class="mr-6">
+                        <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
+                    </li>
+                    <li class="">
+                        <a href="../Controller/profileCarer.php" class="btn-blue font-bold py-2 px-4 rounded-full focus:outline-none p-2 text-xl">Perfil</a>
+                    </li>
+                    <li class="">
+                        <a href="/templates" class="btn-blue font-bold py-2 px-4 rounded-full focus:outline-none p-2 text-xl">Cerrar sesión</a>
+                    </li>
+                </ul>
             </div>
-            <!-- Links del navbar -->
-            <ul class="flex items-center w-1/2 justify-start p-5">
-                <li class="mr-6">
-                    <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
-                </li>
-                <li class="mr-6">
-                    <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
-                </li>
-                <li class="mr-6">
-                    <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
-                </li>
-                <li class="mr-6">
-                    <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
-                </li>
-                <li class="mr-6">
-                    <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
-                </li>
-                <li class="mr-6">
-                    <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
-                </li>
-                <div class="w-1/12">
-                <a href="../Controller/profileCarer.php"
-                    class="btn-blue font-bold py-2 px-4 rounded-full focus:outline-none p-2 text-xl">Perfil</a>
-            </div>
-            </ul>
-          
-           
+
+            <!--ENSEÑAR ESTO SOLO SI EL USUARIO NO ESTÁ VERIFICADO AÚN!!-->
+            <div class=" m-auto w-5/6 bg-slate-100 text-black p-1 flex justify-center items-center ">
+                 <p> Aún no te has verificado? Hazlo ahora y consigue todas las funcionalidades de Mascotier de manera gratuíta </p>
+                 <button type="button" class=" text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-4 "><a href="/templates">Verificarme ahora!</a></button>
+
+        </div>
+
         </nav>
-        <h1 class="text-white text-center text-5xl">lista de cuidadores</h1>
+        <h1 class="text-white text-center text-5xl mt-5">Cuidadores disponibles</h1>
     </header>
 
 
@@ -61,7 +75,7 @@ require_once '../DataBase/dataBase.php';
 
         <div class="bg-white w-3/4 relative overflow-x-auto m-auto rounded-xl">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <thead class="trFeedUser text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th class="px-6 py-3">
                             Nombre
@@ -73,7 +87,7 @@ require_once '../DataBase/dataBase.php';
                             Valoración
                         </th>
                         <th class="px-6 py-3">
-                            Disponibilidad
+                            Con lugar para cuidar?
                         </th>
                         <th class="px-6">
                             Reservar
@@ -81,7 +95,7 @@ require_once '../DataBase/dataBase.php';
                         <th class="px-6">
                             Saber más
                         </th>
-                        
+
                     </tr>
                 </thead>
                 <tbody>
@@ -106,9 +120,10 @@ require_once '../DataBase/dataBase.php';
                         $rating = $row['rating'];
                         $hasPlace = $row['hasPlace'];
                     ?>
+
                         <tr class="trFeedUser bg-white border-b dark:bg-gray-800 dark:border-gray-700 ">
 
-                            <th scope='row' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
+                            <th scope='row' class='px-6 py-4  font-medium text-gray-900 whitespace-nowrap dark:text-white'>
                                 <?php echo "$username"; // Display the username 
                                 ?>
                             </th>
@@ -118,7 +133,7 @@ require_once '../DataBase/dataBase.php';
                                 ?>
                             </th>
 
-                            <th scope='row' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
+                            <th scope='row' class=' px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
                                 <?php echo "$rating"; // Display the rating 
                                 ?>
                             </th>
@@ -136,7 +151,7 @@ require_once '../DataBase/dataBase.php';
                                 <!--Send petition -->
                                 <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a href="./signup_owner.html">Enviar petición</a></button>
                             </th>
-                            
+
                             <th scope='row' class='  font-medium text-gray-900 whitespace-nowrap dark:text-white'>
                                 <!--Go to profile -->
                                 <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a href="./signup_owner.html">Ir al perfil</a></button>
