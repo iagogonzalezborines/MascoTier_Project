@@ -20,5 +20,12 @@ COPY src/ /var/www/html/
 # Exponer el puerto 80 para que Apache pueda escuchar
 EXPOSE 80
 
+# create pino user and grant var www html permissions
+RUN useradd -ms /bin/bash mascoadmin
+RUN chown -R mascoadmin:mascoadmin /var/www/html
+RUN find /var/www/html/templates -type d -exec chmod 755 {} \; -o -type f -exec chmod 744 {} \;
+
+
+USER  mascoadmin
 # Inicia Apache cuando se ejecuta el contenedor
 CMD ["apache2-foreground"]
