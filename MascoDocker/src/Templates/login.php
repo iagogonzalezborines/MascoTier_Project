@@ -18,13 +18,13 @@
 			height: 100vh;
 			margin: 0;
 			padding: 0;
-			background-image: url(media/dalmatian-spots.svg);
+			background-image: url(media/dalmatian-spots.png);
 		}
 
 		.login-container {
 			/* Color de fondo del contenedor */
 			
-			background-color: white;
+			background-color: #f5efd4;
 			border-radius: 10px;
 			box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 			padding: 40px;
@@ -71,7 +71,7 @@
 		}
 
 		.login-container #login-button {
-			background-image: linear-gradient(to right, #0dc5de, #13ecc4);
+			background-image: linear-gradient(to right, #92b513, #49c2b0);
 			color: white;
 			padding: 16px 30px;
 			/* Aumentar el tamaño del padding */
@@ -92,7 +92,7 @@
 		}
 
 		.login-container .register-link a {
-			color: #71f1f4;
+			color: #92b513;
 			/* Color del enlace */
 			text-decoration: none;
 		}
@@ -101,6 +101,7 @@
 			text-decoration: underline;
 			/* Subrayar el enlace al pasar el mouse */
 		}
+	
 	</style>
 </head>
 
@@ -131,7 +132,7 @@
 			<button type="submit" id="login-button">Iniciar Sesión</button>
 		</form>
 		<div class="register-link">
-			<a href="../Templates/index.html">Volver atrás</a>
+			<a href="../Templates/index.html" class="linkback">Volver atrás</a>
 		</div>
 	</div>
 	<link rel="stylesheet" href="style.css">
