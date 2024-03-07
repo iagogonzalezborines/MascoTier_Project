@@ -42,7 +42,7 @@ En el ámbito tecnológico, se ha observado una notable  innovación en producto
 
 Las tendencias del mercado muestran una preferencia  creciente por ingredientes sostenibles en los alimentos para mascotas.  Más del 42% de los dueños prefieren comprar alimentos provenientes de  fuentes sostenibles. Además, se ha observado un aumento significativo en  la adopción de mascotas durante la pandemia, lo que ha impactado  positivamente en el mercado de alimentos para mascotas y en la demanda  de servicios relacionados con su cuidado.
 
-\\pagebreak
+\pagebreak
 
 ## Producto o Servicio:
 
@@ -50,7 +50,7 @@ Funcionamos únicamente como intermediarios entre personas que necesitan el cuid
 
 Nuestro income se produciria tanto por un porcentaje del pago que nos quedmos nosotros debido que nuestro servicio es la mediaciono la puesta en contacto de las dos partes, dado que tambien proporcionaremos en un plazo mas a futuro un servicio de scrow es decir, nsotros retendriamos el dinero de forma que un cliente debe pagar antes del servicio y el trabajador que haga el trabajo no cobrara hasta que el propietario confirme el servicio.
 
-\\pagebreak
+
 
 ## Objetivos Principales:
 
@@ -62,6 +62,7 @@ Nuestro income se produciria tanto por un porcentaje del pago que nos quedmos no
 4. **Programas de Referencia:**  Implementa un programa de referidos que incentive a los usuarios  actuales a recomendar "Mascotier" a amigos y familiares. Ofrece  recompensas como descuentos o servicios gratuitos por cada nuevo usuario  que se registre a través de una referencia.
 5. **Colaboraciones y Patrocinios:**  Colabora con veterinarios, tiendas de mascotas, y eventos relacionados  con mascotas para promocionar "Mascotier". Patrocinar eventos locales o  virtuales puede aumentar la visibilidad de la marca entre los dueños de  mascotas y cuidadores.
 
+\pagebreak
 ### Campañas Publicitarias Centradas en los Beneficios de Mascotier
 
 1. **Enfatizar la Comodidad y Seguridad:**  Destacando cómo "Mascotier" facilita encontrar cuidadores confiables y  calificados para mascotas, ofreciendo tranquilidad a los dueños de  mascotas. Resaltando las medidas de seguridad y verificación de los  cuidadores.
@@ -69,7 +70,7 @@ Nuestro income se produciria tanto por un porcentaje del pago que nos quedmos no
 3. **Promover la Comunidad:**  Muestra cómo "Mascotier" no solo es una plataforma de servicios, sino  también una comunidad de amantes de las mascotas donde los usuarios  pueden compartir experiencias, consejos y apoyo.
 4. **Testimonios y Casos de Éxito:**  Utiliza testimonios de usuarios satisfechos y estudios de caso para  demostrar el impacto positivo de "Mascotier" en la vida de las mascotas y  sus dueños. Las historias reales nos pueden generar confianza y  credibilidad.
 
-\\pagebreak
+
 
 ## Métricas de Éxito:
 
@@ -79,7 +80,7 @@ Nuestro income se produciria tanto por un porcentaje del pago que nos quedmos no
 - Conversiones.
 - Feedback y Reseñas.
 
-\\pagebreak
+\pagebreak
 
 ## Presupuesto de Marketing:
 
@@ -115,7 +116,7 @@ Nuestro income se produciria tanto por un porcentaje del pago que nos quedmos no
 | Herramientas y Software      | 3,000                |
 | **Total**                    | **77,000**           |
 
-\\pagebreak
+
 
 ## Conclusiones:
 
@@ -132,12 +133,15 @@ Nuestro income se produciria tanto por un porcentaje del pago que nos quedmos no
 - Manejo de datos delicados.
 - Gestión de seguridad.
 - Términos y condiciones extensos en el registro.
+\pagebreak
+
 
 ## Plan Operativo:
-
 El plan operativo se centrará principalmente en mantener actualizada la aplicación web, garantizando actualizaciones constantes para mejorar la experiencia del usuario. Para alojar nuestra aplicación, utilizaremos un servicio de hosting proporcionado por el IES, el cual también nos ofrecerá la capacidad de enviar correos electrónicos de manera automatizada para confirmaciones y otros fines.
 
 En términos de proveedores, actualmente estamos considerando asociarnos con Eagle-Fox, una empresa fundada por nuestros compañeros de clase. Eagle-Fox se especializaen el seguimiento de mascotas a través de un sistema de GPS. Esta asociación potencial nos permitiría integrar tecnología de rastreo de mascotas en nuestra plataforma, ofreciendo así a nuestros usuarios una solución integral para el cuidado y la seguridad de sus mascotas.
+
+\pagebreak
 
 ## Análisis Financiero
 
@@ -159,6 +163,8 @@ El análisis financiero proporciona una visión detallada de los ingresos proyec
 * **Mantenimiento de la Aplicación**:  Asumiendo un mantenimiento mensual del 20% del costo inicial anual,  esto sería de 200 € a 333.33 € al mes (2,400 € a 4,000 € anuales).
 * **Herramientas y Software**: Incluyendo CRM, plataformas de análisis, etc., podríamos estimar unos 250 € al mes.
 * **Otros Gastos (Internet, suministros de oficina, etc.)**: Estimemos unos 300 € al mes.
+
+\pagebreak
 
 #### Resumen de Costos Operativos Mensuales
 
@@ -185,7 +191,7 @@ El análisis financiero proporciona una visión detallada de los ingresos proyec
   * Beneficio Neto Anual: -113,664 € (Beneficio Neto Mensual \* 12)
 
 
-\\pagebreak
+\pagebreak
 
 ---
 
@@ -196,6 +202,8 @@ Una estrategia clave para MascoTier es la alianza estratégica con Eagle-Fox, un
 - Clientes: Brindamos seguridad y tranquilidad al ofrecer un servicio que incluye el seguimiento en tiempo real de sus mascotas. Esto les otorga la confianza de que sus animales están seguros y protegidos durante el cuidado.
 - Eagle-Fox: Al asociarse con MascoTier, Eagle-Fox amplía su alcance y visibilidad en el mercado. Además, esta alianza les brinda la oportunidad de ofrecer servicios  adicionales y obtener beneficios adicionales a través de la integración con nuestra plataforma.
 - MascoTier: Como intermediarios, nos esforzamos por ofrecer una plataforma confiable y segura para nuestros usuarios. La integración del rastreo en tiempo real de Eagle-Fox nos permite mejorar nuestra oferta de servicios y diferenciarnos en el mercado al proporcionar una capa adicional de seguridad y protección para las mascotas."
+
+\pagebreak
 
 ## Plan de Contingencia:
 
@@ -219,6 +227,8 @@ Una estrategia clave para MascoTier es la alianza estratégica con Eagle-Fox, un
 - **Equipo de Soporte Técnico:** Contamos con un equipo de soporte técnico dedicado que monitorea activamente la plataforma y responde rápidamente a cualquier problema técnico que pueda surgir. Los usuarios pueden comunicarse con nuestro equipo de soporte a través de varios canales, como chat en vivo, correo electrónico o teléfono.
 - **Comunicación Transparente:** En caso de interrupciones del servicio, mantenemos una comunicación transparente con nuestros usuarios, proporcionando actualizaciones periódicas sobre el estado de la plataforma y los esfuerzos para resolver el problema. También ofrecemos compensaciones apropiadas, como créditos o descuentos, a los usuarios afectados por la interrupción.
 
+\pagebreak
+
 ### 3. Falta de Cumplimiento de Normativas y Regulaciones:
 
 **Adversidad:** Existe el riesgo de enfrentar problemas legales si MascoTier no cumple con las normativas y regulaciones aplicables en el cuidado de mascotas y la protección del consumidor.
@@ -233,7 +243,8 @@ Una estrategia clave para MascoTier es la alianza estratégica con Eagle-Fox, un
 El plan de contingencia de MascoTier se centra en anticipar y abordar diversas adversidades que podrían surgir durante la operación de la plataforma. Al implementar medidas proactivas y establecer protocolos claros, estamos comprometidos a garantizar la seguridad, la confiabilidad y la legalidad de nuestros servicios para todos los usuarios.
 
 
-\\pagebreak
+
+\pagebreak
 
 ## Equipo de Gestión:
 
@@ -283,7 +294,7 @@ El plan de contingencia de MascoTier se centra en anticipar y abordar diversas a
   - Resolución de Problemas Técnicos de Forma Eficiente.
 
 
-\pagebreak
+
 
 ### Pedro Campelo Rico
 
@@ -296,11 +307,7 @@ El plan de contingencia de MascoTier se centra en anticipar y abordar diversas a
   - Elaboración de Documentación Completa para Facilitar el Mantenimiento.
   - Colaboración Activa en la Resolución de Desafíos Técnicos.
 
-\\pagebreak
-
-### Nota Importante:
-
-Todos los miembros del equipo MascoTier son multidisciplinarios y participan activamente en la toma de decisiones creativas y de funcionamiento. Trabajamos en estrecha colaboración para asegurar el éxito del proyecto y estamos comprometidos con la excelencia en todas las áreas del desarrollo de la plataforma.
+\pagebreak
 
 ### Análisis DAFO:
 
@@ -329,7 +336,7 @@ Todos los miembros del equipo MascoTier son multidisciplinarios y participan act
 3. **Tecnología Emergente:** La adopción de tecnologías emergentes como inteligencia artificial y aprendizaje automático puede mejorar la experiencia del usuario y la eficiencia operativa de la plataforma.
 
 
-\\pagebreak
+\pagebreak
 
 ### Análisis CAME:
 
@@ -356,3 +363,20 @@ Todos los miembros del equipo MascoTier son multidisciplinarios y participan act
 1. **Marketing Innovador:** Continuar desarrollando y ejecutando estrategias de marketing innovadoras para diferenciar a MascoTier en el mercado y atraer nuevos usuarios.
 2. **Desarrollo de Alianzas:** Explorar oportunidades para establecer nuevas alianzas estratégicas que amplíen la base de usuarios y aumenten los ingresos.
 3. **Innovación Tecnológica:** Invertir en investigación y desarrollo de tecnologías emergentes para mejorar la experiencia del usuario y la eficiencia operativa de la plataforma.
+
+
+
+\pagebreak
+
+
+### Nota final:
+
+Dado que nuestra empresa se centra en ofrecer una plataforma para el freelancing y nuestra estrategia inicial implica obtener beneficios a través de comisiones, los datos numéricos proporcionados se basan únicamente en estimaciones. Es importante tener en cuenta que estas estimaciones pueden ser complejas de precisar, ya que no tenemos un producto concreto para comercializar y estamos en las primeras etapas de ingreso al mercado.
+
+No obstante, es relevante señalar que hemos llevado a cabo un estudio exhaustivo en la medida de nuestras posibilidades y confiamos en que este plan de empresa resulte claro y completo.
+
+
+Por último, es importante destacar que todos los miembros del equipo de MascoTier participan activamente en diversas tareas, incluyendo diseño, programación, planificación empresarial, entre otras. Además, compartimos valores comunes que guían nuestro trabajo y nuestra visión compartida para el proyecto.
+
+
+--Equipo de Mascotier
