@@ -26,35 +26,31 @@ Cuenta - Búsqueda - Solicitud - Pago - Finalización
 
 En el ámbito político, es esencial considerar las  regulaciones y políticas gubernamentales relacionadas con la protección  animal, la seguridad alimentaria, el control de enfermedades, el uso de  medicamentos veterinarios y las prácticas de bienestar animal. Es  fundamental estar al tanto de las leyes vigentes en diferentes  jurisdicciones para adaptar los servicios de "Mascotier" de manera  adecuada.
 
-
 #### *Análisis Económico*
 
 Desde una perspectiva económica, el gasto en mascotas ha  experimentado un notable crecimiento. En Estados Unidos, se alcanzó un  récord de U\$S 95.7 mil millones en 2019, con la categoría de Pet Food  & Treats destacándose. A nivel global, se proyecta que el mercado de  mascotas crecerá significativamente de \$245 mil millones en 2021 a \$350  mil millones para 2027. Estos datos indican un mercado en expansión con  un potencial considerable para servicios relacionados con el cuidado de  mascotas. Además, es importante considerar cómo la situación económica  de los propietarios de mascotas puede influir en la demanda de servicios  veterinarios y de cuidado, especialmente durante períodos de recesión.
-
 
 #### *Análisis Social*
 
 En cuanto al análisis social, se observa un cambio en la  demografía y comportamiento relacionado con las mascotas. La presencia  de mascotas en los hogares está en aumento, con más personas menores de  34 años adquiriendo mascotas durante la pandemia. Además, se destaca que  el 67% de la población tenía una mascota en 2020, lo que refleja un  cambio en la relación entre las personas y sus mascotas, considerándolas  cada vez más como miembros de la familia. Asimismo, los dueños de  mascotas buscan productos que mejoren la salud física y conductual de  sus animales, demostrando una tendencia hacia la humanización de las  mascotas.
 
-
 #### *Análisis Tecnológico*
 
 En el ámbito tecnológico, se ha observado una notable  innovación en productos y servicios para mascotas. La industria ha  experimentado avances en juguetes, camas, productos tecnológicos y  enriquecimiento para animales. La creciente demanda de productos y  servicios sofisticados para mascotas, especialmente en el segmento  alimenticio, resalta la importancia de la innovación tecnológica.
-
 
 #### *Tendencias del Mercado*
 
 Las tendencias del mercado muestran una preferencia  creciente por ingredientes sostenibles en los alimentos para mascotas.  Más del 42% de los dueños prefieren comprar alimentos provenientes de  fuentes sostenibles. Además, se ha observado un aumento significativo en  la adopción de mascotas durante la pandemia, lo que ha impactado  positivamente en el mercado de alimentos para mascotas y en la demanda  de servicios relacionados con su cuidado.
 
+\\pagebreak
 
 ## Producto o Servicio:
 
 Funcionamos únicamente como intermediarios entre personas que necesitan el cuidado de sus mascotas y personas dispuestas a ofrecer estos cuidados.
 
-Nuestro income se produciria tanto por un porcentaje del pago que nos quedmos nosotros debido que nuestro servicio es la mediaciono la puesta en contacto de las dos partes, dado que tambien proporcionaremos en un plazo mas a futuro un servicio de scrow es decir, nsotros retendriamos el dinero de forma que un cliente debe pagar antes del servicio y el trabajador que haga el trabajo no cobrara hasta que el propietario confirme el servicio. 
+Nuestro income se produciria tanto por un porcentaje del pago que nos quedmos nosotros debido que nuestro servicio es la mediaciono la puesta en contacto de las dos partes, dado que tambien proporcionaremos en un plazo mas a futuro un servicio de scrow es decir, nsotros retendriamos el dinero de forma que un cliente debe pagar antes del servicio y el trabajador que haga el trabajo no cobrara hasta que el propietario confirme el servicio.
 
-
-# Estrategia de Marketing:
+\\pagebreak
 
 ## Objetivos Principales:
 
@@ -73,6 +69,8 @@ Nuestro income se produciria tanto por un porcentaje del pago que nos quedmos no
 3. **Promover la Comunidad:**  Muestra cómo "Mascotier" no solo es una plataforma de servicios, sino  también una comunidad de amantes de las mascotas donde los usuarios  pueden compartir experiencias, consejos y apoyo.
 4. **Testimonios y Casos de Éxito:**  Utiliza testimonios de usuarios satisfechos y estudios de caso para  demostrar el impacto positivo de "Mascotier" en la vida de las mascotas y  sus dueños. Las historias reales nos pueden generar confianza y  credibilidad.
 
+\\pagebreak
+
 ## Métricas de Éxito:
 
 - Crecimiento de Usuarios Registrados.
@@ -81,10 +79,9 @@ Nuestro income se produciria tanto por un porcentaje del pago que nos quedmos no
 - Conversiones.
 - Feedback y Reseñas.
 
-## Presupuesto de Marketing:
+\\pagebreak
 
--
--
+## Presupuesto de Marketing:
 
 #### 1. Publicidad en Redes Sociales
 
@@ -118,6 +115,8 @@ Nuestro income se produciria tanto por un porcentaje del pago que nos quedmos no
 | Herramientas y Software      | 3,000                |
 | **Total**                    | **77,000**           |
 
+\\pagebreak
+
 ## Conclusiones:
 
 - Sencillez y rapidez como enfoque principal.
@@ -140,14 +139,9 @@ El plan operativo se centrará principalmente en mantener actualizada la aplicac
 
 En términos de proveedores, actualmente estamos considerando asociarnos con Eagle-Fox, una empresa fundada por nuestros compañeros de clase. Eagle-Fox se especializaen el seguimiento de mascotas a través de un sistema de GPS. Esta asociación potencial nos permitiría integrar tecnología de rastreo de mascotas en nuestra plataforma, ofreciendo así a nuestros usuarios una solución integral para el cuidado y la seguridad de sus mascotas.
 
----
-
----
-
 ## Análisis Financiero
 
 El análisis financiero proporciona una visión detallada de los ingresos proyectados y el beneficio neto esperado para el primer mes y a partir del primer año de operación de MascoTier.
-
 
 #### Desarrollo de la Aplicación
 
@@ -190,7 +184,8 @@ El análisis financiero proporciona una visión detallada de los ingresos proyec
   * Beneficio Neto Mensual: -9,472 € (Ingresos Mensuales - Costos Operativos)
   * Beneficio Neto Anual: -113,664 € (Beneficio Neto Mensual \* 12)
 
----
+
+\\pagebreak
 
 ---
 
@@ -237,6 +232,9 @@ Una estrategia clave para MascoTier es la alianza estratégica con Eagle-Fox, un
 
 El plan de contingencia de MascoTier se centra en anticipar y abordar diversas adversidades que podrían surgir durante la operación de la plataforma. Al implementar medidas proactivas y establecer protocolos claros, estamos comprometidos a garantizar la seguridad, la confiabilidad y la legalidad de nuestros servicios para todos los usuarios.
 
+
+\\pagebreak
+
 ## Equipo de Gestión:
 
 ## Equipo de MascoTier
@@ -252,6 +250,11 @@ El plan de contingencia de MascoTier se centra en anticipar y abordar diversas a
   - Creación de Conceptos Innovadores para la Plataforma.
   - Desarrollo de Funcionalidades Clave.
 
+![Image](./media/graphiago.png)
+
+\pagebreak
+
+
 ### Brais López Escudero
 
 - **Rol:** Desarrollador de Infraestructura y Frontend
@@ -264,6 +267,10 @@ El plan de contingencia de MascoTier se centra en anticipar y abordar diversas a
   - Optimización de la Velocidad y Estabilidad de la Plataforma.
   - Diseño de Interfaz Intuitiva y Atractiva.
 
+![Image](./media/graphpino.png)
+
+\pagebreak
+
 ### Joel Ninahuaman Quintanilla
 
 - **Rol:** Desarrollador Frontend y Documentación Frontend
@@ -275,6 +282,9 @@ El plan de contingencia de MascoTier se centra en anticipar y abordar diversas a
   - Documentación Clara y Concisa para el Equipo de Desarrollo.
   - Resolución de Problemas Técnicos de Forma Eficiente.
 
+
+\pagebreak
+
 ### Pedro Campelo Rico
 
 - **Rol:** Desarrollador Backend y Documentación Backend
@@ -285,6 +295,8 @@ El plan de contingencia de MascoTier se centra en anticipar y abordar diversas a
   - Implementación de Funcionalidades Críticas del Backend.
   - Elaboración de Documentación Completa para Facilitar el Mantenimiento.
   - Colaboración Activa en la Resolución de Desafíos Técnicos.
+
+\\pagebreak
 
 ### Nota Importante:
 
@@ -315,6 +327,9 @@ Todos los miembros del equipo MascoTier son multidisciplinarios y participan act
 1. **Crecimiento del Mercado:** El mercado de servicios de cuidado de mascotas está en crecimiento, lo que brinda oportunidades para expandir la base de usuarios y aumentar los ingresos.
 2. **Alianzas Estratégicas:** La asociación con empresas como Eagle-Fox puede ofrecer oportunidades para mejorar la oferta de servicios y diferenciarse en el mercado.
 3. **Tecnología Emergente:** La adopción de tecnologías emergentes como inteligencia artificial y aprendizaje automático puede mejorar la experiencia del usuario y la eficiencia operativa de la plataforma.
+
+
+\\pagebreak
 
 ### Análisis CAME:
 
