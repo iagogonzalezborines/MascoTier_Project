@@ -1,4 +1,7 @@
 <?php
+
+/** @author Luis Miguel */
+
 declare(strict_types=1);
 require "../vendor/autoload.php";
 
@@ -31,7 +34,6 @@ function substituir(string $mensaje, array $campos): string
  function enviarCorreo($asunto, $plantilla, $destinatario, $campos = []) {
 
     try {
-        
         $mail = new PHPMailer();
         $mail->CharSet = 'UTF-8';
         $mail->Encoding = 'base64';
@@ -50,7 +52,7 @@ function substituir(string $mensaje, array $campos): string
         // Introducir clave
 
         $mail->Password = "Mascotier123.";
-        $mail->SetFrom("mascotier-no-responder@c23.daw2d.iesteis.gal", 'CONFIRMACION MASCOTIER');
+        $mail->SetFrom("mascotier-no-responder@c23.daw2d.iesteis.gal", 'aaaa Teis');
 
         /*
          * Para especificar el asunto. Utilizamos la función mb_convert_encoding para que muestre

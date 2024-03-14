@@ -12,19 +12,19 @@
     body {
         background-color: #f5efd4;
         background-image: url(media/paws.jpg);
-        
+
     }
 </style>
 
 <body>
     <header>
         <nav class="flex items-center justify-between w-max" id="navbar">
-            
+
             <div class="flex items-center mr-10">
                 <a href="index.html"><img class="h-20 w-20 m-0  " src="media/logo-removebg-preview.png" alt="Logo" /></a>
                 <span class="text-black font-bold text-lg">MASCOTIER</span>
             </div>
-            
+
     </header>
 
     <h1 class="text-center text-black font-bold text-5xl m-5 ">Registro Cuidador</h1>
@@ -82,105 +82,151 @@
 
 
             <div class="relative z-0 w-full mb-5 group">
-                <label for="country">País: (solo estamos en españa por el momento:(    )</label><span style="color: red !important; display: inline; float: none;">*</span>
+                <label for="country">País: (solo estamos en españa por el momento:( )</label><span style="color: red !important; display: inline; float: none;">*</span>
 
                 <select id="country" name="country" class="form-control">
                     <option value="España">España</option>
-                                    </select>
+                </select>
 
-                                </div>
+            </div>
 
-                                <div class="relative z-0 w-full mb-5 group">
-                                    <select name="province" id="province" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-cyan-500 focus:outline-none focus:ring-0 focus:border-cyan-600 peer" >
-                                       
-                                        <option value="Vigo">Vigo</option>
+            <div class="relative z-0 w-full mb-5 group">
+                <select name="province" id="province" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-cyan-500 focus:outline-none focus:ring-0 focus:border-cyan-600 peer">
+                
+                    <option value="alava">Álava</option>
+                    <option value="albacete">Albacete</option>
+                    <option value="alicante">Alicante</option>
+                    <option value="almeria">Almería</option>
+                    <option value="asturias">Asturias</option>
+                    <option value="avila">Ávila</option>
+                    <option value="badajoz">Badajoz</option>
+                    <option value="barcelona">Barcelona</option>
+                    <option value="burgos">Burgos</option>
+                    <option value="caceres">Cáceres</option>
+                    <option value="cadiz">Cádiz</option>
+                    <option value="cantabria">Cantabria</option>
+                    <option value="castellon">Castellón</option>
+                    <option value="ceuta">Ceuta</option>
+                    <option value="ciudad_real">Ciudad Real</option>
+                    <option value="cordoba">Córdoba</option>
+                    <option value="cuenca">Cuenca</option>
+                    <option value="girona">Girona</option>
+                    <option value="granada">Granada</option>
+                    <option value="guadalajara">Guadalajara</option>
+                    <option value="guipuzcoa">Guipúzcoa</option>
+                    <option value="huelva">Huelva</option>
+                    <option value="huesca">Huesca</option>
+                    <option value="illes_balears">Illes Balears</option>
+                    <option value="jaen">Jaén</option>
+                    <option value="la_coruna">A Coruña</option>
+                    <option value="la_rioja">La Rioja</option>
+                    <option value="las_palmas">Las Palmas</option>
+                    <option value="leon">León</option>
+                    <option value="lleida">Lleida</option>
+                    <option value="lugo">Lugo</option>
+                    <option value="madrid">Madrid</option>
+                    <option value="malaga">Málaga</option>
+                    <option value="melilla">Melilla</option>
+                    <option value="murcia">Murcia</option>
+                    <option value="navarra">Navarra</option>
+                    <option value="ourense">Ourense</option>
+                    <option value="palencia">Palencia</option>
+                    <option value="pontevedra">Pontevedra</option>
+                    <option value="salamanca">Salamanca</option>
+                    <option value="segovia">Segovia</option>
+                    <option value="sevilla">Sevilla</option>
+                    <option value="soria">Soria</option>
+                    <option value="tarragona">Tarragona</option>
+                    <option value="santa_cruz_de_tenerife">Santa Cruz de Tenerife</option>
+                    <option value="teruel">Teruel</option>
+                    <option value="toledo">Toledo</option>
+                    <option value="valencia">Valencia</option>
+                    <option value="valladolid">Valladolid</option>
+                    <option value="vizcaya">Vizcaya</option>
+                    <option value="zamora">Zamora</option>
+                    <option value="zaragoza">Zaragoza</option>
+                </select>
+                <label for="province" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-cyan-600 peer-focus:dark:text-cyan-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Provincia</label>
+            </div>
 
-                                    </select>
-                                    <label for="province" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-cyan-600 peer-focus:dark:text-cyan-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Provincia</label>
-                                </div>
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="text" name="city" id="city" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-cyan-500 focus:outline-none focus:ring-0 focus:border-cyan-600 peer">
+                <label for="city" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-cyan-600 peer-focus:dark:text-cyan-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Ciudad</label>
+            </div>
+            <div class="">
+                <p class="text-gray-500 flex ">¿Dispones de un espacio apropiado para el cuidado de la mascota?</p>
+                <input type="radio" name="hasPlace" value="yes" id="yes">
+                <label for="yes" class="text-gray-500 mr-2">Si</label>
+                <input type="radio" name="hasPlace" value="no" id="no">
+                <label for="no" class="text-gray-500">No</label>
 
-                                <div class="relative z-0 w-full mb-5 group">
-                                    <select name="city" id="city" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-cyan-500 focus:outline-none focus:ring-0 focus:border-cyan-600 peer" >
-                                        <option value="">Introduce tu ciudad</option>
-                                        <option value="Vigo">Vigo</option>
-
-                                    </select>
-                                    <label for="city" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-cyan-600 peer-focus:dark:text-cyan-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Ciudad</label>
-                                </div>
-                                <div class="">
-                                    <p class="text-gray-500 flex ">¿Dispones de un espacio apropiado para el cuidado de la mascota?</p>
-                                    <input type="radio" name="hasPlace" value="yes" id="yes">
-                                    <label for="yes" class="text-gray-500 mr-2">Si</label>
-                                    <input type="radio" name="hasPlace" value="no" id="no">
-                                    <label for="no" class="text-gray-500">No</label>
-
-                                </div>
+            </div>
 
 
-                                <script>
-                                    $(document).ready(function() {
-                                        $('#country').change(function() {
-                                            var countryId = $(this).val();
-                                            if (countryId) {
-                                                $('#province').prop('disabled', false);
-                                                $('#province').html('<option value="">Loading...</option>');
-                                                $('#city').prop('disabled', true);
-                                                $('#city').html('<option value="">Select City</option>');
-                                                $.ajax({
-                                                    url: 'get_provinces.php', // Replace with the PHP file to fetch provinces based on country
-                                                    type: 'POST',
-                                                    data: {
-                                                        country_id: countryId
-                                                    },
-                                                    success: function(response) {
-                                                        $('#province').html(response);
-                                                    }
-                                                });
-                                            } else {
-                                                $('#province').prop('disabled', true);
-                                                $('#province').html('<option value="">Select Province</option>');
-                                                $('#city').prop('disabled', true);
-                                                $('#city').html('<option value="">Select City</option>');
-                                            }
-                                        });
+            <script>
+                $(document).ready(function() {
+                    $('#country').change(function() {
+                        var countryId = $(this).val();
+                        if (countryId) {
+                            $('#province').prop('disabled', false);
+                            $('#province').html('<option value="">Loading...</option>');
+                            $('#city').prop('disabled', true);
+                            $('#city').html('<option value="">Select City</option>');
+                            $.ajax({
+                                url: 'get_provinces.php', // Replace with the PHP file to fetch provinces based on country
+                                type: 'POST',
+                                data: {
+                                    country_id: countryId
+                                },
+                                success: function(response) {
+                                    $('#province').html(response);
+                                }
+                            });
+                        } else {
+                            $('#province').prop('disabled', true);
+                            $('#province').html('<option value="">Select Province</option>');
+                            $('#city').prop('disabled', true);
+                            $('#city').html('<option value="">Select City</option>');
+                        }
+                    });
 
-                                        $('#province').change(function() {
-                                            var provinceId = $(this).val();
-                                            if (provinceId) {
-                                                $('#city').prop('disabled', false);
-                                                $('#city').html('<option value="">Loading...</option>');
-                                                $.ajax({
-                                                    url: 'get_cities.php', // Replace with the PHP file to fetch cities based on province
-                                                    type: 'POST',
-                                                    data: {
-                                                        province_id: provinceId
-                                                    },
-                                                    success: function(response) {
-                                                        $('#city').html(response);
-                                                    }
-                                                });
-                                            } else {
-                                                $('#city').prop('disabled', true);
-                                                $('#city').html('<option value="">Select City</option>');
-                                            }
-                                        });
-                                    });
-                                </script>
+                    $('#province').change(function() {
+                        var provinceId = $(this).val();
+                        if (provinceId) {
+                            $('#city').prop('disabled', false);
+                            $('#city').html('<option value="">Loading...</option>');
+                            $.ajax({
+                                url: 'get_cities.php', // Replace with the PHP file to fetch cities based on province
+                                type: 'POST',
+                                data: {
+                                    province_id: provinceId
+                                },
+                                success: function(response) {
+                                    $('#city').html(response);
+                                }
+                            });
+                        } else {
+                            $('#city').prop('disabled', true);
+                            $('#city').html('<option value="">Select City</option>');
+                        }
+                    });
+                });
+            </script>
 
-                                <div class="flex justify-center">
-                                    <button type="submit" class=" bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800">Registrarse</button>
-                                </div>
+            <div class="flex justify-center">
+                <button type="submit" class=" bg-cyan-700 hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800">Registrarse</button>
+            </div>
 
-                                <div class="relative z-0 w-full mb-5 group">
-                                    <input type="hidden" name="userType" id="userType" value="carer" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-cyan-500 focus:outline-none focus:ring-0 focus:border-cyan-600 peer" placeholder=" " />
-                                    <label for="area" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-cyan-600 peer-focus:dark:text-cyan-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"></label>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="flex justify-center m-1">
-                            <p class="text-black mr-5  "> ¿Dispones de una cuenta en MascoTier?</p>
-                            <a href="login.html" class="text-cyan-600">Iniciar sesion</a>
-                        </div>
-                    </body>
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="hidden" name="userType" id="userType" value="carer" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-cyan-500 focus:outline-none focus:ring-0 focus:border-cyan-600 peer" placeholder=" " />
+                <label for="uerType" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-cyan-600 peer-focus:dark:text-cyan-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"></label>
+            </div>
+        </form>
+    </div>
+    <div class="flex justify-center m-1">
+        <p class="text-black mr-5  "> ¿Dispones de una cuenta en MascoTier?</p>
+        <a href="login.html" class="text-cyan-600">Iniciar sesion</a>
+    </div>
+</body>
 
-                    </html>
+</html>
