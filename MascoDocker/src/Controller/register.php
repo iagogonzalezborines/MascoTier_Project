@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $destinatario = $email;
                     $camposPlantilla = [
                         "{email}" => $email,
-                        "{url}" => "http://" . $_SERVER["HTTP_HOST"] . "/index.html"
+                        "{url}" => "http://" . $_SERVER["HTTP_HOST"] . "/Controller/confirm.php?email=". encriptar($email)
                     ];
                     enviarCorreo("Confirmacion de la cuenta", $plantilla,$destinatario, $camposPlantilla);
 

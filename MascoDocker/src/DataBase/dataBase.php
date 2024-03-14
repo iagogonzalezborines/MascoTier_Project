@@ -87,13 +87,13 @@ class dataBase
         } else { // In case there are parameters it uses the prepare method in order to avoid SQL injection
             try {
                 $stmt = $this->dbh->prepare($query);
-           /*     foreach ($params as $key => $value) {
+                /*     foreach ($params as $key => $value) {
                     $stmt->bindParam($key + 1, $value); //THIS IS NOT WORKING, IT SHOULD BE FIXED BY MEKANIK 
                 }*/
-                for ($i = 1; $i <= count($params); $i++) { 
+                for ($i = 1; $i <= count($params); $i++) {
                     $stmt->bindParam($i, $params[$i - 1]);
                 }
-                
+
                 // Ejecuta la consulta preparada
                 $stmt->execute();
                 return $stmt;
@@ -106,7 +106,8 @@ class dataBase
             }
         }
     }
-    public function prepareStatement($stmnt){
+    public function prepareStatement($stmnt)
+    {
         try {
             $stmt = $this->dbh->prepare($stmnt);
             return $stmt;
@@ -114,7 +115,6 @@ class dataBase
             echo $e->getMessage();
             return false;
         }
-        
     }
     public function transformResultSetIntoUserArray($result)
     {
@@ -125,33 +125,42 @@ class dataBase
         return $userArray;
     }
 
-    public function logIn($email, $password, $db){
-        if(!empty($email) && !empty($password)){
-            
-           
-        
+    public function logIn($email, $password, $db)
+    {
+        if (!empty($email) && !empty($password)) {
+
+
+
             $query = "SELECT * FROM users WHERE email = ?";
             $result = $db->executeQuery($query, array($email));
             $arrayResult = $db->transformResultSetIntoUserArray($result);
-        
+
             if (count($arrayResult) === 0) {
                 $db->disconnectFromDatabase();
                 return false;
             }
-            
+
             $hashedPassword = $arrayResult[0]["pwd"];
             if (!password_verify($password, $hashedPassword)) {
                 $db->disconnectFromDatabase();
                 return false;
             }
-            
+
             $_SESSION['email'] = $arrayResult[0];
             $db->disconnectFromDatabase();
             return true;
         }
     }
+    function verifyUser($email)
+    {
+        try {
+            $instance = self::getInstance();
+            $pdo = $instance->connectToDatabase();
+            $query = "UPDATE users set verified = 1 where email= ? ";
+            $smt = $pdo->prepare($query);
+            $smt->execute([$email]);
+        } catch (\PDOException $th) {
+            throw $th;
+        }
     }
-
-
-
-?>
+}

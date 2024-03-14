@@ -31,7 +31,12 @@ function substituir(string $mensaje, array $campos): string
  function enviarCorreo($asunto, $plantilla, $destinatario, $campos = []) {
 
     try {
-        
+        $config=parse_ini_file("./configMailer.ini",true)["mailer"];
+        $port= $config["port"];
+        $host=$config["host"];
+        $username=$config["username"];
+        $password=$config["password"];
+
         $mail = new PHPMailer();
         $mail->CharSet = 'UTF-8';
         $mail->Encoding = 'base64';
@@ -42,15 +47,15 @@ function substituir(string $mensaje, array $campos): string
         $mail->SMTPAuth = true;
         $mail->SMTPSecure = "TLS";
         //	Establece el servidor SMTP. Pueden ser varios separados por ;
-        $mail->Host = 'c23-daw2d-iesteis-gal.correoseguro.dinaserver.com';
-        $mail->Port = 587;
+        $mail->Host = $host;
+        $mail->Port = $port;
 
         // Introducir usuario de correo completo
-        $mail->Username = "mascotier-no-responder@c23.daw2d.iesteis.gal";
+        $mail->Username = $username;
         // Introducir clave
 
-        $mail->Password = "Mascotier123.";
-        $mail->SetFrom("mascotier-no-responder@c23.daw2d.iesteis.gal", 'CONFIRMACION MASCOTIER');
+        $mail->Password = $password;
+        $mail->SetFrom($username, 'CONFIRMACION MASCOTIER');
 
         /*
          * Para especificar el asunto. Utilizamos la función mb_convert_encoding para que muestre
