@@ -11,6 +11,7 @@ if (!empty($_POST)) {
         $username= test_text($_POST["name"]);
         $phone = $_POST["phone"];
         $area= test_text($_POST["area"]);
+        $_SESSION["email"]=$email;
         switch ($_POST["place"]) {
             case"yes":
                 $hasPlace=1;

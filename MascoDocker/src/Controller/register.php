@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     break;
                 case 'owner':
                     $type = "owner";
-                    $_SESSION["email"] == $email;
+                    $_SESSION["email"] = $email;
                     $user = new User($email, $password, $type, $birthDate, $username, $phone, $city, $verified, null, $idDocument, null, null);
                     $user->saveUserToDb($user);
                     $plantilla = file_get_contents("../Templates/email.html");
