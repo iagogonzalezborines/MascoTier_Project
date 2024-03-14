@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up Owner</title>
     <link rel="stylesheet" href="../Templates/assets/outstyles.css">
-    
 </head>
 
 <body class="bg-gray-800">
@@ -46,6 +45,9 @@
     <div id="main-container" class="mt-10 p-10 bg-[#fdfdfb] rounded-lg max-w-sm mx-auto">
 
         <form class="max-w-md mx-auto" action="../Controller/register.php" method="post">
+        <?php if (isset($msg_error)) {
+                echo "<p class='text-center'>$msg_error</p>";
+            } ?>
             <div class="relative z-0 w-full mb-5 group">
                 <input type="email" name="email" id="email"
                     class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
@@ -67,8 +69,9 @@
                 <label for="repeat_pwd"
                     class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirmar
                     contraseña</label>
+                    
             </div>
-            <div class="grid md:grid-cols-2 md:gap-6 flex justify-center">
+            <div class=" md:grid-cols-2 md:gap-6 flex justify-center">
                 <div class="relative z-0 w-full mb-5 group">
                     <input type="text" name="name" id="name"
                         class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
@@ -117,17 +120,17 @@
 
             </div>
             <div class="relative z-0 w-full mb-5 group">
-                <input type="text" name="area" id="area"
+                <input type="text" name="city" id="city"
                     class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     placeholder=" " />
-                <label for="area"
-                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Area</label>
+                <label for="city"
+                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">city</label>
             </div>
             <div class="relative z-0 w-full mb-5 group">
                 <input type="hidden" name="userType" id="userType" value="owner"
                     class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     placeholder=" " />
-                <label for="area"
+                <label for="userType"
                     class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"></label>
             </div>
             <div class="flex justify-center">

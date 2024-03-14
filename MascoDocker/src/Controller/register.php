@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST["pwd"];
     $repassword = $_POST["repeat_pwd"];
     $phone = test_text($_POST['phone']);
-    $province =  $_POST["province"];
+  //  $province =  $_POST["province"];
     $city = test_text($_POST['city']);
     $email = $_POST['email'];
     $birthDate = $_POST["birth-date"];
@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $destinatario = $email;
                     $camposPlantilla = [
                         "{email}" => $email,
-                        "{url}" => "http://" . $_SERVER["HTTP_HOST"] . "/index.html"
+                        "{url}" => "http://" . $_SERVER["HTTP_HOST"] . "/Controller/confirm.php?email=". encriptar($email)
                     ];
                     enviarCorreo("Confirmacion de la cuenta", $plantilla,$destinatario, $camposPlantilla);
                     if ($user) {
@@ -101,6 +101,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
     }
-} else {
-    echo  "errores";
 }
