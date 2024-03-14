@@ -31,7 +31,7 @@ function substituir(string $mensaje, array $campos): string
  function enviarCorreo($asunto, $plantilla, $destinatario, $campos = []) {
 
     try {
-        
+        $config = parse_ini_file("");
         $mail = new PHPMailer();
         $mail->CharSet = 'UTF-8';
         $mail->Encoding = 'base64';
