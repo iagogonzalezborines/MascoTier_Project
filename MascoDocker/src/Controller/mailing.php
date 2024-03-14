@@ -1,47 +1,110 @@
-
 <?php
+declare(strict_types=1);
+require "../vendor/autoload.php";
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-require_once '../DataBase/dataBase.php';
-require_once '../Methods/formFilters.php';
-require_once '../Methods/PHPMailer.php';
-require_once '../Methods/PHPMailerException.php';
-require_once '../Methods/SMTP.php';
 
 
-// In controller page there should be a button to submit an email which will execute this code
-if ($_SERVER['REQUEST_METHOD'] === 'POST' || $_SESSION['email'] != null) {
-    // Create a new PHPMailer instance
-    $mail = new PHPMailer(true);
-    $config = parse_ini_file('config.ini', true);
+/**
+ * remplaza en un texto el array de campos que se le pasa
+ */
+function substituir(string $mensaje, array $campos): string
+{
+    // Reemplazamos los campos que queremos de la plantilla
+    // $mensaje = str_replace('{phpmailer}', $user, $plantilla);
+    foreach ($campos as $key => $campo) {
+        $mensaje = str_replace($key, $campo, $mensaje);
+    }
+    return $mensaje;
+}
+
+/**
+ * envia el mail en la plantilla es el cuerpo del correo si se quiere usar texto personalizado debes de usar el parametro $campos que tiene que tener la siguiente estructura.
+ * [
+ *  "campo a cambiar" => valor del campo que quieres cambiar,
+ *  "{url}" => www.google.com
+ * ]
+ * este array busca en el parametro plantilla el valor {url} y lo sustituye por www.google.com tantas veces como {url} aparezca
+ */
+
+ function enviarCorreo($asunto, $plantilla, $destinatario, $campos = []) {
 
     try {
-        // Server settings
-        $mail->SMTPDebug = 0; // Set to 2 for debugging information
-        $mail->isSMTP();
-        $mail->Host = 'smtp.example.com'; // Specify your SMTP server
+        
+        $mail = new PHPMailer();
+        $mail->CharSet = 'UTF-8';
+        $mail->Encoding = 'base64';
+        $mail->IsSMTP();
+        // cambiar a 0 para no ver mensajes de error
+        $mail->SMTPDebug = 0;
+        //	Establece la autentificación SMTP. Por defecto a False
         $mail->SMTPAuth = true;
-        $mail->Username = 'your-email@example.com'; // Your SMTP username
-        $mail->Password = $config['phpmailer']['password']; // Your SMTP password
-        $mail->SMTPSecure = 'tls';
+        $mail->SMTPSecure = "TLS";
+        //	Establece el servidor SMTP. Pueden ser varios separados por ;
+        $mail->Host = 'c23-daw2d-iesteis-gal.correoseguro.dinaserver.com';
         $mail->Port = 587;
 
-        // Sender and recipient
-        $mail->setFrom('sender@example.com', 'Sender Name');
-        $mail->addAddress($_SESSION['email'], 'Recipient Name');
+        // Introducir usuario de correo completo
+        $mail->Username = "mascotier-no-responder@c23.daw2d.iesteis.gal";
+        // Introducir clave
 
-        // Email content
-        $mail->isHTML(true);
-        $mail->Subject = 'Test Email';
-        $mail->Body = 'This is a test email';
+        $mail->Password = "Mascotier123.";
+        $mail->SetFrom("mascotier-no-responder@c23.daw2d.iesteis.gal", 'CONFIRMACION MASCOTIER');
 
-        // Send the email
-        $mail->send();
-        echo 'Email sent successfully';
+        /*
+         * Para especificar el asunto. Utilizamos la función mb_convert_encoding para que muestre
+         * correctamente los acentos.
+         */
+        $mail->Subject = mb_convert_encoding($asunto, 'UTF-8');
+
+        $mensaje = substituir($plantilla, $campos);
+        $mail->MsgHTML($mensaje);
+        $mail->AddAddress($destinatario);
+        $resul = $mail->Send();
+
+        return $resul;
     } catch (Exception $e) {
-        echo 'Email could not be sent. Error: ' . $mail->ErrorInfo;
+        
     }
 }
-    
 
-?>
+
+/**
+ * configura una variable de session y redirige a la pagina que se le pasa como parametro en la pagina muestras el mensaje como quieras
+ */
+function setErrorMsg(string $msg, string $page): void
+{
+    $_SESSION["msg"] = $msg;
+    header("Location: $page");
+}
+
+
+/**
+ * se le pasa una cadena de texto que deberia ser el usuario y te dice si es un phpmailer o el nombre del usuario creado
+ */
+function userOrphpmailer(string $user): string
+{
+    $campo = "nombre";
+    if (filter_var($user, FILTER_VALIDATE_EMAIL) !== false) {
+        $campo = "phpmailer";
+    }
+    return $campo;
+}
+
+
+/**
+ * encripta de forma reversible el valor
+ */
+function encriptar(string $mensaje)
+{
+    return base64_encode(str_rot13($mensaje));
+}
+
+/**
+ * desencripta el valor que se encripto utilizando la funcion encriptar
+ */
+function desencriptar(string $mensaje)
+{
+    return str_rot13(base64_decode($mensaje));
+}
