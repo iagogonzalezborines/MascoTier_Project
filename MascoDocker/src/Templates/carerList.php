@@ -81,9 +81,9 @@ require_once '../DataBase/dataBase.php';
         <!-- table-->
 
 
-        <div class="bg-white w-3/4 relative overflow-x-auto m-auto rounded-xl">
-            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
-                <thead class="trFeedUser text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <div class=" w-3/4 relative overflow-x-auto m-auto rounded-xl">
+            <table class="w-full text-sm text-left border-4 border-green-200 rtl:text-right ">
+                <thead class="trFeedUser text-xs  uppercase  bg-green-200 text-black">
                     <tr>
                         <th class="px-6 py-3">
                             Nombre
@@ -129,24 +129,24 @@ require_once '../DataBase/dataBase.php';
                         $hasPlace = $row['hasPlace'];
                     ?>
 
-                        <tr class="trFeedUser bg-white border-b dark:bg-gray-800 dark:border-gray-700 ">
+                        <tr class="trFeedUser   border-b bg-green-100 text-black border-gray-700 ">
 
-                            <th scope='row' class='px-6 py-4  font-medium text-gray-900 whitespace-nowrap dark:text-white'>
+                            <th scope='row' class='px-6 py-4   text-gray-900 whitespace-nowrap '>
                                 <?php echo "$username"; // Display the username 
                                 ?>
                             </th>
 
-                            <th scope='row' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
+                            <th scope='row' class='px-6 py-4  text-gray-900 whitespace-nowrap '>
                                 <?php echo "$zone";  // Display the zone 
                                 ?>
                             </th>
 
-                            <th scope='row' class=' px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
+                            <th scope='row' class=' px-6 py-4  text-gray-900 whitespace-nowrap '>
                                 <?php echo "$rating"; // Display the rating 
                                 ?>
                             </th>
 
-                            <th scope='row' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
+                            <th scope='row' class='px-6 py-4  text-gray-900 whitespace-nowrap '>
                                 <?php if ($hasPlace == 1) {
                                     echo "Si";
                                 } else {
@@ -155,12 +155,12 @@ require_once '../DataBase/dataBase.php';
                                 ?>
                             </th>
 
-                            <th scope='row' class='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
+                            <th scope='row' class='px-6 py-4  text-gray-900 whitespace-nowrap dark:text-white'>
                                 <!--Send petition -->
-                                <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a href="./signup_owner.html">Enviar petición</a></button>
+                                <button type="button" class="text-white bg-gradient-to-r from-green-900 via-green-700 to-green-800 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a href="./signup_owner.html">Enviar petición</a></button>
                             </th>
 
-                            <th scope='row' class='  font-medium text-gray-900 whitespace-nowrap dark:text-white'>
+                            <th scope='row' class='  text-gray-900 whitespace-nowrap dark:text-white'>
                                 <!--Go to profile -->
                                 <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><a href="./signup_owner.html">Ir al perfil</a></button>
                             </th>
