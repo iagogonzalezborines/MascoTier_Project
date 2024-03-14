@@ -7,7 +7,7 @@ session_start();
 require_once '../DataBase/dataBase.php';
 require_once '../Classes/User.php';
 require_once '../Methods/formFilters.php';
-
+require_once '../Templates/Utils.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
  
@@ -31,6 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }else{
         echo "dni no valido";
     }
+    enviarMail("mascotier-no-responder@c23.daw2d.iesteis.gal",file_get_contents("../Templates/mainTemplate.html"),"hixikod440@hdrlog.com");
+
     // this is the controller that checks if exists or not the email in the database
     $checkEmail = "Select count(email) as total from users where email = ?";
     $db = dataBase::getInstance();
@@ -75,8 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 case 'owner':
                     $type = "owner";
                     $_SESSION["email"]==$email;
-                    $user = new User($email, $password, $type,$birthDate,$username, $phone,$area,  $verified,null, $idDocument,null,null);
-        
+                    $user = new User($email, $password, $type,$birthDate,$username, $phone,$area,  $verified,null, $idDocument,null,null);  
                    $user->saveUserToDb($user);
                  
                    if ($user) {
