@@ -18,7 +18,7 @@
 			height: 100vh;
 			margin: 0;
 			padding: 0;
-			background-image: url(media/dalmatian-spots.png);
+			background-image: url(media/patternpad.svg);
 		}
 
 		.login-container {
