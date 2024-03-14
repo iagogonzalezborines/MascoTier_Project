@@ -7,11 +7,11 @@
     <title>MascoTier</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-        <style>
-            body {
-                background-color: #f5efd4;
-                overflow: hidden;
-            }
+    <style>
+        body {
+            background-color: #f5efd4;
+            overflow: hidden;
+        }
 
         .text-gradient-mascotier {
             background-image: linear-gradient(to right, #92b513, #1ad3eb);
@@ -46,68 +46,66 @@
             color: white;
         }
 
-            .logo {
-                width: 150px;
-                position: absolute;
-                top: 10px;
-                left: 0px;
-            }
-            nav {
-                background-color: #faf5df;
-                width: 100%;
-            }
+        .logo {
+            width: 150px;
+            position: absolute;
+            top: 10px;
+            left: 0px;
+        }
 
-        </style>
-        </head>
+        nav {
+            background-color: #faf5df;
+            width: 100%;
+        }
+    </style>
+</head>
 
-        <body>
-            <!-- Navbar -->
-            <nav class="bg-transparent fixed top-0 left-0 right-0 z-10 w-4/5 m-auto ">
-                <div class="flex items-center justify-between h-16">
-                    <div class="flex items-center">
-                        <div class="flex-shrink-0">
-                            <img src="media/logo-removebg-preview.png" alt="" class="logo" style="position: absolute; top: 10px; left: 10px;">
-                        </div>
-                    <div class="hidden md:block">
-                        <div class="ml-10 flex items-baseline space-x-4">
-                            <!-- Add navigation links here -->
-                        </div>
+<body>
+    <!-- Navbar -->
+    <nav class="bg-transparent fixed top-0 left-0 right-0 z-10 w-full  ">
+        <div class="flex items-center justify-between h-20 w-full pr-32 p-10">
+
+                <img src="media/logo-removebg-preview.png" alt="" class="logo ml-28">
+
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <!-- Add navigation links here -->
                     </div>
                 </div>
-                <button class="md:hidden bg-transparent text-white hover:text-gray-300 focus:outline-none">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-                <div class="hidden md:block" style="margin-top: 80px;">
-                    <a href="../Templates/login.php"
-                        class="btn-blue font-bold py-3 px-4 rounded-full focus:outline-none p-1 text-xl">Iniciar Sesión</a>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Main content -->
-        <div class="p-5 grid grid-cols-1 md:grid-cols-2 gap-10 items-center w-5/6 m-auto mt-40">
-            <!-- Text section -->
-            <div class="text-center md:text-left w-full mt-52">
-                <h1 class="text-7xl md:text-7xl lg:text-8xl font-bold mb-8">
-                    <span class="text-black">Bienvenido a</span> <span class="text-gradient-mascotier text-8xl block">MascoTier</span>
-                </h1>
-                <p class="text-lg md:text-xl text-black mb-8">Conectamos a dueños de mascotas con cuidadores confiables.</p>
-                <div class="flex justify-center md:justify-start">
-                    <a href="signup_carer.php"
-                        class="btn-blue font-bold py-4 px-7 rounded-full mr-4 text-lg">¡Cuida Mascotas!</a>
-                    <a href="signup_owner.php"
-                        class="btn-green font-bold py-4 px-7 rounded-full text-lg">¡Soy Dueño!</a>
-                </div>
-            </div>
-            <!-- Image section -->
-            <div class="flex justify-center md:justify-end">
-                <img src="./media/happydoggo.png" alt="Pet Care" class="rounded-lg max-w-lg">
+            <button class="md:hidden bg-transparent text-white hover:text-gray-300 focus:outline-none">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+            <div class="hidden md:block" style="margin-top: 80px;">
+                <a href="../Templates/login.php"
+                    class="btn-blue font-bold py-3 px-4 rounded-full focus:outline-none p-1 text-xl">Iniciar Sesión</a>
             </div>
         </div>
-    </body>
+    </nav>
 
-    </html>
+    <!-- Main content -->
+    <div class="p-5 grid grid-cols-1 md:grid-cols-2 gap-10 items-center w-5/6 m-auto mt-40">
+        <!-- Text section -->
+        <div class="text-center md:text-left w-full mt-32">
+            <h1 class="text-7xl md:text-7xl lg:text-8xl font-bold mb-8">
+                <span class="text-black">Bienvenido a</span> <span
+                    class="text-gradient-mascotier text-8xl block">MascoTier</span>
+            </h1>
+            <p class="text-lg md:text-xl text-black mb-8">Conectamos a dueños de mascotas con cuidadores confiables.</p>
+            <div class="flex justify-center md:justify-start">
+                <a href="signup_carer.php" class="btn-blue font-bold py-4 px-7 rounded-full mr-4 text-lg">¡Cuida
+                    Mascotas!</a>
+                <a href="signup_owner.php" class="btn-green font-bold py-4 px-7 rounded-full text-lg">¡Soy Dueño!</a>
+            </div>
+        </div>
+        <!-- Image section -->
+        <div class="flex justify-center md:justify-end">
+            <img src="./media/perro.png" alt="Pet Care" class="rounded-lg max-w-lg">
+        </div>
+    </div>
+</body>
+
+</html>
