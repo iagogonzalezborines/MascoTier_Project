@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Dueño</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-image: url(media/pattern3.svg);
+        }
+
+        .big-container {
+            background-color: rgba(215, 250, 228, 0.658);
+            display: flex;
+            justify-content: left;
+            align-items: left   ;
+            height: 90%;
+            width: 90%;
+            margin-left: 10px;
+            border-radius: 10px;
+            box-shadow: 5px 10px 10px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            transition: width 0.5s ease;
+        }
+
+
+
+        .form-container {
+            height: 100%;
+            background-color: #ffffff;
+            width: 40%;
+            left: 100%;
+
+        }
+
+        .form-container.pet-form {
+            transform: translateX(100%);
+        }
+
+        .title {
+            color: #a7cc23;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #a7cc23;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #a7cc23;
+            border-radius: 5px;
+        }
+
+        .btn-green {
+            background-color: #a7cc23;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-green:hover {
+            background-color: #8cbf20;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big-container">
+            <div class="form-container">
+                <h1 class="title">Registro de Dueño</h1>
+                <form class="form" action="/signupOwner" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <!-- Otros campos del formulario de dueño -->
+                </form>
+                <button class="btn-green" id="addPetBtn">Agregar Mascota</button>
+            </div>
+           
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    document.getElementById('submitPetBtn').addEventListener('click', function () {
+    // Obtener los valores del formulario de mascota
+    const petName = document.getElementById('petName').value;
+    const petType = document.getElementById('petType').value;
+    const petBreed = document.getElementById('petBreed').value;
+
+    // Crear un objeto que represente la mascota
+    const pet = {
+        name: petName,
+        type: petType,
+        breed: petBreed
+    };
+
+    // Aquí puedes enviar el objeto 'pet' al servidor utilizando AJAX o fetch
+    // Por ejemplo, si estás utilizando fetch:
+    fetch('/addPet', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(pet)
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        }
+        throw new Error('Error al agregar mascota');
+    })
+    .then(data => {
+        // Agregar la mascota a la lista en el big-container
+        const petList = document.getElementById('petList');
+        const listItem = document.createElement('li');
+        listItem.textContent = `${pet.name} - ${pet.type} - ${pet.breed}`;
+        petList.appendChild(listItem);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+
+</script>

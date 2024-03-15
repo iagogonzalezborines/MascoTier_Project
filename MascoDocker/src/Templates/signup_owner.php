@@ -7,8 +7,21 @@
     <title>Sign up Owner</title>
     <link rel="stylesheet" href="../Templates/assets/outstyles.css">
 </head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        background-image: url(media/pattern3.svg);
+    }
+</style>
 
-<body class="bg-gray-800">
+<body class="">
     <header>
         <nav class="flex items-center justify-between" id="navbar">
             <!-- temporal Logo -->
@@ -42,7 +55,7 @@
 
     <hr>
     <h1 class="text-center text-white text-5xl m-5 ">Registro Dueño</h1>
-    <div id="main-container" class="mt-10 p-10 bg-[#fdfdfb] rounded-lg max-w-sm mx-auto">
+    <div id="main-container" class="mt-10 p-10 bg-[#dfdf67] rounded-lg max-w-sm mx-auto">
 
         <form class="max-w-md mx-auto" action="../Controller/register.php" method="post">
         <?php if (isset($msg_error)) {
@@ -81,7 +94,7 @@
                 </div>
 
             </div>
-            <div class="grid md:grid-cols-2 md:gap-6 flex justify-center">
+            <div class="grid md:grid-cols-2 md:gap-6  justify-center">
                 <div class="relative z-0 w-full mb-5 group">
                     <input type="tel" name="phone" id="phone"
                         class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
