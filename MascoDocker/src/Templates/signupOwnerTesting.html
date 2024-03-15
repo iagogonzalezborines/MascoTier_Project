@@ -37,10 +37,13 @@
             height: 100%;
             background-color: #ffffff;
             width: 40%;
+            /* Ancho original del formulario */
             position: absolute;
             left: 0;
-            transition: transform 0.5s ease;
+            transition: width 0.5s ease;
+            /* Agregar transición para una animación suave */
         }
+
 
         .form-container.pet-form {
             transform: translateX(-100%);
@@ -48,13 +51,21 @@
 
         .title {
             color: #000000;
-            text-align: center;
+            text-align: left;
+            position: fixed; /* Cambiar de absolute a fixed */
+            width: 40%; /* Asegurar que el título ocupe todo el ancho */
+            top: 40px; /* Ajustar la posición vertical */
+            z-index: 1; /* Asegurar que el título esté por encima del formulario */
+            margin: 30px;
+            
         }
-
+        form {
+            margin-top: 100px;
+        }	
         .form-group {
             margin-left: 30px;
             margin-bottom: 15px;
-            margin-top: 40px;
+            margin-top: 60px;
         }
 
         label {
@@ -68,7 +79,7 @@
         input[type="email"],
         input[type="tel"],
         input[type="password"] {
-            width: 80%;
+            width:240px;
             padding: 10px;
             border: 1px solid #49c2b0;
             border-radius: 5px;
@@ -78,16 +89,26 @@
             background-color: #a7cc23;
             color: #ffffff;
             border: none;
-            padding: 10px 20px;
+            padding: 10px 0;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
             margin-top: 30px;
             height: 40px;
+            position: absolute;
+            right: -60px; /* Posicionar a la derecha del form-container */
+            transform-origin: right; /* Establecer el punto de origen de la transformación */
+            transform: skewX(-45deg); /* Aplicar transformación de inclinación */
         }
 
         .btn-green:hover {
             background-color: #8cbf20;
+        }
+
+        .btn-green span {
+            transform: skewX(45deg); /* Invertir la inclinación para el texto */
+            display: block;
+            padding: 0 20px;
         }
 
         input[type=date] {
@@ -147,7 +168,7 @@
 
 <body>
     <div class="big-container">
-        <div class="form-container">
+        <div class="form-container" id="form-container">
             <h1 class="title">Registro de Dueño</h1>
             <form class="form" action="/signupOwner" method="POST">
                 <div class="form-group">
@@ -163,9 +184,11 @@
                     <input id="phone" type="tel" name="phone" placeholder="123 45 67 89 " required>
                 </div>
                 <div class="form-group">
+                    <label for="birthdate">Fecha de Nacimiento:</label>
                     <input type="date" name="birthdate" id="birthdate">
                 </div>
             </form>
+            <button class="btn-green" id="addPetBtn">Agregar Mascota</button>
         </div>
         <div class="form-container pet-form">
             <h1 class="title">Registro de Mascota</h1>
@@ -185,63 +208,34 @@
             </form>
             <button class="btn-green" id="submitPetBtn">Agregar Mascota</button>
         </div>
-        <button class="btn-green" id="addPetBtn">Agregar Mascota</button>
+
     </div>
 
-<script>
-     document.getElementById('addPetBtn').addEventListener('click', function () {
-            const formContainer = document.querySelector('.form-container.pet-form');
-            formContainer.classList.toggle('active');
-            document.querySelector('.big-container').classList.toggle('expanded');
+    <script>
+        const mainForm = document.querySelector('.form-container');
+        const petAdd = document.getElementById('addPetBtn');
+
+        function expandForm(formContainer) {
+            formContainer.style.width = '80%'; // Ampliar el ancho del formulario
+            formContainer.style.left = '0'; // Asegurar que el formulario comience desde el borde izquierdo
+        }
+
+        petAdd.addEventListener('click', () => {
+            expandForm(mainForm);
         });
-    $(document).ready(function () {
-        $('input[type="date"]').click();
 
-    });
 
-    function closeDate(dateInput) {
-        $(dateInput).attr('type', 'text');
-        $(dateInput).attr('type', 'date');
-    }
 
-    document.getElementById('submitPetBtn').addEventListener('click', function () {
-        // Obtener los valores del formulario de mascota
-        const petName = document.getElementById('petName').value;
-        const petType = document.getElementById('petType').value;
-        const petBreed = document.getElementById('petBreed').value;
 
-        // Crear un objeto que represente la mascota
-        const pet = {
-            name: petName,
-            type: petType,
-            breed: petBreed
-        };
+        function closeDate(dateInput) {
+            $(dateInput).attr('type', 'text');
+            $(dateInput).attr('type', 'date');
+        }
+        function closeDate(dateInput) {
+            $(dateInput).attr('type', 'text');
+            $(dateInput).attr('type', 'date');
+        }
 
-        // Aquí puedes enviar el objeto 'pet' al servidor utilizando AJAX o fetch
-        // Por ejemplo, si estás utilizando fetch:
-        fetch('/addPet', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(pet)
-        })
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                }
-                throw new Error('Error al agregar mascota');
-            })
-            .then(data => {
-                // Agregar la mascota a la lista en el big-container
-                const petList = document.getElementById('petList');
-                const listItem = document.createElement('li');
-                listItem.textContent = `${pet.name} - ${pet.type} - ${pet.breed}`;
-                petList.appendChild(listItem);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-    });
 
-</script>
+
+    </script>
