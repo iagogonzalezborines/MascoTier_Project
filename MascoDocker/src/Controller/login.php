@@ -19,8 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $arrayResult = $db->transformResultSetIntoUserArray($result);
 
         if (count($arrayResult) === 0) {
-            $msg_error = "error en las creedenciales";
-
+           // $msg_error = "error en las creedenciales";
+            echo json_encode(['success' => false, 'message' => 'Credenciales incorrectas. Por favor, inténtalo de nuevo.']);
             $db->disconnectFromDatabase();
         } else {
             $hashedPassword = $arrayResult[0]["pwd"];
