@@ -27,18 +27,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if (!password_verify($password, $hashedPassword) && $email == $arrayResult[0]["email"]) {
                 $db->disconnectFromDatabase();
-                echo " fail";
+                echo json_encode(['success' => false, 'message' => 'Credenciales incorrectas. Por favor, inténtalo de nuevo.']);
             }else{
                 $_SESSION['email'] = $arrayResult[0]["email"];
                 $db->disconnectFromDatabase();
-                header('Location: ../Templates/carerList.php');
+//                header('Location: ../Templates/carerList.php');
+                 echo json_encode(['success' => true]);
             }
         }  
     }else{
-        $msg_error = "introduzca sus creedenciales por favor";
+   //     $msg_error = "introduzca sus creedenciales por favor";
     }
 }
 
 // if exists an error throw a error menssage then include then template login
-require_once "../Templates/login.php";
+//require_once "../Templates/login.php";
 
