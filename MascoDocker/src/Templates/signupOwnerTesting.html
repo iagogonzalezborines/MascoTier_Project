@@ -21,8 +21,8 @@
         .big-container {
             background-color: rgba(215, 250, 228, 0.658);
             display: flex;
-            justify-content: left;
-            align-items: left   ;
+            justify-content: space-between;
+            align-items: flex-start;
             height: 90%;
             width: 90%;
             margin-left: 10px;
@@ -33,33 +33,34 @@
             transition: width 0.5s ease;
         }
 
-
-
         .form-container {
             height: 100%;
             background-color: #ffffff;
             width: 40%;
-            left: 100%;
-
+            position: absolute;
+            left: 0;
+            transition: transform 0.5s ease;
         }
 
         .form-container.pet-form {
-            transform: translateX(100%);
+            transform: translateX(-100%);
         }
 
         .title {
-            color: #a7cc23;
+            color: #000000;
             text-align: center;
         }
 
         .form-group {
+            margin-left: 30px;
             margin-bottom: 15px;
+            margin-top: 40px;
         }
 
         label {
             display: block;
             margin-bottom: 5px;
-            color: #a7cc23;
+            color: #000000;
             font-weight: bold;
         }
 
@@ -67,9 +68,9 @@
         input[type="email"],
         input[type="tel"],
         input[type="password"] {
-            width: 100%;
+            width: 80%;
             padding: 10px;
-            border: 1px solid #a7cc23;
+            border: 1px solid #49c2b0;
             border-radius: 5px;
         }
 
@@ -81,77 +82,166 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            margin-top: 30px;
+            height: 40px;
         }
 
         .btn-green:hover {
             background-color: #8cbf20;
+        }
+
+        input[type=date] {
+            height: 35px;
+            margin: 0 auto;
+            font-family: arial, sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            background-color: #49c2b0;
+            outline: none;
+            border: 0;
+            border-radius: 3px;
+            padding: 0 3px;
+            color: black;
+        }
+
+        input[type=date]::-webkit-datetime-edit-month-field {
+            color: #a7cc23;
+        }
+
+        input[type=date]::-webkit-datetime-edit-day-field {
+            color: white;
+        }
+
+        input[type=date]::-webkit-datetime-edit-year-field {
+            color: #49c2b0;
+        }
+
+        input[type=date]::-webkit-clear-button {
+            font-size: 18px;
+            height: 30px;
+            position: relative;
+            right: 5px;
+            margin-right: 4px;
+        }
+
+        input[type=date]::-webkit-inner-spin-button {
+            height: 30px;
+        }
+
+        input[type=date]::-webkit-calendar-picker-indicator {
+            font-size: 18px;
+        }
+
+        input[type=date]::-webkit-calendar-picker-indicator:hover {
+            background-color: #f5efd4;
+            color: #e6e6e6;
+            cursor: pointer;
+        }
+
+        input[type=date]::-webkit-calendar-picker-indicator:active {
+            color: #49c2b0;
         }
     </style>
 </head>
 
 <body>
     <div class="big-container">
-            <div class="form-container">
-                <h1 class="title">Registro de Dueño</h1>
-                <form class="form" action="/signupOwner" method="POST">
-                    <div class="form-group">
-                        <label for="name">Nombre</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <!-- Otros campos del formulario de dueño -->
-                </form>
-                <button class="btn-green" id="addPetBtn">Agregar Mascota</button>
-            </div>
-           
+        <div class="form-container">
+            <h1 class="title">Registro de Dueño</h1>
+            <form class="form" action="/signupOwner" method="POST">
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required placeholder="Joe Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="joedoe@ejemplo.com">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Teléfono:</label>
+                    <input id="phone" type="tel" name="phone" placeholder="123 45 67 89 " required>
+                </div>
+                <div class="form-group">
+                    <input type="date" name="birthdate" id="birthdate">
+                </div>
+            </form>
+        </div>
+        <div class="form-container pet-form">
+            <h1 class="title">Registro de Mascota</h1>
+            <form class="form" action="/addPet" method="POST">
+                <div class="form-group">
+                    <label for="petName">Nombre:</label>
+                    <input type="text" id="petName" name="petName" required>
+                </div>
+                <div class="form-group">
+                    <label for="petType">Tipo:</label>
+                    <input type="text" id="petType" name="petType" required>
+                </div>
+                <div class="form-group">
+                    <label for="petBreed">Raza:</label>
+                    <input type="text" id="petBreed" name="petBreed" required>
+                </div>
+            </form>
+            <button class="btn-green" id="submitPetBtn">Agregar Mascota</button>
+        </div>
+        <button class="btn-green" id="addPetBtn">Agregar Mascota</button>
     </div>
 
-</body>
-
-</html>
-
 <script>
-    document.getElementById('submitPetBtn').addEventListener('click', function () {
-    // Obtener los valores del formulario de mascota
-    const petName = document.getElementById('petName').value;
-    const petType = document.getElementById('petType').value;
-    const petBreed = document.getElementById('petBreed').value;
+     document.getElementById('addPetBtn').addEventListener('click', function () {
+            const formContainer = document.querySelector('.form-container.pet-form');
+            formContainer.classList.toggle('active');
+            document.querySelector('.big-container').classList.toggle('expanded');
+        });
+    $(document).ready(function () {
+        $('input[type="date"]').click();
 
-    // Crear un objeto que represente la mascota
-    const pet = {
-        name: petName,
-        type: petType,
-        breed: petBreed
-    };
-
-    // Aquí puedes enviar el objeto 'pet' al servidor utilizando AJAX o fetch
-    // Por ejemplo, si estás utilizando fetch:
-    fetch('/addPet', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(pet)
-    })
-    .then(response => {
-        if (response.ok) {
-            return response.json();
-        }
-        throw new Error('Error al agregar mascota');
-    })
-    .then(data => {
-        // Agregar la mascota a la lista en el big-container
-        const petList = document.getElementById('petList');
-        const listItem = document.createElement('li');
-        listItem.textContent = `${pet.name} - ${pet.type} - ${pet.breed}`;
-        petList.appendChild(listItem);
-    })
-    .catch(error => {
-        console.error('Error:', error);
     });
-});
+
+    function closeDate(dateInput) {
+        $(dateInput).attr('type', 'text');
+        $(dateInput).attr('type', 'date');
+    }
+
+    document.getElementById('submitPetBtn').addEventListener('click', function () {
+        // Obtener los valores del formulario de mascota
+        const petName = document.getElementById('petName').value;
+        const petType = document.getElementById('petType').value;
+        const petBreed = document.getElementById('petBreed').value;
+
+        // Crear un objeto que represente la mascota
+        const pet = {
+            name: petName,
+            type: petType,
+            breed: petBreed
+        };
+
+        // Aquí puedes enviar el objeto 'pet' al servidor utilizando AJAX o fetch
+        // Por ejemplo, si estás utilizando fetch:
+        fetch('/addPet', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(pet)
+        })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Error al agregar mascota');
+            })
+            .then(data => {
+                // Agregar la mascota a la lista en el big-container
+                const petList = document.getElementById('petList');
+                const listItem = document.createElement('li');
+                listItem.textContent = `${pet.name} - ${pet.type} - ${pet.breed}`;
+                petList.appendChild(listItem);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    });
 
 </script>
