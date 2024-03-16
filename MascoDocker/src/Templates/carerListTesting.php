@@ -248,6 +248,80 @@
         .range-value {
             margin-left: 10px;
         }
+
+        #button {
+  --color: #0077ff;
+  font-family: inherit;
+  display: inline-block;
+  width: 5em;
+  height: 2.6em;
+  line-height: 2.5em;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 20px;
+  font-size: 17px;
+  z-index: 1;
+  color: var(--color);
+  border: 2px solid var(--color);
+  border-radius: 6px;
+  position: relative;
+  margin: auto;
+  margin-left:90px ;
+}
+
+#button::before {
+  position: absolute;
+  content: "";
+  background: var(--color);
+  width: 150px;
+  height: 200px;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+#button:hover {
+  color: white;
+}
+
+#button:before {
+  top: 100%;
+  left: 100%;
+  transition: 0.3s all;
+}
+
+#button:hover::before {
+  top: -30px;
+  left: -30px;
+}
+
+.rating {
+  display: inline-block;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  float: right;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.rating label:before {
+  content: '\2605';
+  font-size: 30px;
+}
+
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #6f00ff;
+  transition: color 0.3s;
+}
+
+
     </style>
 </head>
 
@@ -288,8 +362,18 @@
                     </div>
                 </div>
                 <div class="formBlock">
-                    <label for="">Rating mínimo </label>
-                    <input type="number" placeholder="0" min="0" max="5">
+                <div class="rating">
+  <input value="5" name="rating" id="star5" type="radio">
+  <label for="star5"></label>
+  <input value="4" name="rating" id="star4" type="radio">
+  <label for="star4"></label>
+  <input value="3" name="rating" id="star3" type="radio">
+  <label for="star3"></label>
+  <input value="2" name="rating" id="star2" type="radio">
+  <label for="star2"></label>
+  <input value="1" name="rating" id="star1" type="radio">
+  <label for="star1"></label>
+</div>
                 </div>
                 <div class="formBlock">
                     <label for="">Precio máximo/hora</label>
@@ -299,6 +383,7 @@
                     </div>
                 </div>
 
+                <button value="Filtrar" id="button"> Filtrar</button>
             </form>
         </aside>
         <div class="menu-container">
