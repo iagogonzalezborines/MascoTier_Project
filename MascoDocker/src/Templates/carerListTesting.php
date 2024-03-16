@@ -12,7 +12,8 @@
             margin: 0;
             padding: 0;
             background-image: url('media/patternTETRIS.svg');
-            color: #333;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
         /* Estilos del encabezado */
@@ -115,6 +116,7 @@
             width: 40vh;
             border: 4px solid black;
             margin:2vh;
+            background-color: white;
 
         }
 
@@ -133,7 +135,7 @@
 
     <main class="">
         <aside>
-            <H3>FILTROS</H3>
+            <H3 class="text-center">FILTROS</H3>
         </aside>
         <div class="menu-container">
             <?php
