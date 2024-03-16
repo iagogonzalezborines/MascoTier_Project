@@ -51,7 +51,7 @@
             justify-self: center;
             margin:auto;
             margin-left: 10vh;
-            width: 70vh;
+            width: 80vh;
         }
 
         .menu-item {
@@ -62,7 +62,7 @@
             margin: 20px;
             margin-left: 40px;
             transition: transform 0.3s;
-            width: 60vh;
+            width: 100%;
 
             /* Para mostrar en columnas hacia abajo */
             display: flex;
