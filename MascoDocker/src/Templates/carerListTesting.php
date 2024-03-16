@@ -127,6 +127,7 @@
             flex-direction: row;
             justify-content: space-around;
             align-items: right;
+            margin-left: 50px;
             width: 50%;
             color: #a7cc23;
         }
@@ -149,9 +150,9 @@
             display: flex;
         }
         .formBlock {
-            border: 1px solid black;
+            
             padding: 4px;
-            margin-bottom: 5px;
+            margin-bottom:30px;
         }
     </style>
 </head>
