@@ -11,7 +11,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-image: url('media/patternTETRIS.svg');
             color: #333;
         }
 
@@ -31,15 +31,17 @@
 
         /* Estilos del navbar */
         nav {
-            background-color: #333;
-            padding: 10px 0;
+            background-color: #f6f8f7;
+            display: flex;
+            flex-direction: row;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         nav .logo {
-            display: block;
-            width: 150px;
-            margin: 0 auto;
+            left: 100px;
+            display: flex;
+            width: 120px;
+            margin-left: 30px;
         }
 
         .menu-container {
@@ -112,9 +114,7 @@
 </head>
 
 <body>
-    <header>
-        <h1>Lista de Cuidadores - Mascotier</h1>
-    </header>
+
 
     <nav>
         <img src="media/logo-removebg-preview.png" alt="Logo de Mascotier" class="logo">
