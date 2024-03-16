@@ -125,13 +125,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            height: fit-content;
         }
 
         main {
             display: flex;
         }
 
-
+        .formBlock {
+            border: 1px solid black;
+            padding: 4px;
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 
@@ -144,11 +149,28 @@
 
     <main>
         <aside>
-        <form action="" method="get">
-            <H3>FILTROS</H3>
-            
-            
+            <form action="" method="get">
+                <H3>FILTROS</H3>
 
+                <div class="formBlock">
+                    <label for="">Localización</label>
+                    <input type="text" placeholder="Vigo">
+                </div>
+                <div class="formBlock">
+                    <label for="">Tienes donde cuidar?</label><br>
+                    <input type="radio" name="hasPlace" value="1" id="hasPlaceYes">
+                    <label for="hasPlaceYes" class="round-button">Sí</label>
+                    <input type="radio" name="hasPlace" value="0" id="hasPlaceNo">
+                    <label for="hasPlaceNo" class="round-button">No</label>
+                </div>
+                <div class="formBlock">
+                    <label for="">Rating mínimo </label>
+                    <input type="number" placeholder="0" min="0" max="5">
+                </div>
+                <div class="formBlock">
+                    <label for="">Precio máximo/hora</label>
+                    <input type="number"  placeholder="20" min="0" max="30">
+                </div>
             </form>
         </aside>
         <div class="menu-container">
