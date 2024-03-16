@@ -55,8 +55,8 @@
             margin-left: 10vh;
             width: 90vh;
             height: 80vh;
-            overflow-y: scroll;
-            scrollbar-width: thin;
+            overflow-y: auto; /* Esto crea una barra de desplazamiento vertical */
+            scrollbar-width: 2px; /* Establece el grosor de la barra de desplazamiento */
             margin-top: 10px;
         }
 
