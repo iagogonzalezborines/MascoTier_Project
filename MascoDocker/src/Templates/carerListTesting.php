@@ -51,7 +51,7 @@
 
             align-self: center;
             justify-self: center;
-            margin:auto;
+            margin: auto;
             margin-left: 10vh;
             width: 80vh;
         }
@@ -117,14 +117,21 @@
         aside {
             width: 40vh;
             border: 4px solid black;
-            margin:2vh;
+            margin: 2vh;
             background-color: white;
-
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         main {
             display: flex;
         }
+
+
     </style>
 </head>
 
@@ -135,9 +142,14 @@
         <img src="media/logo-removebg-preview.png" alt="Logo de Mascotier" class="logo">
     </nav>
 
-    <main class="">
+    <main>
         <aside>
-            <H3 class="text-center">FILTROS</H3>
+        <form action="" method="get">
+            <H3>FILTROS</H3>
+            
+            
+
+            </form>
         </aside>
         <div class="menu-container">
             <?php
