@@ -33,7 +33,7 @@
         /* Estilos del navbar */
         nav {
             background-color: #f6f8f7;
-            opacity: 0.9;
+            opacity: 0.97;
             border-radius: 20px;
             display: flex;
             flex-direction: row;
