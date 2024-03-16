@@ -45,12 +45,12 @@
         }
 
         .menu-container {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 20px auto;
-            width: 100%;
+
+            align-self: center;
+            justify-self: center;
+            margin:auto;
+            margin-left: 10vh;
+            width: 70vh;
         }
 
         .menu-item {
@@ -59,10 +59,10 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             margin: 20px;
-            margin-left:40px;
-            overflow: hidden;
+            margin-left: 40px;
             transition: transform 0.3s;
-            width: calc(33.33% - 20px);
+            width: 60vh;
+
             /* Para mostrar en columnas hacia abajo */
             display: flex;
             flex-direction: row;
@@ -110,6 +110,17 @@
             margin: 5px 0;
             color: #666;
         }
+
+        aside {
+            width: 40vh;
+            border: 4px solid black;
+            margin:2vh;
+
+        }
+
+        main {
+            display: flex;
+        }
     </style>
 </head>
 
@@ -120,7 +131,10 @@
         <img src="media/logo-removebg-preview.png" alt="Logo de Mascotier" class="logo">
     </nav>
 
-    <main>
+    <main class="">
+        <aside>
+            <H3>FILTROS</H3>
+        </aside>
         <div class="menu-container">
             <?php
             // Requerir la clase de la base de datos
