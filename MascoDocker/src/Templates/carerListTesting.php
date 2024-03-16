@@ -53,8 +53,26 @@
             justify-self: center;
             margin: auto;
             margin-left: 10vh;
-            width: 80vh;
+            width: 90vh;
+            height: 80vh;
+            overflow-y: auto; /* Esto crea una barra de desplazamiento vertical */
+            scrollbar-width: 2px; /* Establece el grosor de la barra de desplazamiento */
+            margin-top: 10px;
         }
+
+        /* Personaliza la apariencia de la barra de desplazamiento */
+        .menu-container::-webkit-scrollbar {
+            width: 6px;
+            /* Grosor de la barra de desplazamiento */
+        }
+
+        .menu-container::-webkit-scrollbar-thumb {
+            background-color: #888;
+            /* Color del pulgar de la barra de desplazamiento */
+            border-radius: 3px;
+            /* Borde redondeado del pulgar */
+        }
+
 
         .menu-item {
             width: 400px;
@@ -114,14 +132,16 @@
             margin: 5px 0;
             color: #666;
         }
-        .links{
+
+        .links {
             display: flex;
             flex-direction: row;
             justify-content: space-around;
             align-items: right;
             width: 50%;
         }
-        ul{
+
+        ul {
             list-style: none;
             display: flex;
             flex-direction: row;
@@ -192,7 +212,7 @@
                 </div>
                 <div class="formBlock">
                     <label for="">Precio máximo/hora</label>
-                    <input type="number"  placeholder="20" min="0" max="30">
+                    <input type="number" placeholder="20" min="0" max="30">
                 </div>
             </form>
         </aside>
