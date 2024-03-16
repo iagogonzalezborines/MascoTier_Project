@@ -11,7 +11,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('media/patternTETRIS.svg');
+            background-image: url('media/pattern6.svg');
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -33,6 +33,8 @@
         /* Estilos del navbar */
         nav {
             background-color: #f6f8f7;
+            opacity: 0.9;
+            border-radius: 20px;
             display: flex;
             flex-direction: row;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
