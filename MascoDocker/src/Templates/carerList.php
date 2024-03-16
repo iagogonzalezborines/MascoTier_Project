@@ -53,10 +53,10 @@ require_once '../DataBase/dataBase.php';
                 </button>
                 
                 <!-- Links del navbar -->
-                <ul class="flex items-end w-1/2 justify-start p-5">
+                <ul class="flex items-end p-5">
 
                     <li class="">
-                        <a href="../Controller/profileCarer.php" class="btn-blue font-bold py-2 px-4 rounded-full focus:outline-none p-2 text-xl">Perfil</a>
+                        <a href="../Controller/profileCarer.php" class="font-bold p-2 text-xl">Perfil</a>
                     </li>
                     <li class="">
                         <a href="/templates" class="btn-blue font-bold py-2 px-4 rounded-full focus:outline-none p-2 text-xl">Cerrar sesión</a>
