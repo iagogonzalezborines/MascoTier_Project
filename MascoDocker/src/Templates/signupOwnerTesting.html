@@ -44,19 +44,6 @@
         /* Agregar transición para una animación suave */
       }
 
-      .pet-form {
-        height: 100%;
-
-        width: 40%;
-        /* Ancho original del formulario */
-        position: absolute;
-
-        transition: width 0.5s ease;
-        right: 100px;
-        display: none;
-        /* Agregar transición para una animación suave */
-      }
-
       .title {
         color: #000000;
         text-align: left;
@@ -175,6 +162,21 @@
         margin-bottom: 30px;
         display: block;
       }
+      .pet-form {
+        height: 100%;
+
+        width: 40%;
+        /* Ancho original del formulario */
+        position: absolute;
+        right: 100px;
+
+        opacity: 0; /* Inicialmente oculto */
+        transition: opacity 0.5s ease; /* Transición de opacidad */
+      }
+
+      .show {
+        opacity: 1; /* Hace que el formulario sea visible */
+      }
       .btn-green-pet {
         display: block;
         background-color: #a7cc23;
@@ -188,7 +190,7 @@
         height: 40px;
         transform-origin: right; /* Establecer el punto de origen de la transformación */
         transform: skewX(-45deg); /* Aplicar transformación de inclinación */
-        margin-left:20% ;
+        margin-left: 20%;
       }
 
       .btn-green-pet:hover {
@@ -250,26 +252,45 @@
         <form class="form" action="/addPet" method="POST">
           <div class="form-group">
             <label for="petName">Nombre:</label>
-            <input type="text" id="petName" name="petName" placeholder="bobby" required />
+            <input
+              type="text"
+              id="petName"
+              name="petName"
+              placeholder="bobby"
+              required
+            />
           </div>
           <div class="form-group">
             <label for="petType">Tipo:</label>
-            <input type="text" id="petType" name="petType" placeholder="perro" required />
+            <input
+              type="text"
+              id="petType"
+              name="petType"
+              placeholder="perro"
+              required
+            />
           </div>
           <div class="form-group">
             <label for="petBreed">Raza:</label>
-            <input type="text" id="petBreed" name="petBreed" placeholder="pitbull" required />
+            <input
+              type="text"
+              id="petBreed"
+              name="petBreed"
+              placeholder="pitbull"
+              required
+            />
           </div>
-          <button class="btn-green-pet" id="submitPetBtn">Agregar Mascota</button>
+          <button class="btn-green-pet" id="submitPetBtn">
+            Agregar Mascota
+          </button>
         </form>
-       
       </div>
     </div>
 
     <script>
       const mainForm = document.querySelector(".form-container");
       const petAdd = document.getElementById("addPetBtn");
-    const petForm = document.querySelector(".pet-form");
+      const petForm = document.querySelector(".pet-form");
       function expandForm(formContainer) {
         formContainer.style.width = "80%"; // Ampliar el ancho del formulario
         formContainer.style.left = "0"; // Asegurar que el formulario comience desde el borde izquierdo
@@ -277,9 +298,7 @@
 
       petAdd.addEventListener("click", () => {
         expandForm(mainForm);
-        setTimeout(() => {
-            petForm.style.display = "block";
-        }, 400);
+        petForm.classList.add("show"); // Agrega la clase "mostrar"
       });
 
       function closeDate(dateInput) {
