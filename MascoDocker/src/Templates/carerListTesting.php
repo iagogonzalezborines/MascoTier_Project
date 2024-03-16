@@ -113,6 +113,22 @@
             margin: 5px 0;
             color: #666;
         }
+        .links{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: right;
+            width: 50%;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: right;
+            width: 50%;
+            color: #a7cc23;
+        }
 
         aside {
             width: 40vh;
@@ -133,6 +149,12 @@
 
     <nav>
         <img src="media/logo-removebg-preview.png" alt="Logo de Mascotier" class="logo">
+        <div class="links">
+            <ul>
+                <li><a href="">Mis datos</a></li>
+                <li><a href="">Contacto</a></li>
+            </ul>
+        </div>
     </nav>
 
     <main class="">
