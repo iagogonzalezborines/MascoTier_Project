@@ -55,8 +55,10 @@
             margin-left: 10vh;
             width: 90vh;
             height: 80vh;
-            overflow-y: auto; /* Esto crea una barra de desplazamiento vertical */
-            scrollbar-width: 2px; /* Establece el grosor de la barra de desplazamiento */
+            overflow-y: auto;
+            /* Esto crea una barra de desplazamiento vertical */
+            scrollbar-width: 2px;
+            /* Establece el grosor de la barra de desplazamiento */
             margin-top: 10px;
         }
 
@@ -169,10 +171,82 @@
         main {
             display: flex;
         }
+
         .formBlock {
-            
+            margin-left: 50px;
             padding: 4px;
-            margin-bottom:30px;
+            margin-bottom: 30px;
+        }
+
+        .input-style {
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #555;
+            outline: none;
+
+        }
+
+        .input-style:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+
+        .radio-inputs {
+            display: flex;
+            flex-wrap: wrap;
+            border-radius: 0.5rem;
+            background-color: #EEE;
+            box-sizing: border-box;
+            box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+            padding: 0.25rem;
+            width: 60%;
+            font-size: 14px;
+        }
+
+        .radio-inputs .radio {
+            flex: 1 1 auto;
+            text-align: center;
+        }
+
+        .radio-inputs .radio input {
+            display: none;
+        }
+
+        .radio-inputs .radio .name {
+            display: flex;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+            border: none;
+            padding: .5rem 0;
+            color: rgba(51, 65, 85, 1);
+            transition: all .15s ease-in-out;
+        }
+
+        .radio-inputs .radio input:checked+.name {
+            background-color: #fff;
+            font-weight: 600;
+        }
+
+        #p-form {
+            text-align: center;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        /* Estilos para el control de rango */
+        .range-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .range-value {
+            margin-left: 10px;
         }
     </style>
 </head>
@@ -196,15 +270,22 @@
                 <H3>FILTROS</H3>
 
                 <div class="formBlock">
-                    <label for="">Localización</label>
-                    <input type="text" placeholder="Vigo">
+                    <label for="location"></label>
+                    <input type="text" placeholder="Localizacion" class="input-style">
                 </div>
+                <p id="p-form">Lugar para alojar</p>
                 <div class="formBlock">
-                    <label for="">Localización para alojar la mascota?</label><br>
-                    <input type="radio" name="hasPlace" value="1" id="hasPlaceYes">
-                    <label for="hasPlaceYes" class="round-button">Sí</label>
-                    <input type="radio" name="hasPlace" value="0" id="hasPlaceNo">
-                    <label for="hasPlaceNo" class="round-button">No</label>
+                    <div class="radio-inputs">
+                        <label class="radio">
+                            <input type="radio" name="radio">
+                            <span class="name">Si</span>
+                        </label>
+
+                        <label class="radio">
+                            <input type="radio" name="radio">
+                            <span class="name">No</span>
+                        </label>
+                    </div>
                 </div>
                 <div class="formBlock">
                     <label for="">Rating mínimo </label>
@@ -212,8 +293,12 @@
                 </div>
                 <div class="formBlock">
                     <label for="">Precio máximo/hora</label>
-                    <input type="number" placeholder="20" min="0" max="30">
+                    <div class="range-container">
+                        <input type="range" id="priceRange" placeholder="20" min="0" max="30" oninput="updateRangeValue(this.value)">
+                        <output for="priceRange" class="range-value" id="rangeValue">0</output>
+                    </div>
                 </div>
+
             </form>
         </aside>
         <div class="menu-container">
@@ -254,5 +339,10 @@
         </div>
     </main>
 </body>
+<script>
+    function updateRangeValue(value) {
+        document.querySelector('.range-value').textContent = value;
+    }
+</script>
 
 </html>
