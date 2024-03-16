@@ -58,6 +58,7 @@
 
         .menu-item {
             width: 400px;
+            opacity: 0.97;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -132,8 +133,8 @@
 
         aside {
             width: 40vh;
-            border: 4px solid black;
             margin: 2vh;
+            opacity: 0.9;
             background-color: white;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
@@ -147,7 +148,6 @@
         main {
             display: flex;
         }
-
         .formBlock {
             border: 1px solid black;
             padding: 4px;
@@ -179,7 +179,7 @@
                     <input type="text" placeholder="Vigo">
                 </div>
                 <div class="formBlock">
-                    <label for="">Tienes donde cuidar?</label><br>
+                    <label for="">Localización para alojar la mascota?</label><br>
                     <input type="radio" name="hasPlace" value="1" id="hasPlaceYes">
                     <label for="hasPlaceYes" class="round-button">Sí</label>
                     <input type="radio" name="hasPlace" value="0" id="hasPlaceNo">
