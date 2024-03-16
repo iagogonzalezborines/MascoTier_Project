@@ -5,50 +5,238 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mascotas</title>
     <link rel="stylesheet" href="./assets/outstyles.css">
-
-
+    <link rel="stylesheet" href="./assets/slider.css">
 </head>
+<style>
+    body {
+        background-color: #ecda86;
+        background-image: url(media/paws.jpg);
+
+    }
+</style>
 <body class="bg-gray-800 p-4">
     <header>
         <nav class="flex items-center justify-between" id="navbar">
-            <!-- temporal Logo -->
+            <!-- Logo -->
             <div class="flex items-center mr-10">
-                <img class="h-20 w-20" src="media/logo.svg" alt="Logo" />
-                <span class="text-white font-bold text-lg">MASCOTIER</span>
+                <img class="h-20 w-20" src="media/logo.png" alt="Logo" />
             </div>
             <!-- Links del navbar -->
             <ul class="flex items-center w-1/2 justify-start p-5">
                 <li class="mr-6">
-                    <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
+                    <a href="./index.html" class="text-cyan-400 hover:text-green-400">Inicio</a>
                 </li>
                 <li class="mr-6">
-                    <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
+                    <a href="#" class="text-blue-400 hover:text-green-400">Item</a>
                 </li>
                 <li class="mr-6">
-                    <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
+                    <a href="#" class="text-blue-400 hover:text-green-400">Item</a>
                 </li>
                 <li class="mr-6">
-                    <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
+                    <a href="#" class="text-blue-400 hover:text-green-400">Item</a>
                 </li>
                 <li class="mr-6">
-                    <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
+                    <a href="#" class="text-blue-400 hover:text-green-400">Item</a>
                 </li>
                 <li class="mr-6">
-                    <a href="#" class="text-gray-100 hover:text-blue-400">Item</a>
+                    <a href="#" class="text-blue-400 hover:text-green-400">Item</a>
                 </li>
             </ul>
         </nav>
     </header>
+    <div class="text-center w-full mt-32"></div>
+    <h1 class="text-black text-8xl text-center"><span class="text-black text-8xl">Mascotas</span></h1>
     <main class="text-white mt-10">
        <div class="flex justify-center w-1/2 mx-auto">
-        <p class="text-lg m-2">Añadir Mascota</p>
-       <a class="w-1/12 flex items-center justify-center p-2 hover:rounded hover:bg-blue-500" href="./form_pet.html"> <img src="media/plus.svg" alt="add_icon" class="w-1/6"></a>
-       </div>
-       <!--here should be the pets of the owner--> 
+
+<div class="myform">
+<button id="expandButton" onclick="toggleForm()">Anhadir mascota</button>
+
+<form id="myForm" style="display: none;">
+    <form>
+        <label for="especie">Especie:</label>
+        <input type="text" id="especie" name="especie" required><br><br>
+      
+        <label for="raza">Raza:</label>
+        <input type="text" id="raza" name="raza"><br><br>
+      
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+      
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" required><br><br>
+      
+        <label for="observaciones">Observaciones Especiales:</label><br>
+        <textarea id="observaciones" name="observaciones" rows="4" cols="50"></textarea><br><br>
+      
+        <input type="submit" value="Submit">
+      </form>
+</form>
+
+<script>
+    function toggleForm() {
+        var form = document.getElementById("myForm");
+        if (form.style.display === "none") {
+            form.style.display = "block";
+        } else {
+            form.style.display = "none";
+        }
+    }
+</script>
+</div>
+  
+</div>
+ 
+        <div class="slider">
+            <input type="radio" name="fpets" id="t-1" />
+            <input type="radio" name="fpets" id="t-2" />
+            <input type="radio" name="fpets" id="t-3" checked />
+            <input type="radio" name="fpets" id="t-4" />
+            <input type="radio" name="fpets" id="t-5" />
+            <input type="radio" name="fpets" id="t-6" />
+            <input type="radio" name="fpets" id="t-7" />
+            <input type="radio" name="fpets" id="t-8" />
+            <input type="radio" name="fpets" id="t-9" />
+
+            <div class="fpets" id="pets">
+                <!-- Pet 1 -->
+                <label class="item" for="t-1">
+                    <div class="mycard">
+                        <p class="cardtitle">PetName</p>
+                        <a href="">
+                            <img src="" alt="Pet" class="cardimg" />
+                        </a>
+                        <div>
+                            <p class="carddescription">Pet Description Basics (Name, Raze...)</p>
+                        </div>
+                    </div>
+                </label>
+
+                <!-- Pet 2 -->
+                <label class="item" for="t-2">
+                    <div class="mycard">
+                        <p class="cardtitle">PetName</p>
+                        <a href="">
+                            <img src="" alt="Pet" class="cardimg" />
+                        </a>
+                        <div>
+                            <p class="carddescription">Pet Description Basics (Name, Raze...)</p>
+                        </div>
+                    </div>
+                </label>
+
+                <!-- Pet 3 -->
+                <label class="item" for="t-3">
+                    <div class="mycard">
+                        <p class="cardtitle">PetName</p>
+                        <a href="">
+                            <img src="" alt="Pet" class="cardimg" />
+                        </a>
+                        <div>
+                            <p class="carddescription">Pet Description Basics (Name, Raze...)
+                            </p>
+                        </div>
+                    </div>
+                </label>
+
+                <!-- Pet 4 -->
+                <label class="item" for="t-4">
+                    <div class="mycard">
+                        <p class="cardtitle">PetName</p>
+                        <a href="">
+                            <img src="" alt="Pet" class="cardimg" />
+                        </a>
+                        <div>
+                            <p class="carddescription">Pet Description Basics (Name, Raze...)</p>
+                        </div>
+                    </div>
+                </label>
+
+                <!-- Pet 5 -->
+                <label class="item" for="t-5">
+                    <div class="mycard">
+                        <p class="cardtitle">PetName</p>
+                        <a href="">
+                            <img src="" alt="Pet" class="cardimg" />
+                        </a>
+                        <div>
+                            <p class="carddescription">Pet Description Basics (Name, Raze...)</p>
+                        </div>
+                    </div>
+                </label>
+
+                <!-- Pet 6 -->
+                <label class="item" for="t-6">
+                    <div class="mycard">
+                        <p class="cardtitle">PetName</p>
+                        <a href="">
+                            <img src="" alt="Pet" class="cardimg" />
+                        </a>
+                        <div>
+                            <p class="carddescription">Pet Description Basics (Name, Raze...)</p>
+                        </div>
+                    </div>
+                </label>
+
+                <!-- Pet 7 -->
+                <label class="item" for="t-7">
+                    <div class="mycard">
+                        <p class="cardtitle">PetName</p>
+                        <a href="">
+                            <img src="" alt="Pet" class="cardimg" />
+                        </a>
+                        <div>
+                            <p class="carddescription">Pet Description Basics (Name, Raze...)</p>
+                        </div>
+                    </div>
+                </label>
+
+                <!-- Pet 8 -->
+                <label class="item" for="t-8">
+                    <div class="mycard">
+                        <p class="cardtitle">PetName</p>
+                        <a href="">
+                            <img src="" alt="Pet" class="cardimg" />
+                        </a>
+                        <div>
+                            <p class="carddescription">Pet Description Basics (Name, Raze...)</p>
+                        </div>
+                    </div>
+                </label>
+
+                <!-- Pet 9 -->
+                <label class="item" for="t-9">
+                    <div class="mycard">
+                        <p class="cardtitle">PetName</p>
+                        <a href="">
+                            <img src="" alt="Pet" class="cardimg" />
+                        </a>
+                        <div>
+                            <p class="carddescription">Pet Description Basics (Name, Raze...)</p>
+                        </div>
+                    </div>
+                </label>
+            </div>
+
+            <div class="dots">
+                <label for="t-1"></label>
+                <label for="t-2"></label>
+                <label for="t-3"></label>
+                <label for="t-4"></label>
+                <label for="t-5"></label>
+                <label for="t-6"></label>
+                <label for="t-7"></label>
+                <label for="t-8"></label>
+                <label for="t-9"></label>
+            </div>
+        </div>
+    </section>
        <div>
 
        </div>
     </main>
 
 </body>
+<script src="./scripts/pets.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </html>
