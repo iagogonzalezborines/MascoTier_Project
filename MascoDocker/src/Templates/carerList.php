@@ -17,7 +17,7 @@ require_once '../DataBase/dataBase.php';
         }
 
         body {
-            background-color: #f5efd4;
+            background-image: url('media/patternTETRIS.svg');
             
         }
 
