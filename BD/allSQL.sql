@@ -17,7 +17,7 @@ CREATE TABLE users (
     pets TEXT,
     hasPlace TINYINT(1),
     idDocument VARCHAR(100),
-    rating VARCHAR(10)
+    rating FLOAT
 );
 
 
@@ -63,18 +63,17 @@ CREATE TABLE requests_pets (
 
 
 
-/* 
-NOTES: 
 
-- The user class will be able to SELECT, INSERT, UPDATE and DELETE on the table_name table of the database_name database.
-- Should we add another type of user? (Owner?, Carer?)(e.g. a user that can only SELECT on the table_name table of the database_name database)
-- Add admin with all permits remeber to hide config.ini in orther to not leak the password
+-- NOTES: 
 
-PURPOSE:
-    The purpose of this script is to create the necessary users 
-    with the proper permissions to interact with the database.
+-- The user class will be able to SELECT, INSERT, UPDATE and DELETE on the table_name table of the database_name database.
+-- Should we add another type of user? (Owner?, Carer?)(e.g. a user that can only SELECT on the table_name table of the database_name database)
+-- Add admin with all permits remeber to hide config.ini in orther to not leak the password
 
-*/
+-- PURPOSE:
+--    The purpose of this script is to create the necessary users 
+--   with the proper permissions to interact with the database.
+
 
 CREATE USER 'mascoadmin'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON *.* TO 'mascoadmin'@'localhost' WITH GRANT OPTION;
@@ -110,15 +109,15 @@ FLUSH PRIVILEGES;
 -- Agregar tuplas a la tabla user
 INSERT INTO users (username, email, pwd, phone, area, birth_date, verified, type, contactNumber, pets, hasPlace, idDocument, rating) VALUES
 ('usuario1', 'usuario1@example.com', '$2y$10$E/eU5cpgtRjk0wfNqE1eJOWfEMo6DOjNi.H31wD.nASKQ16Ew7EPO', '123456789', 'Área1', '1990-01-01', 1, 'owner', '987654321', 'Perro', 1, '123ABC', null),
-('usuario2', 'usuario2@example.com', '$2y$10$WsTnqO9eIvLpviNh.dgLCOlwH2R9jic0i2040oZ2GrmLCRjJKPnkm', '987654321', 'Área2', '1995-02-15', 1, 'carer', '123456789', null, 0, '456DEF', '4.5'),
-('usuario3', 'usuario3@example.com', 'contraseña3', '555555555', 'Área3', '1988-05-20', 0, 'both', '888888888', 'Perro, Gato', 1, '789GHI', '4.8'),
-('usuario4', 'usuario4@example.com', 'contraseña4', '666666666', 'Área4', '1992-11-10', 1, 'owner', '222222222', 'Pájaro', 0, '321JKL', '4.2'),
-('usuario5', 'usuario5@example.com', 'contraseña5', '444444444', 'Área5', '1998-07-30', 0, 'carer', '444444444', 'Pez', 1, '654MNO', '4.9'),
-('usuario6', 'usuario6@example.com', 'contraseña6', '333333333', 'Área6', '1993-09-25', 1, 'both', '555555555', 'Perro, Gato, Pájaro', 0, '987PQR', '4.7'),
-('usuario7', 'usuario7@example.com', 'contraseña7', '222222222', 'Área7', '1985-03-18', 1, 'owner', '333333333', 'Hamster', 1, '147STU', '4.6'),
-('usuario8', 'usuario8@example.com', 'contraseña8', '111111111', 'Área8', '1979-12-05', 0, 'carer', '666666666', 'Conejo', 0, '258VWX', '4.3'),
-('usuario9', 'usuario9@example.com', 'contraseña9', '999999999', 'Área9', '1983-04-22', 1, 'both', '777777777', 'Perro, Conejo', 1, '369YZA', '4.1'),
-('usuario10', 'usuario10@example.com', 'contraseña10', '888888888', 'Área10', '1996-08-12', 0, 'owner', '999999999', 'Gato, Pájaro', 0, '741BCD', '4.4');
+('usuario2', 'usuario2@example.com', '$2y$10$WsTnqO9eIvLpviNh.dgLCOlwH2R9jic0i2040oZ2GrmLCRjJKPnkm', '987654321', 'Área2', '1995-02-15', 1, 'carer', '123456789', null, 0, '456DEF', 4.5),
+('usuario3', 'usuario3@example.com', 'contraseña3', '555555555', 'Área3', '1988-05-20', 0, 'both', '888888888', 'Perro, Gato', 1, '789GHI', 4.8),
+('usuario4', 'usuario4@example.com', 'contraseña4', '666666666', 'Área4', '1992-11-10', 1, 'owner', '222222222', 'Pájaro', 0, '321JKL',null),
+('usuario5', 'usuario5@example.com', 'contraseña5', '444444444', 'Área5', '1998-07-30', 0, 'carer', '444444444', 'Pez', 1, '654MNO', 4.9),
+('usuario6', 'usuario6@example.com', 'contraseña6', '333333333', 'Área6', '1993-09-25', 1, 'both', '555555555', 'Perro, Gato, Pájaro', 0, '987PQR', 4.7),
+('usuario7', 'usuario7@example.com', 'contraseña7', '222222222', 'Área7', '1985-03-18', 1, 'owner', '333333333', 'Hamster', 1, '147STU',null),
+('usuario8', 'usuario8@example.com', 'contraseña8', '111111111', 'Área8', '1979-12-05', 0, 'carer', '666666666', 'Conejo', 0, '258VWX', 4.3),
+('usuario9', 'usuario9@example.com', 'contraseña9', '999999999', 'Área9', '1983-04-22', 1, 'both', '777777777', 'Perro, Conejo', 1, '369YZA', 4.1),
+('usuario10', 'usuario10@example.com', 'contraseña10', '888888888', 'Área10', '1996-08-12', 0, 'owner', '999999999', 'Gato, Pájaro', 0, '741BCD',null);
 
 
 -- Agregar tuplas a la tabla pet
