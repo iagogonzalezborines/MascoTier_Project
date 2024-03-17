@@ -29,7 +29,7 @@
       border-radius: 10px;
       box-shadow: 5px 10px 10px 10px rgba(0, 0, 0, 0.3);
       position: relative;
-     
+
       transition: width 0.5s ease;
     }
 
@@ -98,11 +98,6 @@
       height: 40px;
       position: absolute;
       right: -60px;
-      /* Posicionar a la derecha del form-container */
-      transform-origin: right;
-      /* Establecer el punto de origen de la transformación */
-      transform: skewX(-45deg);
-      /* Aplicar transformación de inclinación */
     }
 
     .btn-green:hover {
@@ -181,7 +176,8 @@
       width: 40%;
       /* Ancho original del formulario */
       position: absolute;
-      right: 100px;
+      right: 90px;
+      margin-right: 200px;
 
       opacity: 0;
       /* Inicialmente oculto */
@@ -206,8 +202,7 @@
       margin-top: 30px;
       height: 40px;
       transform-origin: right;
-      /* Establecer el punto de origen de la transformación */
-      transform: skewX(-45deg);
+      width: 40px;
       /* Aplicar transformación de inclinación */
       margin-left: 20%;
     }
@@ -217,15 +212,59 @@
     }
 
     .btn-green-pet span {
-      transform: skewX(45deg);
+
       /* Invertir la inclinación para el texto */
       display: block;
       padding: 0 20px;
     }
+
+    .petlist {
+      display: flex;
+      flex-direction: column;
+      z-index: 1;
+      margin-left: 350px;
+      background-color: aquamarine;
+      border-radius: 10px;
+      height: 100%;
+      width: 15%;
+    }
+
+    .petType {
+      width: 200px;
+    }
+
+    .petlisttitle {
+
+      margin-left: 05px;
+    }
+
+    .petTypeOption {
+      width: 100px;
+      height: 100px;
+      background-color: #49c2b0;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .submitchiquito{
+      z-index: -1;
+    }
+    .registerBtn{
+      display: flex;
+      background-color: #49c2b0;
+      right: 100%;
+      z-index: 1;
+    }
+    .logo{
+      z-index: -3;
+    }
+
   </style>
 </head>
 
 <body>
+  
   <div class="big-container">
     <div class="form-container" id="form-container">
       <h1 class="title">Registro de Dueño</h1>
@@ -242,7 +281,7 @@
           <label for="phone">Teléfono:</label>
           <input id="phone" type="tel" name="phone" placeholder="123 45 67 89 " required />
         </div>
-      <button type="button" class="btn-green" id="addPetBtn">Agregar Mascota</button>
+        <button type="button" class="btn-green" id="addPetBtn">Agregar Mascota</button>
         <div class="form-group">
           <label for="password">Contraseña:</label>
           <input id="password" type="password" name="password" placeholder="****" required />
@@ -251,30 +290,47 @@
           <label for="birthdate">Fecha de Nacimiento:</label>
           <input type="date" name="birthdate" id="birthdate" />
         </div>
-
+        <div class="form-group">
+          <input type="submit">
+        </div>
       </form>
+    </div>
+    <div class="petlist">
+      <h1 class="petlisttitle">Tus Mascotas:</h1>
+      <ul id="petlist">
+
+      </ul>
     </div>
     <div class="pet-form">
       <h1 class="title" id="h1pet">Registro de Mascota</h1>
       <form class="form" action="/addPet" method="POST">
         <div class="form-group">
           <label for="petName">Nombre:</label>
-          <input type="text" id="petName" name="petName" placeholder="bobby" required />
+          <input type="text" id="petName" name="petName" placeholder="Cooper" required />
         </div>
         <div class="form-group">
           <label for="petType">Tipo:</label>
-          <input type="text" id="petType" name="petType" placeholder="perro" required />
+          <select name="petType" id="petType" class="petType">
+            <option value="cat" class="petTypeOption">Gato</option>
+            <option value="dog" class="petTypeOption">Perro</option>
+            <option value="turtle" class="petTypeOption">Tortuga</option>
+            <option value="rabbit" class="petTypeOption">Conejo</option>
+            <option value="fish" class="petTypeOption">Pez</option>
+            <option value="hamster" class="petTypeOption">Hamster</option>
+          </select>
         </div>
         <div class="form-group">
           <label for="petBreed">Raza:</label>
-          <input type="text" id="petBreed" name="petBreed" placeholder="pitbull" required />
+          <input type="text" id="petBreed" name="petBreed" placeholder="pitbull"  />
         </div>
         <button class="btn-green-pet" id="submitPetBtn">
-          Agregar Mascota
+          +
         </button>
       </form>
     </div>
   </div>
+  
+
 
   <script>
     const mainForm = document.querySelector(".form-container");
@@ -298,6 +354,51 @@
       $(dateInput).attr("type", "text");
       $(dateInput).attr("type", "date");
     }
+
+
+
+    const petlist = document.getElementById('petlist');
+
+    petForm.addEventListener('submit', function (event) {
+      event.preventDefault(); // Evitar el comportamiento de envío predeterminado
+
+      const petType = document.getElementById('petType').value;
+      let petName = document.getElementById('petName').value
+      let petText = '';
+      let pronun = ' el '
+
+      switch (petType) {
+        case 'cat':
+          petText = 'Gato';
+          break;
+        case 'dog':
+          petText = 'Perro';
+          break;
+        case 'turtle':
+          petText = 'Tortuga';
+          pronun = ' la '
+          break;
+        case 'rabbit':
+          petText = 'Conejo';
+          break;
+        case 'hamster':
+          petText = 'Hamster';
+          break;
+        case 'fish':
+          petText = 'Pez';
+          break;
+
+      }
+
+      if (petText !== '') {
+        const listItem = document.createElement('li');
+        listItem.textContent = petName + pronun + petText;
+        petlist.appendChild(listItem);
+      }
+
+      // Limpiar el campo de selección después de enviar
+      document.getElementById('petType').value = '';
+    });
   </script>
 </body>
 
