@@ -2,6 +2,7 @@
 session_start();
 require_once '../Methods/formFilters.php';
 require_once "../DataBase/dataBase.php";
+
 if (!isset($_SESSION["email"])) {
     $host  = $_SERVER['HTTP_HOST'];
     $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');

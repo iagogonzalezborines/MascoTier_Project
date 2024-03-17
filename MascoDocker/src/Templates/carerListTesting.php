@@ -55,7 +55,7 @@
             margin-left: 10vh;
             width: 90vh;
             height: 80vh;
-            overflow-y: auto;
+            overflow-y: scroll;
             /* Esto crea una barra de desplazamiento vertical */
             scrollbar-width: 2px;
             /* Establece el grosor de la barra de desplazamiento */
@@ -103,7 +103,6 @@
             /* Aumentamos un poco el tamaño de la imagen */
             border-radius: 8px 0 0 8px;
             /* Borde redondeado solo a la izquierda */
-            overflow: hidden;
         }
 
         .game-image-container img {

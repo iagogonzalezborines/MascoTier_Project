@@ -116,7 +116,7 @@ require_once '../DataBase/dataBase.php';
                     $pdo = dataBase::getInstance();
                     $db = $pdo->connectToDatabase();
 
-                    $statement = $db->prepare("SELECT * FROM `users` where (type='carer')"); //this number is the owner id so it has to be changed every time we use this file
+                    $statement = $db->prepare("SELECT * FROM `users` where (type='carer' or type='both' )"); //this number is the owner id so it has to be changed every time we use this file
 
                     $statement->execute();
                     $data = $statement->fetchAll(PDO::FETCH_ASSOC);
