@@ -13,8 +13,7 @@ if (!isset($_SESSION["email"])) {
 $email = $_SESSION["email"];
 if (!empty($_POST)) {
 
-    if (test_email($_POST["email"])) {
-        $newEmail = $_POST["email"];
+    if (test_email($email)) {
         $username = test_text($_POST["name"]);
         $phone = $_POST["phone"];
         $area = test_text($_POST["area"]);
@@ -30,7 +29,7 @@ if (!empty($_POST)) {
         $query = "update users set email = ? , username = ?, phone = ? , hasPlace = ? ,area= ? where email = ?";
         $db = dataBase::getInstance();
         $db->connectToDatabase();
-        $result = $db->executeQuery($query, [$newEmail, $username, $phone, $hasPlace, $area, $email]);
+        $result = $db->executeQuery($query, [$email, $username, $phone, $hasPlace, $area, $email]);
     }
 }
 
