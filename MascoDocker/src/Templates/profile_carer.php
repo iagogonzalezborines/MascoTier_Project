@@ -55,7 +55,9 @@
 
             <!-- Links del navbar -->
             <ul class="flex items-end p-5">
-
+            <li class="">
+                    <a href="../Templates/carerList.php" class="font-bold p-2 text-xl">Feed</a>
+                </li>
                 <li class="">
                     <a href="../Controller/profileCarer.php" class="font-bold p-2 text-xl">Perfil</a>
                 </li>

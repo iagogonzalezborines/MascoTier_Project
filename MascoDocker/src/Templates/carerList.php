@@ -77,7 +77,7 @@
 
 
         .menu-item {
-            width: 400px;
+            width: 90%;
             opacity: 0.97;
             background-color: #fff;
             border-radius: 8px;
@@ -85,7 +85,7 @@
             margin: 20px;
             margin-left: 40px;
             transition: transform 0.3s;
-            width: 100%;
+            
 
             /* Para mostrar en columnas hacia abajo */
             display: flex;
@@ -121,6 +121,7 @@
             /* Alineamos el texto a la izquierda */
             flex-grow: 1;
             /* Hacemos que el texto ocupe el espacio restante */
+            width: 50%;
         }
 
         .game-text h1 {
@@ -310,10 +311,8 @@
             color: #6f00ff;
             transition: color 0.3s;
         }
-        #filterForm{  /*THIS WAS SUPOSSED TO CENTER DE FORM, NOT WORKING, VIEW LATER*/ 
-            width: auto;
-            margin: auto;
-        }
+
+
     </style>
     <link rel="stylesheet" href="../Templates/assets/outstyles.css">
 
@@ -338,7 +337,9 @@
 
             <!-- Links del navbar -->
             <ul class="flex items-end p-5">
-
+                <li class="">
+                    <a href="carerList.php" class="font-bold p-2 text-xl">Feed</a>
+                </li>
                 <li class="">
                     <a href="../Controller/profileCarer.php" class="font-bold p-2 text-xl">Perfil</a>
                 </li>
