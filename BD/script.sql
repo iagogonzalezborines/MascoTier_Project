@@ -17,7 +17,7 @@ CREATE TABLE users (
     pets TEXT,
     hasPlace TINYINT(1),
     idDocument VARCHAR(100),
-    rating VARCHAR(10)
+    rating INT
 );
 
 

@@ -13,75 +13,24 @@
         color: #252f48;
         background-color: #f5efd4;
     }
-
-    h1 {
-        font-size: 3.5rem;
-        font-weight: 700;
-    }
-
-    .divImageAndDesc {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 500px;
-
-    }
-
-    .logo {
-        width: 15vh;
-    }
-
-    .hiddenForm {
-        display: none;
-    }
 </style>
 
 <body>
-    <nav id="navbar">
-        <div class="flex items-center justify-between h-20 w-full pr-32 p-10 mt-5 mb-6">
-            <img src="../Templates/media/logo.png" alt="Logo" class=" logo">
 
-            <div class="hidden md:block">
-                <div class="ml-10 flex items-baseline space-x-4">
-                    <!-- Add navigation links here -->
-                </div>
+
+
+
+    <div class="flex m-10 ">
+        <div class="flex justify-start flex-wrap w-2/3 ml-5">
+            <div class="m-auto flex justify-center w-1/2 ">
+                <img src="../Templates/media/cat1.png" alt="" class="w-1/2  rounded-full border-4 border-white">
             </div>
-            <button class="md:hidden bg-transparent text-white hover:text-gray-300 focus:outline-none">
-                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
-                    </path>
-                </svg>
-            </button>
 
-            <!-- Links del navbar -->
-            <ul class="flex items-end p-5">
-
-                <li class="">
-                    <a href="../Controller/profileCarer.php" class="font-bold p-2 text-xl">Perfil</a>
-                </li>
-                <li class="">
-                    <a href="/templates" class="btn-blue font-bold py-2 px-4 rounded-full focus:outline-none p-2 text-xl">Cerrar sesión</a>
-                </li>
-            </ul>
-        </div>
-
-
-    </nav>
-    <main>
-
-        <div class="flex justify-center w-2/4 ">
-            <div class="w-max-full  ">
-                <h2 class="text-7xl font-bold  mb-8  text-center"><?php if (isset($row["username"])) echo $row["username"] ?></h2>
-
-                <div class="divImageAndDesc ">
-                    <figure>
-                        <img src="../Templates/media/account.png" alt="imagen de usuario">
-                    </figure>
-                    <div>
-                        <p> PLACEHOLDER ipsum dolor sit amet consectetur adipisicing elit. Officiis modi omnis eum et corrupti a accusamus quaerat eius alias! Natus laborum reiciendis praesentium veniam tempore est explicabo, iusto animi consequuntur.PLACEHOLDER </p>
-                    </div>
-                </div>
-
+            <div class="w-max-full ">
+                <h2 class="text-7xl font-bold mb-4  text-center"><?php if (isset($row["username"])) echo $row["username"] ?></h2>
+                <p class="text-lg text-center mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod,
+                    nunc vitae
+                    aliquam tincidunt, nisl mauris tincidunt urna, a aliquam nunc nisl id nunc.</p>
                 <div class="m-10 flex flex-col justify-center items-center">
 
                     <p class="text-xl mb-2">Email: <?php if (isset($row["email"])) echo $row["email"] ?></p>
@@ -95,14 +44,18 @@
                             </svg>
                             Editar Perfil
                         </button>
-
                     </div>
                 </div>
             </div>
 
         </div>
-
-        <div id="hiddenForm" class="hiddenForm w-full flex  flex-wrap mb-8">
+        <div class="w-full flex  flex-wrap">
+            <h1 class="text-7xl w-full text-center m-auto mb-5 "><?php
+                                                                    if (isset($row["username"])) {
+                                                                        echo $row["username"];
+                                                                    } else {
+                                                                        echo "Perfil de Usuario";
+                                                                    } ?></h1>
             <form class="max-w-md mx-auto ml-auto mb-auto p-5 bg-white rounded-lg shadow-2xl" action="<?php $_SERVER["PHP_SELF"] ?>" method="post">
                 <div class="grid md:grid-cols-2 md:gap-6  justify-center">
                     <div class="relative z-0 w-full mb-5 group">
@@ -133,22 +86,10 @@
                 </div>
             </form>
         </div>
-    </main>
-
-
-
+    </div>
 </body>
 <script>
-    const editPwdButton = document.getElementById("editPwd");
-    const hiddenForm =  document.getElementById("hiddenForm");
-    editPwdButton.addEventListener("click", () => {
-        if (hiddenForm.style.display == "block") {
-            hiddenForm.style.display = "none";
-        } else {
-            hiddenForm.style.display = "block";
-        }
-        
-    });
+
 </script>
 
 </html>

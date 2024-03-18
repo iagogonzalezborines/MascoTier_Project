@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botón Trapecio Rotado con Texto Normal</title>
+    <style>
+        .trapezoid {
+            width: 120px; /* Aumentamos el ancho del trapecio */
+            text-align: center;
+            height: 80px; /* Aumentamos la altura del trapecio */
+            position: relative;
+            border-right: 40px solid transparent; /* Ajustamos el tamaño del borde derecho */
+            border-top: 60px solid #2963BD;
+            border-left: 40px solid transparent; /* Ajustamos el tamaño del borde izquierdo */
+            box-sizing: content-box;
+            cursor: pointer;
+            transform: rotate(-90deg);
+        }
+
+        .trapezoid span {
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(90deg); /* Rotación inversa para el texto */
+            color: #961f1f;
+            font-size: 90px; /* Tamaño del texto */
+            width: 100%; /* Aseguramos que el texto ocupe todo el ancho del trapecio */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="trapezoid">
+        <span>+</span> 
+            
+    </div>
+</body>
+
+</html>
