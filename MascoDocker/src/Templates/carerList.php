@@ -310,6 +310,10 @@
             color: #6f00ff;
             transition: color 0.3s;
         }
+        #filterForm{  /*THIS WAS SUPOSSED TO CENTER DE FORM, NOT WORKING, VIEW LATER*/ 
+            width: auto;
+            margin: auto;
+        }
     </style>
     <link rel="stylesheet" href="../Templates/assets/outstyles.css">
 
@@ -348,7 +352,7 @@
     </nav>
     <main>
         <aside>
-            <form action="" method="get">
+            <form id="filterForm" action="" method="get">
                 <H3>FILTROS</H3>
 
                 <div class="formBlock">
