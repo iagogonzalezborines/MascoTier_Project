@@ -164,7 +164,6 @@
             hiddenForm.style.display = hiddenForm.style.display === "block" ? "none" : "block";
         });
 
-        // Eventos para actualizar el título cuando se sale de los campos de entrada
         nameInput.addEventListener("blur", () => {
             nameTittle.textContent = nameInput.value;
         });
