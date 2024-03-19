@@ -220,8 +220,8 @@
     let form = document.getElementById("form");
     form.addEventListener("submit",(e)=>{
         e.preventDefault();
-        var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
+        let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
         let xhr = new XMLHttpRequest();
         xhr.open('POST', '../Controller/login.php', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -230,7 +230,7 @@
         if (xhr.readyState === XMLHttpRequest.DONE) {
             
             if (xhr.status === 200) {
-                var response = JSON.parse(xhr.responseText);
+                let response = JSON.parse(xhr.responseText);
                 if (response.success) {
                     // Credenciales válidas, redireccionar o realizar alguna acción
                     window.location.href = 'carerList.php';
