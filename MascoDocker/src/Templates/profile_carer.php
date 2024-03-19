@@ -55,7 +55,7 @@
 
             <!-- Links del navbar -->
             <ul class="flex items-end p-5">
-            <li class="">
+                <li class="">
                     <a href="../Templates/carerList.php" class="font-bold p-2 text-xl">Feed</a>
                 </li>
                 <li class="">
@@ -142,15 +142,30 @@
 </body>
 <script>
     const editPwdButton = document.getElementById("editPwd");
-    const hiddenForm =  document.getElementById("hiddenForm");
+    const hiddenForm = document.getElementById("hiddenForm");
     editPwdButton.addEventListener("click", () => {
         if (hiddenForm.style.display == "block") {
             hiddenForm.style.display = "none";
         } else {
             hiddenForm.style.display = "block";
         }
-        
+
     });
+
+    /*Coge datos del server y rellena los inputs */
+    const nameInput = document.getElementById("name");
+    const phoneInput = document.getElementById("phone");
+    const areaInput = document.getElementById("area");
+
+    const userData = {
+        name: "<?php if (isset($row["username"])) echo $row["username"] ?>",
+        phone: "<?php if (isset($row["phone"])) echo $row["phone"] ?>",
+        area: "<?php if (isset($row["area"])) echo $row["area"] ?>"
+    };
+    nameInput.value = userData.name;
+    phoneInput.value = userData.phone;
+    areaInput.value = userData.area;
+    
 </script>
 
 </html>

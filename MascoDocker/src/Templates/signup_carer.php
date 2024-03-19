@@ -12,6 +12,7 @@
     body {
         background-color: #f5efd4;
         background-image: url(media/paws.jpg);
+ 
 
     }
 </style>
@@ -21,7 +22,7 @@
         <nav class="flex items-center justify-between w-max" id="navbar">
 
             <div class="flex items-center mr-10">
-                <a href="index.html"><img class="h-20 w-20 m-0  " src="media/logo-removebg-preview.png" alt="Logo" /></a>
+                <a href="index.html"><img class="h-20 w-20 m-0  " src="media/logo.png" alt="Logo" /></a>
                 <span class="text-black font-bold text-lg">MASCOTIER</span>
             </div>
 
