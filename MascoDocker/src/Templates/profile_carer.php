@@ -73,7 +73,7 @@
 
         <div class="flex justify-center w-2/4 ">
             <div class="w-max-full  ">
-                <h2 class="text-7xl font-bold  mb-8  text-center"><?php if (isset($row["username"])) echo $row["username"] ?></h2>
+                <h2 id="nameTittle" class="text-7xl font-bold  mb-8  text-center"><?php if (isset($row["username"])) echo $row["username"] ?></h2>
 
                 <div class="divImageAndDesc ">
                     <figure>
@@ -108,13 +108,13 @@
             <form class="max-w-md mx-auto ml-auto mb-auto p-5 bg-white rounded-lg shadow-2xl" action="<?php $_SERVER["PHP_SELF"] ?>" method="post">
                 <div class="grid md:grid-cols-2 md:gap-6  justify-center">
                     <div class="relative z-0 w-full mb-5 group">
-                        <input type="text" name="name" id="name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  />
+                        <input type="text" name="name" id="name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
                         <label for="name" class="text-center peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nombre</label>
                     </div>
                 </div>
                 <div class="grid md:grid-cols-2 md:gap-6  justify-center">
                     <div class="relative z-0 w-full mb-5 group">
-                        <input type="tel" name="phone" id="phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  />
+                        <input type="tel" name="phone" id="phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
                         <label for="phone" class="text-center peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Telefono</label>
                     </div>
                 </div>
@@ -141,31 +141,42 @@
 
 </body>
 <script>
-    const editPwdButton = document.getElementById("editPwd");
-    const hiddenForm = document.getElementById("hiddenForm");
-    editPwdButton.addEventListener("click", () => {
-        if (hiddenForm.style.display == "block") {
-            hiddenForm.style.display = "none";
-        } else {
-            hiddenForm.style.display = "block";
-        }
+        // auto rellenar los campos del form y actualización dinámica
+        const nameTittle = document.getElementById("nameTittle");
+        const nameInput = document.getElementById("name");
+        const phoneInput = document.getElementById("phone");
+        const areaInput = document.getElementById("area");
+        const editPwdButton = document.getElementById("editPwd");
+        const hiddenForm = document.getElementById("hiddenForm");
 
-    });
+        const userData = {
+            name: "<?php if (isset($row["username"])) echo $row["username"] ?>",
+            phone: "<?php if (isset($row["phone"])) echo $row["phone"] ?>",
+            area: "<?php if (isset($row["area"])) echo $row["area"] ?>"
+        };
 
-    /*Coge datos del server y rellena los inputs */
-    const nameInput = document.getElementById("name");
-    const phoneInput = document.getElementById("phone");
-    const areaInput = document.getElementById("area");
+        nameInput.value = userData.name;
+        phoneInput.value = userData.phone;
+        areaInput.value = userData.area;
+        nameTittle.textContent = userData.name;
 
-    const userData = {
-        name: "<?php if (isset($row["username"])) echo $row["username"] ?>",
-        phone: "<?php if (isset($row["phone"])) echo $row["phone"] ?>",
-        area: "<?php if (isset($row["area"])) echo $row["area"] ?>"
-    };
-    nameInput.value = userData.name;
-    phoneInput.value = userData.phone;
-    areaInput.value = userData.area;
+        editPwdButton.addEventListener("click", () => {
+            hiddenForm.style.display = hiddenForm.style.display === "block" ? "none" : "block";
+        });
 
+        // Eventos para actualizar el título cuando se sale de los campos de entrada
+        nameInput.addEventListener("blur", () => {
+            nameTittle.textContent = nameInput.value;
+        });
+
+        // NOT WORKING ATM
+        phoneInput.addEventListener("blur", () => {
+            phoneInput.textContent = phoneInput.value;
+        });
+
+        areaInput.addEventListener("blur", () => {
+            areaInput.textContent = areaInput.value;
+        });
 </script>
 
 </html>
